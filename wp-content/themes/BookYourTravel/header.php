@@ -64,6 +64,7 @@
 		window.currentLanguage = '<?php echo ICL_LANGUAGE_CODE; ?>';
 <?php } ?>
 	</script>
+    
 <?php
 	$body_class = '';
 	$content_class = '';
@@ -85,10 +86,36 @@
 			<!--logo-->
 			<?php $logo_title = get_bloginfo('name') . ' | ' . ( is_home() || is_front_page() ? get_bloginfo('description') : wp_title('', false)); ?>
 			<h1 class="logo"><a href="<?php echo get_home_url(); ?>" title="<?php echo $logo_title; ?>"><img src="<?php echo $logo_src; ?>" alt="<?php echo $logo_title; ?>" /></a></h1>
+            <!------------------------------------------------->
+            <div class="headerright">
+ 
+ 
+ <div class="language"> language </div>
+ 
+ <div class="currency"> 
+   <div class='selectBox'>
+   <span class='selected'></span>
+   <span class='selectArrow'>&#9660</span>
+   <div class="selectOptions" >
+    <span class="selectOption" value="Option 1">GBP</span>
+    <span class="selectOption" value="Option 2">GBP 1 </span>
+    <span class="selectOption" value="Option 3">GBP 2</span>
+   </div>
+  </div>
+ 
+  </div>
+ 
+ <div class="toplinks"> <span>  <a href="#">Register Now! </a></span>
+ <p><a href="#">Sign in</a> or <a href="#">Sign Up </a></p>
+ </div>
+ 
+ 
+  </div>
+    <!------------------------------------------------->
 			<!--//logo-->
 			<?php if (!$hide_header_ribbon) { ?>
 			<!--ribbon-->
-			<div class="ribbon">
+			<!--<div class="ribbon">
 				<nav>
 					<ul class="profile-nav">
 						<?php if (!is_user_logged_in() && (!empty($login_page_url) || !empty($register_page_url) || !empty($cart_page))) { ?>
@@ -128,27 +155,27 @@
 					<?php } ?>
 					<?php get_sidebar('header'); ?>
 				</nav>
-			</div>
+			</div>-->
 			<!--//ribbon-->
 			<?php } // endif (!$hide_header_ribbon) ?>
 			<!--search-->
-			<div class="search">
+			<!--<div class="search">
 				<form id="searchform" method="get" action="<?php echo home_url(); ?>">
 					<input type="search" placeholder="<?php _e('Search entire site here', 'bookyourtravel'); ?>" name="s" id="search" /> 
 					<input type="submit" id="searchsubmit" value="" name="searchsubmit"/>
 				</form>
-			</div>
+			</div>-->
 			<!--//search-->		
 			<!--contact-->
-			<div class="contact">
+			<!--<div class="contact">
 				<span><?php _e('24/7 Support number', 'bookyourtravel'); ?></span>
 				<span class="number"><?php echo of_get_option('contact_phone_number', ''); ?></span>
-			</div>
+			</div>-->
 			<!--//contact-->
 		</div>
 		<!--primary navigation-->
 		<?php  if ( has_nav_menu( 'primary-menu' ) ) {
-			wp_nav_menu( array( 'theme_location' => 'primary-menu', 'container' => 'nav', 'container_class' => 'main-nav', 'container_id' => 'nav', 'menu_class' => 'wrap') );
+			//wp_nav_menu( array( 'theme_location' => 'primary-menu', 'container' => 'nav', 'container_class' => 'main-nav', 'container_id' => 'nav', 'menu_class' => 'wrap') );
 		} else { ?>
 		<nav class="main-nav">
 			<ul class="wrap">
@@ -162,11 +189,12 @@
 	<!--//header-->
 	<?php 
 	if (is_page_template('byt_home.php')) {
-		get_template_part('includes/parts/home-page-header', 'latest'); 
+		//get_template_part('includes/parts/home-page-header', 'latest'); 
 	}
 	?>
+    <div class="body-bg">
 	<!--main-->
-	<div class="main" role="main" id="primary">		
+	<div class="" role="main" id="primary">		
 		<div class="wrap clearfix">
 			<!--main content-->
 			<div class="content clearfix <?php echo $content_class; ?>" id="content">
