@@ -20,7 +20,14 @@
 ?>
 	<!--location item-->
 	<article class="location_item <?php echo $location_class; ?>">
-    <div class="details" style="height:70px;">
+		<div>
+			<figure>
+				<a href="<?php  echo $location_obj->get_permalink(); ?>" title="<?php echo $location_obj->get_title(); ?>">
+					<img src="<?php echo $location_image; ?>" alt="" />
+				</a>
+			</figure>
+            
+			<div class="details">
 				<?php //byt_render_link_button($location_obj->get_permalink(), "gradient-button", "", __('View all', 'bookyourtravel')); ?>
 				<h3><?php echo $location_obj->get_title(); ?></h3>
                 <span class="stars">
@@ -50,14 +57,6 @@
 				</div>
 				<?php } ?>
 			</div>
-		<div>
-			<figure>
-				<a href="<?php  echo $location_obj->get_permalink(); ?>" title="<?php echo $location_obj->get_title(); ?>">
-					<img src="<?php echo $location_image; ?>" alt="" />
-				</a>
-			</figure>
-            
-			
 		</div>
 	</article>
 	<!--//location item-->
