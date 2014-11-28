@@ -16,16 +16,16 @@
 
 // ** MySQL settings - You can get this info from your web host ** //
 /** The name of the database for WordPress */
-define('DB_NAME', 'samterhotel');
+define('DB_NAME', 'rajencba_samter');
 
 /** MySQL database username */
-define('DB_USER', 'root');
+define('DB_USER', 'rajencba_samter');
 
 /** MySQL database password */
-define('DB_PASSWORD', '');
+define('DB_PASSWORD', 'ZEM}7BkGMaMI');
 
 /** MySQL hostname */
-define('DB_HOST', 'localhost');
+define('DB_HOST', 'arkinfotec.in');
 
 /** Database Charset to use in creating database tables. */
 define('DB_CHARSET', 'utf8');
