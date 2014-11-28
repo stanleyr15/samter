@@ -14,7 +14,7 @@
 	
 	if ($reviews_total > 0) {
 	?>
-	<article>
+	<!--<article>
 		<h1><?php _e(ucfirst($entity_obj->get_entity_type()) . ' review scores and score breakdown', 'bookyourtravel'); ?></h1>
 		<div class="score">
 		<?php 
@@ -41,7 +41,7 @@
 			}
 			?>
 		</dl>
-	</article>
+	</article>-->
 	<article>
 		<h1><?php _e('Guest reviews', 'bookyourtravel');?></h1>
 		<ul class="reviews">
