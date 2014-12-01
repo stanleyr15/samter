@@ -441,10 +441,27 @@ $room_type_custom_meta_fields = array(
 		'max'	=> '10',
 		'step'	=> '1'
 	),
+	
+	array(
+		'label'	=> __('Max Guest count', 'bookyourtravel'),
+		'desc'	=> __('How many guest are allowed in the room?', 'bookyourtravel'),
+		'id'	=> $prefix.'max_guest_count',
+		'type'	=> 'slider',
+		'min'	=> '1',
+		'max'	=> '10',
+		'step'	=> '1'
+	),
+	
 	array(
 		'label'	=> __('Bed size', 'bookyourtravel'),
 		'desc'	=> __('How big is/are the beds?', 'bookyourtravel'),
 		'id'	=> $prefix.'bed_size',
+		'type'	=> 'text'
+	),
+	array(
+		'label'	=> __('Extra Beds Available', 'bookyourtravel'),
+		'desc'	=> __('Extra beds available', 'bookyourtravel'),
+		'id'	=> $prefix.'extra_beds_available',
 		'type'	=> 'text'
 	),
 	array(

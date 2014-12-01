@@ -95,36 +95,42 @@ if ( have_posts() ) {
 					<?php } ?>
 					<div class="meta room_type">
 						<h2><?php echo $room_type_obj->get_title(); ?></h2>
-						<?php byt_render_field('', '', '', $room_type_obj->get_custom_field('meta'), '', true, true); ?>
+						<?php //byt_render_field('', '', '', $room_type_obj->get_custom_field('meta'), '', true, true); ?>
+                        <?php byt_render_field('', '', __('Bed size:', 'bookyourtravel'), $room_type_obj->get_custom_field('bed_size'), '', true, true); ?>
+                        <?php byt_render_field('', '', __('Extra Beds Available:', 'bookyourtravel'), $room_type_obj->get_custom_field('extra_beds_available'), '', true, true); ?>
+                        <?php byt_render_field('', '', __('', 'bookyourtravel'), $room_type_obj->get_custom_field('room_size').'Square Metres', '', true, true); ?> 
+						<?php byt_render_field('', '', __('Max Occupancy:', 'bookyourtravel'), $room_type_obj->get_custom_field('max_guest_count').'Guests', '', true, true); ?>
+                        
+                        
 						<?php byt_render_link_button("#", "more-info", "", __('+ more info', 'bookyourtravel')); ?>
 					</div>
 					<div class="room-information">
 						<div class="row">
-							<span class="first"><?php _e('Max:', 'bookyourtravel'); ?></span>
-							<span class="second">
-								<?php for ( $j = 0; $j < $room_type_obj->get_custom_field('max_count'); $j++ ) { ?>
-								<img src="<?php echo get_byt_file_uri('/images/ico/person.png'); ?>" alt="" />
-								<?php } ?>
-							</span>
-						</div>
-						<?php if ($room_type_min_price > 0) { ?>
+                        <?php if ($room_type_min_price > 0) { ?>
 						<div class="row">
-							<span class="first"><?php _e('Price from:', 'bookyourtravel'); ?></span>
+							<span class="first"><?php _e('Rs', 'bookyourtravel'); ?></span>
 							<div class="second price">
-								<em><span class="curr"><?php echo $currency_symbol; ?></span>
+								<br /><em><span class="curr"><?php echo $currency_symbol; ?></span>
 								<span class="amount"><?php echo $room_type_min_price; ?></span></em>
 								<input type="hidden" class="max_count" value="<?php echo $room_type_obj->get_custom_field('max_count'); ?>" />
 								<input type="hidden" class="max_child_count" value="<?php echo $room_type_obj->get_custom_field('max_child_count'); ?>" />
 							</div>
 						</div>
-						<?php byt_render_link_button("#", "gradient-button book-accommodation", "book-accommodation-$room_type_id", __('Book', 'bookyourtravel')); ?>
+						
+							<span class="first"><?php byt_render_field('', '', __('Max :', 'bookyourtravel'), $room_type_obj->get_custom_field('max_guest_count'), '', true, true); ?></span>
+                            <?php byt_render_link_button("#", "gradient-button book-accommodation", "book-accommodation-$room_type_id", __('Book', 'bookyourtravel')); ?>
 						<?php } ?>
+							
+						</div>
+						
 					</div>
 					<div class="more-information">
 						<?php byt_render_field('', '', __('Room facilities:', 'bookyourtravel'), $room_type_obj->get_facilities_string(), '', true, true); ?>
 						<?php echo $room_type_obj->get_description(); ?>
-						<?php byt_render_field('', '', __('Bed size:', 'bookyourtravel'), $room_type_obj->get_custom_field('bed_size'), '', true, true); ?>
-						<?php byt_render_field('', '', __('Room size:', 'bookyourtravel'), $room_type_obj->get_custom_field('room_size'), '', true, true); ?>
+                        <?php byt_render_field('', '', '', $room_type_obj->get_custom_field('meta'), '', true, true); ?>
+						<?php //byt_render_field('', '', __('Bed size:', 'bookyourtravel'), $room_type_obj->get_custom_field('bed_size'), '', true, true); ?>
+                        <?php //byt_render_field('', '', __('Max Occupancy:', 'bookyourtravel'), $room_type_obj->get_custom_field('max_guest_count').'Guests', '', true, true); ?>
+						<?php //byt_render_field('', '', __('Room size:', 'bookyourtravel'), $room_type_obj->get_custom_field('room_size').'Square Metres', '', true, true); ?>
 					</div>
 				</li>
 				<!--//room-->
