@@ -42,6 +42,14 @@ class byt_accommodation extends byt_entity
 		return wp_get_post_terms($this->get_base_id(), 'facility', array('orderby' => 'name', 'order' => 'ASC', 'fields' => 'all'));	
 	}
 	
+	public function get_generals() {
+		return wp_get_post_terms($this->get_base_id(), 'general', array('orderby' => 'name', 'order' => 'ASC', 'fields' => 'all'));	
+	}
+	
+	public function get_common_areas() {
+		return wp_get_post_terms($this->get_base_id(), 'area', array('orderby' => 'name', 'order' => 'ASC', 'fields' => 'all'));	
+	}
+	
 	public function get_field_value($field_name, $use_prefix = true) {
 		if ( $field_name == 'facilities' ) {
 			$facility_ids = array();

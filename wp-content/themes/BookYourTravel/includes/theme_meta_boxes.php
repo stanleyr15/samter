@@ -542,6 +542,21 @@ $accommodation_custom_meta_fields = array(
 		'id'	=> 'facility', // field id and name, needs to be the exact name of the taxonomy
 		'type'	=> 'tax_checkboxes' // type of field
 	),
+	
+	array( // Taxonomy Select box
+		'label'	=> __('General', 'bookyourtravel'), // <label>
+		// the description is created in the callback function with a link to Manage the taxonomy terms
+		'id'	=> 'general', // field id and name, needs to be the exact name of the taxonomy
+		'type'	=> 'tax_checkboxes' // type of field
+	),
+	
+	array( // Taxonomy Select box
+		'label'	=> __('Areas', 'bookyourtravel'), // <label>
+		// the description is created in the callback function with a link to Manage the taxonomy terms
+		'id'	=> 'area', // field id and name, needs to be the exact name of the taxonomy
+		'type'	=> 'tax_checkboxes' // type of field
+	),
+	
 	array( // Taxonomy Select box
 		'label'	=> __('Accommodation type', 'bookyourtravel'), // <label>
 		// the description is created in the callback function with a link to Manage the taxonomy terms

@@ -204,6 +204,7 @@ if ( have_posts() ) {
             <?php do_action( 'byt_show_single_accommodation_facilites_before' ); ?>
 			<?php 
 			$facilities = $accommodation_obj->get_facilities();
+			
 			if ($facilities && count($facilities) > 0) { ?>
 			<h1><?php _e('Services', 'bookyourtravel'); ?></h1>
 			<div class="text-wrap">	
@@ -218,6 +219,42 @@ if ( have_posts() ) {
 			<?php } // endif (!empty($accommodation_facilities)) ?>			
 			<?php byt_render_tab_extra_fields('accommodation_extra_fields', $accommodation_extra_fields, 'facilities', $accommodation_obj); ?>			
 			<?php do_action( 'byt_show_single_accommodation_facilites_after' ); ?>
+            
+            <?php 
+			$generals = $accommodation_obj->get_generals();
+			//var_dump($generals); exit;
+			if ($generals && count($generals) > 0) { ?>
+			<h1><?php _e('General Facilities', 'bookyourtravel'); ?></h1>
+			<div class="text-wrap">	
+				<ul class="three-col">
+				<?php
+				for( $i = 0; $i < count($generals); $i++) {
+					$accommodation_general = $generals[$i];
+					//var_dump($accommodation_general); exit;
+					echo '<li>' . $accommodation_general->name  . '</li>';
+				} ?>					
+				</ul>
+			</div>
+			<?php } // endif (!empty($accommodation_facilities)) ?>			
+			<?php //byt_render_tab_extra_fields('accommodation_extra_fields', $accommodation_extra_fields, 'facilities', $accommodation_obj); ?>	
+            
+             <?php 
+			$areas = $accommodation_obj->get_common_areas();
+			//var_dump($generals); exit;
+			if ($areas && count($areas) > 0) { ?>
+			<h1><?php _e('Extra Common Areas', 'bookyourtravel'); ?></h1>
+			<div class="text-wrap">	
+				<ul class="three-col">
+				<?php
+				for( $i = 0; $i < count($areas); $i++) {
+					$accommodation_area = $areas[$i];
+					//var_dump($accommodation_general); exit;
+					echo '<li>' . $accommodation_area->name  . '</li>';
+				} ?>					
+				</ul>
+			</div>
+			<?php } // endif (!empty($accommodation_facilities)) ?>			
+			<?php //byt_render_tab_extra_fields('accommodation_extra_fields', $accommodation_extra_fields, 'facilities', $accommodation_obj); ?>			
 		</article>
 	</section>
 	<!--//description-->	

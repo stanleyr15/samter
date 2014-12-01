@@ -214,6 +214,7 @@ function bookyourtravel_register_facility_taxonomy(){
 			'menu_name'         => __( 'Facilities', 'bookyourtravel' ),
 		);
 		
+		
 	$args = array(
 			'hierarchical'      => false,
 			'labels'            => $labels,
@@ -223,6 +224,8 @@ function bookyourtravel_register_facility_taxonomy(){
 			'update_count_callback' => '_update_post_term_count',
 			'rewrite'           => array( 'slug' => 'facility' ),
 		);
+		
+		
 	
 	$enable_accommodations = of_get_option('enable_accommodations', 1);
 	$enable_cruises = of_get_option('enable_cruises', 1);
@@ -239,4 +242,100 @@ function bookyourtravel_register_facility_taxonomy(){
 		
 	if (count($types_for_facility) > 0)
 		register_taxonomy( 'facility', $types_for_facility, $args );
+		
+		
+    $labels = array(
+			'name'              => _x( 'Generals', 'taxonomy general name', 'bookyourtravel' ),
+			'singular_name'     => _x( 'General', 'taxonomy singular name', 'bookyourtravel' ),
+			'search_items'      => __( 'Search Generals', 'bookyourtravel' ),
+			'all_items'         => __( 'All Generals', 'bookyourtravel' ),
+			'parent_item'                => null,
+			'parent_item_colon'          => null,
+			'edit_item'         => __( 'Edit General', 'bookyourtravel' ),
+			'update_item'       => __( 'Update General', 'bookyourtravel' ),
+			'add_new_item'      => __( 'Add New General', 'bookyourtravel' ),
+			'new_item_name'     => __( 'New General Name', 'bookyourtravel' ),
+			'separate_items_with_commas' => __( 'Separate generals with commas', 'bookyourtravel' ),
+			'add_or_remove_items'        => __( 'Add or remove generals', 'bookyourtravel' ),
+			'choose_from_most_used'      => __( 'Choose from the most used generals', 'bookyourtravel' ),
+			'not_found'                  => __( 'No generals found.', 'bookyourtravel' ),
+			'menu_name'         => __( 'Generals', 'bookyourtravel' ),
+		);
+		
+	$args = array(
+			'hierarchical'      => false,
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'query_var'         => true,
+			'update_count_callback' => '_update_post_term_count',
+			'rewrite'           => array( 'slug' => 'general' ),
+		);
+		
+		//var_dump($args);exit;
+	
+	$enable_accommodations = of_get_option('enable_accommodations', 1);
+	$enable_cruises = of_get_option('enable_cruises', 1);
+
+	$types_for_facility = array();
+	if ($enable_accommodations) {
+		$types_for_general[] = 'accommodation';
+		$types_for_general[] = 'room_type';
+	}
+	if ($enable_cruises) {
+		$types_for_general[] = 'cruise';
+		$types_for_general[] = 'cabin_type';
+	}
+		
+	if (count($types_for_general) > 0)
+		register_taxonomy( 'general', $types_for_general, $args );
+		
+		
+	$labels = array(
+			'name'              => _x( 'Areas', 'taxonomy general name', 'bookyourtravel' ),
+			'singular_name'     => _x( 'Area', 'taxonomy singular name', 'bookyourtravel' ),
+			'search_items'      => __( 'Search areas', 'bookyourtravel' ),
+			'all_items'         => __( 'All Areas', 'bookyourtravel' ),
+			'parent_item'                => null,
+			'parent_item_colon'          => null,
+			'edit_item'         => __( 'Edit Area', 'bookyourtravel' ),
+			'update_item'       => __( 'Update Area', 'bookyourtravel' ),
+			'add_new_item'      => __( 'Add New Area', 'bookyourtravel' ),
+			'new_item_name'     => __( 'New Area Name', 'bookyourtravel' ),
+			'separate_items_with_commas' => __( 'Separate areas with commas', 'bookyourtravel' ),
+			'add_or_remove_items'        => __( 'Add or remove areas', 'bookyourtravel' ),
+			'choose_from_most_used'      => __( 'Choose from the most used areas', 'bookyourtravel' ),
+			'not_found'                  => __( 'No areas found.', 'bookyourtravel' ),
+			'menu_name'         => __( 'Areas', 'bookyourtravel' ),
+		);
+		
+	$args = array(
+			'hierarchical'      => false,
+			'labels'            => $labels,
+			'show_ui'           => true,
+			'show_admin_column' => true,
+			'query_var'         => true,
+			'update_count_callback' => '_update_post_term_count',
+			'rewrite'           => array( 'slug' => 'area' ),
+		);
+		
+		//var_dump($args);exit;
+	
+	$enable_accommodations = of_get_option('enable_accommodations', 1);
+	$enable_cruises = of_get_option('enable_cruises', 1);
+
+	$types_for_facility = array();
+	if ($enable_accommodations) {
+		$types_for_general[] = 'accommodation';
+		$types_for_general[] = 'room_type';
+	}
+	if ($enable_cruises) {
+		$types_for_general[] = 'cruise';
+		$types_for_general[] = 'cabin_type';
+	}
+		
+	if (count($types_for_general) > 0)
+		register_taxonomy( 'area', $types_for_general, $args );
+		
+		
 }
