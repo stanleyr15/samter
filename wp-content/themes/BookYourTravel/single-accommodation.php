@@ -20,6 +20,7 @@ if ( have_posts() ) {
 
 	the_post();
 	$accommodation_obj = new byt_accommodation($post);
+	
 	$entity_obj = $accommodation_obj;
 	$accommodation_id = $accommodation_obj->get_id();
 	$base_accommodation_id = $accommodation_obj->get_base_id();
@@ -104,6 +105,7 @@ if ( have_posts() ) {
                         
 						<?php byt_render_link_button("#", "more-info", "", __('+ more info', 'bookyourtravel')); ?>
 					</div>
+                    <!--<div class="room-information">Best Value</div>-->
 					<div class="room-information">
 						<div class="row">
                         <?php if ($room_type_min_price > 0) { ?>
@@ -277,7 +279,7 @@ if ( have_posts() ) {
 		<article>
 			<?php do_action( 'byt_show_single_accommodation_location_before' ); ?>
 			<!--map--><div class="gmap" id="map_canvas"></div><!--//map-->
-			<?php byt_render_tab_extra_fields('accommodation_extra_fields', $accommodation_extra_fields, 'location', $accommodation_obj); ?>			
+			<?php //byt_render_tab_extra_fields('accommodation_extra_fields', $accommodation_extra_fields, 'location', $accommodation_obj); ?>			
 			<?php do_action( 'byt_show_single_accommodation_location_after' ); ?>
 		</article>
 	</section>

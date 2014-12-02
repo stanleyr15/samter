@@ -6129,3 +6129,31 @@ box-shadow: 3px 2px 3px 0px rgba(119, 119, 119, 0.25);
 border-radius: 10px;
 border:#d2d2d2 solid 1px;
 }
+
+
+.rating-blc {
+    float: left;
+    height: 42px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.left-rate {
+    float: left;
+    height: 31px;
+    width: 150px;
+}
+
+.cont-score {
+    background: url(../images/stars-sprite-cn.png) repeat-x scroll left top rgba(0, 0, 0, 0);
+    float: left;
+    height: 31px;
+    width: 150px;
+}
+
+.score-v1 {
+    background: url(../images/stars-sprite-cn.png) repeat-x scroll 0 -30px rgba(0, 0, 0, 0);
+    float: left;
+    height: 31px;
+    width: 150px;
+}
