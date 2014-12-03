@@ -597,7 +597,8 @@ add_action( 'wp_ajax_nopriv_review_ajax_request', 'review_ajax_request' );
 function review_ajax_request() {
 
 	if ( isset($_REQUEST) ) {
-	
+	    
+		$title = wp_kses($_REQUEST['title'], '');
 		$likes = wp_kses($_REQUEST['likes'], '');
 		$dislikes = wp_kses($_REQUEST['dislikes'], '');
 		$reviewed_post_id = wp_kses($_REQUEST['postId'], '');	
@@ -650,6 +651,7 @@ function review_ajax_request() {
 					$new_review_score = $new_score_sum / (count($review_fields) * 10);
 					$review_score = ($review_score + $new_review_score) / $review_count;					
 					
+					add_post_meta($review_post_id, 'review_title', $title);
 					add_post_meta($review_post_id, 'review_likes', $likes);
 					add_post_meta($review_post_id, 'review_dislikes', $dislikes);
 					add_post_meta($review_post_id, 'review_post_id', $reviewed_post_id);
@@ -679,7 +681,7 @@ function sync_reviews_ajax_request() {
 		
 			$enable_accommodations = of_get_option('enable_accommodations', 1); 
 			if ($enable_accommodations)
-				recalculate_review_scores('accommodation');
+				//recalculate_review_scores('accommodation');
 			
 			$enable_tours = of_get_option('enable_tours', 1); 
 			if ($enable_tours)

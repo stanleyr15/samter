@@ -43,7 +43,7 @@
 		</dl>
 	</article>-->
 	<article>
-		<h1><?php _e('Guest reviews', 'bookyourtravel');?></h1>
+		<h1><?php _e($reviews_total . ' People have reviewed this Hotel', 'bookyourtravel');?></h1>
 		<ul class="reviews">
 			<!--review-->
 			<?php
@@ -54,10 +54,22 @@
 			?>
 			<li>
 				<figure class="left"><?php echo get_avatar( get_the_author_meta( 'ID' ), 70 ); ?></figure>
-				<address><span><?php the_author(); ?></span><br /><?php echo get_the_date('Y-m-d'); ?><br /><br /></address>
-				<div class="pro"><p><?php echo get_post_meta($post->ID, 'review_likes', true); ?></p></div>
-				<div class="con"><p><?php echo get_post_meta($post->ID, 'review_dislikes', true); ?></p></div>
+				<address><span><?php the_author(); ?></span><br /> <?php the_author_description(); ?> <br /><br /></address>
+				<div class="pro"><p><b><?php echo get_post_meta($post->ID, 'review_title', true); ?></b><br />
+                
+                <div class="rating-blc">
+                    <div class="left-rate">
+                        <div class="cont-score">
+                            <div class="score-v1" style="width:<?php echo 150 * $review_score; ?>px"></div>
+                        </div>
+                    </div>
+                </div>
+				<?php echo get_post_meta($post->ID, 'review_likes', true); ?></p></div>
+				<div class="con"><p><?php //echo get_post_meta($post->ID, 'review_dislikes', true); ?></p></div>
 			</li>
+            
+           
+            
 			<!--//review-->
 			<?php endwhile; 
 				// Reset Second Loop Post Data
@@ -65,6 +77,9 @@
 			?>
 		</ul>
 	</article>
+
+            <div><ul><li> <?php echo get_you_also_like_posts();  ?></li></ul></div>
+
 <?php } else { ?>
 	<article>
 	<h3><?php echo sprintf(__('We are sorry, there are no reviews yet for this %s.', 'bookyourtravel'), $post_type); ?></h3>

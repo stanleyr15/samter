@@ -387,6 +387,14 @@ foreach ($car_rental_extra_fields as $car_rental_extra_field) {
 
 $prefix = 'review_';
 $review_custom_meta_fields = array(
+
+    array(
+		'label'	=> __('Title', 'bookyourtravel'),
+		'desc'	=> __('Title for the Review', 'bookyourtravel'),
+		'id'	=> $prefix.'title',
+		'type'	=> 'text'
+	),
+	
 	array(
 		'label'	=> __('Likes', 'bookyourtravel'),
 		'desc'	=> __('What the user likes about the accommodation', 'bookyourtravel'),
@@ -617,6 +625,14 @@ $accommodation_custom_meta_fields = array(
 		'id'	=> $prefix.'website_address',
 		'type'	=> 'text'
 	),
+	
+	array(
+		'label'	=> __('Phone Number', 'bookyourtravel'),
+		'desc'	=> '',
+		'id'	=> $prefix.'phone',
+		'type'	=> 'text'
+	),
+	
 	array(
 		'label'	=> __('Availability extra text', 'bookyourtravel'),
 		'desc'	=> __('Extra text shown on availability tab above the book now area.', 'bookyourtravel'),

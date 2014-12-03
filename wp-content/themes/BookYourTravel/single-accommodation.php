@@ -8,6 +8,8 @@ get_sidebar('under-header');
 
 global $post, $current_user, $accommodation_obj, $entity_obj, $currency_symbol, $price_decimal_places, $score_out_of_10, $enable_reviews, $default_accommodation_tabs, $default_accommodation_extra_fields;
 
+//var_dump($accommodation_obj);
+
 $accommodation_extra_fields = of_get_option('accommodation_extra_fields');
 if (!is_array($accommodation_extra_fields) || count($accommodation_extra_fields) == 0)
 	$accommodation_extra_fields = $default_accommodation_extra_fields;
@@ -142,6 +144,8 @@ if ( have_posts() ) {
 				wp_reset_postdata(); 
 				// end while ?>
 			</ul>	
+            
+            
 			<?php } else if ($accommodation_obj->get_is_self_catered()) { 
 				$accommodation_min_price = get_accommodation_min_price($accommodation_id, 0);
 				if ($accommodation_min_price > 0) {
@@ -333,6 +337,9 @@ if ( have_posts() ) {
 	}	
 	do_action( 'byt_show_single_accommodation_tab_content_after' ); ?>
 	</section>
+
+<?php //echo get_you_also_like_posts();  ?>
+
 	<!--//accommodation content-->	
 <?php
 	get_sidebar('right-accommodation'); 
