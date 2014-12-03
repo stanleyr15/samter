@@ -104,9 +104,20 @@
   </div>
  
   </div>
+  
  
  <div class="toplinks"> <span>  <a href="#">Register Now! </a></span>
- <p><a href="#">Sign in</a> or <a href="#">Sign Up </a></p>
+<!--<p><a href="#">Sign in</a> or <a href="#">Sign Up </a></p>-->
+<?php if (!is_user_logged_in() && (!empty($login_page_url) || !empty($register_page_url) || !empty($cart_page))) { ?>
+ <p>	<?php if (!empty($login_page_url)) { ?>
+						<a class="fn" onclick="toggleLightbox('login_lightbox');" href="javascript:void(0);" title="<?php _e('Sign in', 'bookyourtravel'); ?>"><?php _e('Sign in', 'bookyourtravel'); ?></a>
+						<?php } ?> or <?php if (!empty($register_page_url)) { ?>
+						<a class="fn" onclick="toggleLightbox('register_lightbox');" href="javascript:void(0);" title="<?php _e('Sign Up', 'bookyourtravel'); ?>"><?php _e('Sign Up', 'bookyourtravel'); ?></a>
+						<?php } ?></p>
+                        <?php } else {?>
+                        
+                        <?php						
+						if (!empty($my_account_page)) { ?> <p><a href="<?php echo $my_account_page; ?>" title="<?php _e('My Account', 'bookyourtravel'); ?>"><?php _e('My Account', 'bookyourtravel'); ?></a>/<a class="fn" href="<?php echo wp_logout_url(home_url()); ?>"><?php _e('Sign out', 'bookyourtravel'); ?></a></p> <?php } ?><?php } ?>
  </div>
  
  

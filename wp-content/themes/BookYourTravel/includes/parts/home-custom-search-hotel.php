@@ -63,7 +63,7 @@
 					</div><!--//.form-->
 				</div><!--.forms-->
 			</form>
-		</div><!--//search-->	
+            <!--//search-->	
 <?php	
 	}
 	
@@ -327,3 +327,6 @@
          <input name="" type="button" value="Search Hotels" class="search-btnbg">
    
    </div>-->
+   
+   
+  

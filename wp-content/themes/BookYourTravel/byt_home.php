@@ -25,7 +25,14 @@
 	</section>
    
   
-	<?php  get_template_part('includes/parts/home-custom-search', 'hotel');  } 	
+	<?php  get_template_part('includes/parts/home-custom-search', 'hotel');  } 	?>
+     <div class="home-right"> 
+   
+   <div class="slider-cont"> <img src="images/slider.jpg" width="615" height="151" alt=""></div>
+   
+    </div>
+		</div>
+    <?php 
 	
 	$enable_car_rentals = of_get_option('enable_car_rentals', 1); 
 	$enable_accommodations = of_get_option('enable_accommodations', 1); 
