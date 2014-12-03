@@ -12,7 +12,7 @@
 			
 			$('#search_date_from').datepicker({
 				showOn: 'button',
-				buttonImage: window.themePath + '/images/ico/calendar.png',
+				buttonImage: window.themePath + '/images/ico/calendar-2.png',
 				buttonImageOnly: true,
 				minDate: 0,
 				onClose: function (selectedDate) {
@@ -24,7 +24,7 @@
 			
 			$('#search_date_to').datepicker({
 				showOn: 'button',
-				buttonImage: window.themePath + '/images/ico/calendar.png',
+				buttonImage: window.themePath + '/images/ico/calendar-2.png',
 				buttonImageOnly: true,
 				minDate: 0,
 				onClose: function (selectedDate) {

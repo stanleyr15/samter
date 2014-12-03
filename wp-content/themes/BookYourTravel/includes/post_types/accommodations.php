@@ -371,7 +371,7 @@ function list_accommodations ( $paged = 0, $per_page = -1, $orderby = '', $order
 				$descendant_location_ids[] = $location->ID;
 			}
 		}
-		
+		$descendant_location_ids = array();//added newly
 		$location_ids = array_merge($descendant_location_ids,$location_ids);
 	}
 	

@@ -26,7 +26,7 @@
 		$search_box_who_text = of_get_option('search_box_who_text', __('Who?', 'bookyourtravel'));
 		
 		$search_box_guests_text = of_get_option('search_box_guests_text', __('Guests', 'bookyourtravel'));
-		$search_box_rooms_text = of_get_option('search_box_rooms_text', __('Rooms', 'bookyourtravel'));
+		$search_box_rooms_text = of_get_option('search_box_rooms_text', __('No of Rooms', 'bookyourtravel'));
 		$search_box_cabins_text = of_get_option('search_box_cabins_text', __('Cabins', 'bookyourtravel'));
 		$search_box_drivers_age_text = of_get_option('search_box_drivers_age_text', __("Driver's age?", 'bookyourtravel'));
 		$search_box_car_type_text = of_get_option('search_box_car_type_text', __('Car type?', 'bookyourtravel'));
@@ -46,19 +46,20 @@
 			window.searchTourDateFromLabel = '<?php echo of_get_option('search_box_tour_date_from_text', __('Start date', 'bookyourtravel')); ?>';		
 			window.searchCruiseDateFromLabel = '<?php echo of_get_option('search_box_cruise_date_from_text', __('Start date', 'bookyourtravel')); ?>';	
 		</script>
-		<div class="main-search">
+		<div class="search-widget">
+        <div class="search-headingbg"> BOOK NOW & PAY LATER AT THE HOTEL ! </div>
 			<form id="main-search" method="get" action="<?php echo $custom_search_results_page; ?>">
 				<?php 			
 				render_home_search_what_column($searchable_count); 
 				?>
-				<div class="forms <?php echo ($searchable_count <= 1) ? 'first' : ''?>">
+				<div class=" <?php echo ($searchable_count <= 1) ? 'first' : ''?>">
 					<div class="form">
 						<?php
 						render_home_search_where_column($searchable_count);
 						render_home_search_when_column($searchable_count);
 						render_home_search_who_column($searchable_count);
 						?>
-						<input type="submit" value="<?php echo $search_box_submit_button_text; ?>" class="search-submit" id="search-submit" />
+						<input type="submit" value="Search Hotels" class="search-btnbg" id="search-submit" />
 					</div><!--//.form-->
 				</div><!--.forms-->
 			</form>
@@ -71,14 +72,14 @@
 		global $search_box_what_text, $search_box_where_text, $search_box_when_text, $search_box_who_text, $home_search_box_column_count;
 	?>
 		<!--column-->
-		<div class="column">
+		<div class="fullwidth"> <b class="destination-heading">Destination </b>
 			<script>
 				window.whereCount = <?php echo $home_search_box_column_count; ?>;
 			</script>
-			<h4><span class="where_count">0<?php echo $home_search_box_column_count; ?></span> <?php echo $search_box_where_text; ?></h4>
+			<!--<h4><span class="where_count">0<?php echo $home_search_box_column_count; ?></span> <?php echo $search_box_where_text; ?></h4>-->
 			<div class="f-item">
-				<label for="search_term"></label>
-				<input type="text" placeholder="" id="search_term" name="term" />
+				<!--<label for="search_term"></label>-->
+				<input type="text" placeholder="" class="text-field" id="search_term" name="term" />
 			</div>
 		</div>
 		<!--//column-->
@@ -90,20 +91,21 @@
 		global $search_box_when_text, $home_search_box_column_count;	
 	?>
 		<!--column-->
-		<div class="column twins">
+		
 			<script>
 				window.whenCount = <?php echo $home_search_box_column_count; ?>;
 			</script>
-			<h4><span class="when_count">0<?php echo $home_search_box_column_count; ?></span> <?php echo $search_box_when_text; ?></h4>
-			<div class="f-item datepicker">
+			<!--<h4><span class="when_count">0<?php echo $home_search_box_column_count; ?></span> <?php echo $search_box_when_text; ?></h4>-->
+            
+			<div class="one-half textfield-cont f-item datepicker"> 
 				<label for="search_date_from"></label>
-				<div class="datepicker-wrap"><input type="text" placeholder="" id="search_date_from" name="from" /></div>
+				<div class="datepicker-wrap"><input class="text-field textfield2" type="text" placeholder="mm / dd / yyyy" id="search_date_from" name="from" /></div>
 			</div>
-			<div class="f-item datepicker">
+			<div class="one-half last textfield-cont f-item datepicker">
 				<label for="search_date_to"></label>
-				<div class="datepicker-wrap"><input type="text" placeholder="" id="search_date_to" name="to" /></div>
+				<div class="datepicker-wrap"><input class="text-field textfield2"  type="text" placeholder="mm / dd / yyyy" id="search_date_to" name="to" /></div>
 			</div>
-		</div>
+		
 		<!--//column-->
 	<?php
 		$home_search_box_column_count++;
@@ -121,11 +123,11 @@
 		$car_types = get_terms(array('car_type'), $car_types_args);
 	?>
 		<!--column-->
-		<div class="column twins last">
+		
 			<script>
 				window.whoCount = <?php echo $home_search_box_column_count; ?>;
 			</script>
-			<h4><span class="who_count">0<?php echo $home_search_box_column_count; ?></span> <?php echo $search_box_who_text; ?></h4>
+			<!--<h4><span class="who_count">0<?php echo $home_search_box_column_count; ?></span> <?php echo $search_box_who_text; ?></h4>-->
 			<div class="f-item spinner">
 				<label for="search_guests"><?php echo $search_box_guests_text; ?></label>
 				<input type="text" id="search_guests" name="guests" />
@@ -145,10 +147,37 @@
 				</select>
 			</div>
 			<?php } ?>
-			<div class="f-item spinner">
+		<div class="one-third">
 				<label for="search_rooms"><?php echo $search_box_rooms_text; ?></label>
-				<input type="text" id="search_rooms" name="rooms" />
-			</div>
+				<!--<input type="text" id="search_rooms" name="rooms" />-->
+    <select id="search_rooms" name="rooms" class="selectfield">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+			
+             <div class="one-third">Adults
+    <select name="adults" class="selectfield">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+  <div class="one-third last">Children
+    <select name="childrens" class="selectfield">
+      <option>1</option>
+      <option>2</option>
+      <option>3</option>
+      <option>4</option>
+      <option>5</option>
+    </select>
+  </div>
+            
 			<div class="f-item spinner">
 				<label for="search_cabins"><?php echo $search_box_cabins_text; ?></label>
 				<input type="text" id="search_cabins" name="cabins" />
@@ -167,7 +196,7 @@
 
 		if ($searchable_count > 1) { ?>
 			<!--column-->
-			<div class="column radios">
+			<?php /*?><div class="column radios">
 				<script>
 					window.whatCount = <?php echo $home_search_box_column_count; ?>;
 				</script>
@@ -219,7 +248,7 @@
 					<label for="cruise"> <?php _e('Cruise', 'bookyourtravel'); ?></label>
 				</div>
 				<?php } ?>
-			</div>
+			</div><?php */?>
 			<!--//column-->
 		<?php
 			$home_search_box_column_count++;
@@ -244,7 +273,7 @@
 	}
 	?>
 	
-	<div class="search-widget">
+	<!--<div class="search-widget">
    
    <div class="search-headingbg"> BOOK NOW & PAY LATER AT THE HOTEL ! </div>
    
@@ -297,4 +326,4 @@
          
          <input name="" type="button" value="Search Hotels" class="search-btnbg">
    
-   </div>
+   </div>-->

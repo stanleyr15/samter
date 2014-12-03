@@ -3864,7 +3864,7 @@ border: 0;
 padding: 0;
 }
 .ui-datepicker {
-	width: 22em;
+	width: 17em;
 	padding: 0;
 	display:none;
 	background:#fff;
@@ -6056,7 +6056,7 @@ padding:5px;
 
 .textfield2
 {
-	background:url(./images/calendar.png) right no-repeat !important;
+	/*background:url(./images/calendar.png) right no-repeat !important;*/
 	width:92%;
 }
 
