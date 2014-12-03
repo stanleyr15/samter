@@ -196,7 +196,7 @@
 
 		if ($searchable_count > 1) { ?>
 			<!--column-->
-			<?php /*?><div class="column radios">
+			<div class="column radios hidden">
 				<script>
 					window.whatCount = <?php echo $home_search_box_column_count; ?>;
 				</script>
@@ -248,7 +248,7 @@
 					<label for="cruise"> <?php _e('Cruise', 'bookyourtravel'); ?></label>
 				</div>
 				<?php } ?>
-			</div><?php */?>
+			</div>
 			<!--//column-->
 		<?php
 			$home_search_box_column_count++;
