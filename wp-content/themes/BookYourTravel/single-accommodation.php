@@ -79,7 +79,7 @@ if ( have_posts() ) {
  <?php if ($accommodation_location != null) { ?>
                 <span class="address"><?php echo $accommodation_obj->get_custom_field('address'); ?> <?php echo $accommodation_obj->get_custom_field('phone'); ?></span>
                 <?php } ?>
-					<span class="stars">
+					<span class="stars pull-left">
 						<?php for ($i=0;$i<$accommodation_obj->get_custom_field('star_count');$i++) { ?>
 						<img src="<?php echo get_byt_file_uri('/images/ico/star.png'); ?>" alt="">
 						<?php } ?>
