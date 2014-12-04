@@ -28,7 +28,9 @@
 	<?php  get_template_part('includes/parts/home-custom-search', 'hotel');  } 	?>
      <div class="home-right"> 
    
-   <div class="slider-cont"> <img src="images/slider.jpg" width="615" height="151" alt=""></div>
+   <div class="slider-cont"> <!--<img src="images/slider.jpg" width="615" height="151" alt="">-->
+   <?php putRevSlider("home_slider") ?>
+   </div>
    
     </div>
 		</div>

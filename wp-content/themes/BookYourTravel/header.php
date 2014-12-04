@@ -20,6 +20,7 @@
 	<title><?php bloginfo('name'); ?> | <?php is_home() || is_front_page() ? bloginfo('description') : wp_title(''); ?></title>
 	<link rel="shortcut icon" href="<?php echo get_byt_file_uri('/images/favicon.ico'); ?>" />	
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
+     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/css/bootstrap.css">
 	<script type="text/javascript">
 		window.themePath = '<?php echo get_template_directory_uri(); ?>';
 	</script>
