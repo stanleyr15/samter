@@ -82,6 +82,17 @@
     
 		</div>
         </div>
+        
+        <div class="whyuse">
+
+
+<div class="col-xs-12 col-sm-3 col-md-3 whyuse-heading"> WHY USE XYZ.COM? </div> 
+
+<div class="col-xs-12 col-sm-3 col-md-3 "> <p> No Booking Charges </p> </div> 
+<div class="col-xs-12 col-sm-3 col-md-3 "> <p>No Cancellation fees  </p>  </div> 
+<div class="col-xs-12 col-sm-3 col-md-3 "> <p>Instant Confirmation </p>  </div> 
+ </div>
+        
     <?php 
 	
 	$enable_car_rentals = of_get_option('enable_car_rentals', 1); 
