@@ -1,0 +1,62 @@
+
+.rating-blc {
+    float: left;
+    height: 42px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+.left-rate {
+    float: left;
+    height: 31px;
+    width: 150px;
+}
+
+.cont-score {
+    background: url(../images/stars-sprite-cn.png) repeat-x scroll left top rgba(0, 0, 0, 0);
+    float: left;
+    height: 31px;
+    width: 150px;
+}
+
+.score-v1 {
+    background: url(../images/stars-sprite-cn.png) repeat-x scroll 0 -30px rgba(0, 0, 0, 0);
+    float: left;
+    height: 31px;
+    width: 150px;
+}
+
+.hotel-desc {
+  border: 3px solid #246fc2;
+  border-radius: 10px;
+  padding: 15px;
+}
+
+article.accommodation-details {
+  border: 0 none;
+  padding: 0;
+  width: 100%;
+  box-shadow: none;
+}
+
+
+.accommodation-details h3 {
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+}
+article.hotel-map{
+	margin-bottom:0px;
+}
+
+#map_canvas {
+height:300px;	
+}
+
+.inner-nav {
+	width:100% !important;
+}
+
+.inner-nav li {
+	width:22% !important;
+}
