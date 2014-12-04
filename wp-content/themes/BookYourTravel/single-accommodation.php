@@ -47,7 +47,7 @@ if ( have_posts() ) {
 	get_template_part('includes/parts/inquiry', 'form');
 	?>		
 	<!--accommodation three-fourth content-->
-	<section class="three-fourth">
+
 	<?php
 	get_template_part('includes/parts/accommodation', 'booking-form');
 	get_template_part('includes/parts/accommodation', 'confirmation-form');
@@ -74,8 +74,25 @@ if ( have_posts() ) {
 		window.currentMonth = <?php echo date('n'); ?>;
 		window.currentYear = <?php echo date('Y'); ?>;
 	</script>
+    <div class="col-lg-12">
+    <h1><?php echo $accommodation_obj->get_title(); '' ?></h1>
+ <?php if ($accommodation_location != null) { ?>
+                <span class="address"><?php echo $accommodation_obj->get_custom_field('address'); ?> <?php echo $accommodation_obj->get_custom_field('phone'); ?></span>
+                <?php } ?>
+					<span class="stars">
+						<?php for ($i=0;$i<$accommodation_obj->get_custom_field('star_count');$i++) { ?>
+						<img src="<?php echo get_byt_file_uri('/images/ico/star.png'); ?>" alt="">
+						<?php } ?>
+					</span>
+
+</div>
+    <div class="col-lg-7">
 	<?php $accommodation_obj->render_image_gallery(); ?>
-    
+    </div>
+    <div class="col-lg-5">
+    <?php 	get_sidebar('right-accommodation');  ?>
+    </div>
+	<section class="col-lg-12">    
     <article>
 			<?php do_action( 'byt_show_single_accommodation_availability_before' ); ?>
 			<h1><?php _e('Select A Room', 'bookyourtravel'); ?></h1>
@@ -271,19 +288,19 @@ if ( have_posts() ) {
 	</section>
 	<!--//description-->	
 	<!--facilities-->
-	<section id="facilities" class="tab-content <?php echo $first_display_tab == 'facilities' ? 'initial' : ''; ?>">
+	<!--<section id="facilities" class="tab-content <?php echo $first_display_tab == 'facilities' ? 'initial' : ''; ?>">
 		<article>
 			
 		</article>
-	</section>
+	</section>-->
 	<!--//facilities-->
 	<?php if ((!empty($accommodation_latitude)) && (!empty($accommodation_longitude))) { ?>
 	<!--location-->
 	<section id="location" class="tab-content <?php echo $first_display_tab == 'location' ? 'active' : ''; ?>">
 		<article>
 			<?php do_action( 'byt_show_single_accommodation_location_before' ); ?>
-			<div class="gmap" id="map_canvas"></div>
-			<?php //byt_render_tab_extra_fields('accommodation_extra_fields', $accommodation_extra_fields, 'location', $accommodation_obj); ?>			
+			<!--<div class="gmap" id="map_canvas"></div>-->
+			<?php byt_render_tab_extra_fields('accommodation_extra_fields', $accommodation_extra_fields, 'location', $accommodation_obj); ?>			
 			<?php do_action( 'byt_show_single_accommodation_location_after' ); ?>
 		</article>
 	</section>
@@ -342,6 +359,6 @@ if ( have_posts() ) {
 
 	<!--//accommodation content-->	
 <?php
-	get_sidebar('right-accommodation'); 
+
 } // end if
 get_footer();
