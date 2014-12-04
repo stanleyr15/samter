@@ -46,19 +46,25 @@
 			window.searchTourDateFromLabel = '<?php echo of_get_option('search_box_tour_date_from_text', __('Start date', 'bookyourtravel')); ?>';		
 			window.searchCruiseDateFromLabel = '<?php echo of_get_option('search_box_cruise_date_from_text', __('Start date', 'bookyourtravel')); ?>';	
 		</script>
+        
+        <div class="col-xs-12 col-sm-6 col-md-5">
 		<div class="search-widget">
         <div class="search-headingbg"> BOOK NOW & PAY LATER AT THE HOTEL ! </div>
+         
 			<form id="main-search" method="get" action="<?php echo $custom_search_results_page; ?>">
 				<?php 			
 				render_home_search_what_column($searchable_count); 
 				?>
+               
 				<div class=" <?php echo ($searchable_count <= 1) ? 'first' : ''?>">
 					<div class="form">
+                     <div class="row"> 
 						<?php
 						render_home_search_where_column($searchable_count);
 						render_home_search_when_column($searchable_count);
 						render_home_search_who_column($searchable_count);
 						?>
+                    </div>    
 						<input type="submit" value="Search Hotels" class="search-btnbg" id="search-submit" />
 					</div><!--//.form-->
 				</div><!--.forms-->
@@ -72,6 +78,8 @@
 		global $search_box_what_text, $search_box_where_text, $search_box_when_text, $search_box_who_text, $home_search_box_column_count;
 	?>
 		<!--column-->
+       
+   <div class="col-xs-12 col-sm-12 col-md-12 searchform-row"> 
 		<div class="fullwidth"> <b class="destination-heading">Destination </b>
 			<script>
 				window.whereCount = <?php echo $home_search_box_column_count; ?>;
@@ -81,7 +89,7 @@
 				<!--<label for="search_term"></label>-->
 				<input type="text" placeholder="" class="text-field" id="search_term" name="term" />
 			</div>
-		</div>
+		</div></div>
 		<!--//column-->
 	<?php 
 		$home_search_box_column_count++;
@@ -96,15 +104,18 @@
 				window.whenCount = <?php echo $home_search_box_column_count; ?>;
 			</script>
 			<!--<h4><span class="when_count">0<?php echo $home_search_box_column_count; ?></span> <?php echo $search_box_when_text; ?></h4>-->
-            
-			<div class="one-half textfield-cont f-item datepicker"> 
+            <div class="col-xs-12 col-sm-6 col-md-6 searchform-row"> 
+			<div class="textfield-cont f-item datepicker"> 
 				<label for="search_date_from"></label>
 				<div class="datepicker-wrap"><input class="text-field textfield2" type="text" placeholder="mm / dd / yyyy" id="search_date_from" name="from" /></div>
 			</div>
-			<div class="one-half last textfield-cont f-item datepicker">
+            </div>
+             <div class="col-xs-12 col-sm-6 col-md-6 searchform-row">  
+			<div class="last textfield-cont f-item datepicker">
 				<label for="search_date_to"></label>
 				<div class="datepicker-wrap"><input class="text-field textfield2"  type="text" placeholder="mm / dd / yyyy" id="search_date_to" name="to" /></div>
 			</div>
+            </div>
 		
 		<!--//column-->
 	<?php
@@ -147,7 +158,8 @@
 				</select>
 			</div>
 			<?php } ?>
-		<div class="one-third">
+             <div class="col-xs-12 col-sm-4 col-md-4 searchform-row">  
+		<div class="">
 				<label for="search_rooms"><?php echo $search_box_rooms_text; ?></label>
 				<!--<input type="text" id="search_rooms" name="rooms" />-->
     <select id="search_rooms" name="rooms" class="selectfield">
@@ -158,8 +170,9 @@
       <option>5</option>
     </select>
   </div>
-			
-             <div class="one-third">Adults
+	</div>
+      <div class="col-xs-12 col-sm-4 col-md-4 searchform-row">  		
+             <div class="">Adults
     <select name="adults" class="selectfield">
       <option>1</option>
       <option>2</option>
@@ -168,7 +181,9 @@
       <option>5</option>
     </select>
   </div>
-  <div class="one-third last">Children
+  </div>
+    <div class="col-xs-12 col-sm-4 col-md-4 searchform-row">  
+  <div class="">Children
     <select name="childrens" class="selectfield">
       <option>1</option>
       <option>2</option>
@@ -177,12 +192,13 @@
       <option>5</option>
     </select>
   </div>
-            
+            </div>
 			<div class="f-item spinner">
 				<label for="search_cabins"><?php echo $search_box_cabins_text; ?></label>
 				<input type="text" id="search_cabins" name="cabins" />
 			</div>
 		</div>
+        </div>
 		<!--//column-->	
 	<?php
 		$home_search_box_column_count++;

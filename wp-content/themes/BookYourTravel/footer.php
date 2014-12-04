@@ -15,7 +15,7 @@
 	</div><!--//main-->
     </div>
 	<!--footer-->
-	<footer>
+	<?php /*?><footer>
 		<?php get_sidebar('footer'); ?>
 		<div class="wrap clearfix">		
 			<section class="bottom">
@@ -37,8 +37,98 @@
 				<!--//footer navigation-->
 			</section>
 		</div>
-	</footer>
+	</footer><?php */?>
 	<!--//footer-->
+    <!-- custom footer-->
+<footer>
+  
+  <div class="footerbg">
+  
+  
+  <div class="wrap clearfix">  
+  
+  
+  <div class="row"> 
+  <div class="col-xs-12 col-sm-3 col-md-2"> 
+ 
+ <h2>Get To Know	 </h2>
+ 
+ <ul>
+<li><a href="#">  About Us </a></li>
+<li><a href="#">Help and FAQ </a></li>
+<li><a href="#">Travel Blog</a>
+<li>
+ 
+ </ul>
+  
+  </div>
+  
+  <div class="col-xs-12 col-sm-3 col-md-2"> 
+ 
+ <h2>Customer Service	 </h2>
+ 
+ <ul>
+<li><a href="#">  My Booking</a></li>
+<li><a href="#">Contact Us </a></li>
+ 
+ </ul>
+  
+  </div>
+  
+  <div class="col-xs-12 col-sm-3 col-md-2"> 
+ 
+ <h2>Our Policies </h2>
+ 
+ <ul>
+<li><a href="#">  Privacy & Cookies</a></li>
+<li><a href="#">Terms & Conditions</a></li>
+ </ul>
+  
+  </div>
+  
+  
+  
+  <div class="col-xs-12 col-sm-3 col-md-2"> 
+ 
+ <h2>Hoteliers </h2>
+ 
+ <ul>
+<li><a href="#"> Add your hotel</a></li>
+
+ </ul>
+  
+  </div>
+  
+  <div class="col-xs-12 col-sm-12 col-md-3 col-md-offset-1"> 
+ 
+ <div class="socialbg"> 
+ 
+ <h2> Recommend Us</h2>
+ <a href="#"><img src="<?php bloginfo('template_directory');?>/images/twitter.png"  alt=""></a> <a href="#"><img src="<?php bloginfo('template_directory');?>/images/fb.png" width="36" height="35" alt=""></a> <a href="#"><img src="<?php bloginfo('template_directory');?>/images/gplus.png" width="36" height="35" alt=""></a> <a href="#"><img src="<?php bloginfo('template_directory');?>/images/rss.png" width="36" height="35" alt=""></a></div>
+
+ 
+ 
+  
+  </div>
+  
+  
+  
+  </div>
+  
+  </div>
+  
+  
+  <div class="footerbg2"> samter hotel booking © 2014 Website designing by: Digital Web Solutions </div>
+  
+  
+   </div>
+  
+
+  
+</footer>
+<!--// custom footer-->
+    
+    
 	<?php 
 	get_template_part('includes/parts/login', 'lightbox');
 	get_template_part('includes/parts/register', 'lightbox'); 

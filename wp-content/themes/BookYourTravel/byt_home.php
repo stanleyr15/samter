@@ -24,8 +24,10 @@
 	<?php endwhile; ?>
 	</section>
    
-  
+   <div class="row"> 
 	<?php  get_template_part('includes/parts/home-custom-search', 'hotel');  } 	?>
+    
+     <div class="col-xs-12 col-sm-6 col-md-7"> 
      <div class="home-right"> 
    
    <div class="slider-cont"> <!--<img src="images/slider.jpg" width="615" height="151" alt="">-->
@@ -33,7 +35,53 @@
    </div>
    
     </div>
+    
+    <div class="customer-servicecont"> 
+   
+   <div class="customservice-header">Customer Service</div>
+   
+   
+   
+   <div class="col-xs-12 col-sm-6 col-md-4 service-txt"> 
+   
+     <img src="<?php bloginfo('template_directory');?>/images/icon1.png"  alt="">  Manage Bookings </div>
+   
+   
+  
+     
+     <div class="col-xs-12 col-sm-6 col-md-4 service-txt"> 
+   
+     <img src="<?php bloginfo('template_directory');?>/images/icon2.png"  alt="">  Cancellation </div>
+     
+      <div class="col-xs-12 col-sm-6 col-md-4 service-txt self-service-heading"> 
+   
+       Self Service </div>
+       
+  
+       
+       <div class="col-xs-12 col-sm-6 col-md-4 service-txt"> 
+   
+     <img src="<?php bloginfo('template_directory');?>/images/icon3.png"  alt="">  FAQs </div>
+     
+      
+       <div class="col-xs-12 col-sm-6 col-md-4 service-txt"> 
+   
+     <img src="<?php bloginfo('template_directory');?>/images/icon4.png"  alt="">  FAQs </div>
+     
+       <div class="col-xs-12 col-sm-6 col-md-4 service-txt"> 
+   
+       <input name="" type="button" class="btns" value="Login"> </div>
+     
+     
+     
+   
+   
+   </div>
+  
+   </div>
+    
 		</div>
+        </div>
     <?php 
 	
 	$enable_car_rentals = of_get_option('enable_car_rentals', 1); 
@@ -67,6 +115,6 @@
 	get_template_part('includes/parts/location', 'latest'); 
 
 	wp_reset_postdata();
-	get_sidebar('home-footer');
+//	get_sidebar('home-footer');
 	get_footer(); 
 ?>
