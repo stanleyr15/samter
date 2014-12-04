@@ -21,6 +21,7 @@
 	<link rel="shortcut icon" href="<?php echo get_byt_file_uri('/images/favicon.ico'); ?>" />	
 	<link rel="pingback" href="<?php bloginfo( 'pingback_url' ); ?>" />
      <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/css/bootstrap.css">
+     <link rel="stylesheet" type="text/css" href="<?php bloginfo('template_directory');?>/css/custom_style_1.css">
 	<script type="text/javascript">
 		window.themePath = '<?php echo get_template_directory_uri(); ?>';
 	</script>
