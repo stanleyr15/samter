@@ -282,7 +282,7 @@ if ( have_posts() ) {
 	<section id="location" class="tab-content <?php echo $first_display_tab == 'location' ? 'active' : ''; ?>">
 		<article>
 			<?php do_action( 'byt_show_single_accommodation_location_before' ); ?>
-			<!--map--><div class="gmap" id="map_canvas"></div><!--//map-->
+			<div class="gmap" id="map_canvas"></div>
 			<?php //byt_render_tab_extra_fields('accommodation_extra_fields', $accommodation_extra_fields, 'location', $accommodation_obj); ?>			
 			<?php do_action( 'byt_show_single_accommodation_location_after' ); ?>
 		</article>

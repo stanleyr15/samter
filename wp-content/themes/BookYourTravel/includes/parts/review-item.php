@@ -43,6 +43,7 @@
 		</dl>
 	</article>-->
 	<article>
+    <?php $review_score = get_post_meta($post->ID, 'review_score', true); ?>
 		<h1><?php _e($reviews_total . ' People have reviewed this Hotel', 'bookyourtravel');?></h1>
 		<ul class="reviews">
 			<!--review-->
@@ -77,8 +78,49 @@
 			?>
 		</ul>
 	</article>
+    <?php  ?>
+    <?php function get_you_also_like_posts() {
+    global $post;
+	
+	$args = array(
+		'posts_per_page'   => 3,
+		'orderby'          => 'DESC',
+		'post_id'          => array( $post->ID ),
+		'post_type'        => 'accommodation',
+		'post_status'      => 'publish' ); 
+    $like_posts = get_posts( $args );
+	//var_dump($like_posts); exit;
+	
+	//print_r($review_score);
+		
+	
 
-            <div><ul><li> <?php echo get_you_also_like_posts();  ?></li></ul></div>
+    foreach ( $like_posts as $like_post ) {
+		//var_dump($like_post);
+		$post_thumbnail_id = get_post_thumbnail_id( $like_post->ID );
+		$review_count = get_post_meta($like_post->ID, 'review_count', true);
+		$review_score = get_post_meta($like_post->ID, 'review_score', true); 
+		
+		$url = wp_get_attachment_url( $post_thumbnail_id );
+        $output .= '<div class="thumad-cont"><div class="thumad-cont-img"><a href="' . get_permalink( $like_post->ID ) . '"> <img src="' . $url . '" width="141" height="74" alt=""></a></div><div class="thumad-cont-name"><a href="' . get_permalink( $like_post->ID ) . '">' . apply_filters( 'the_title', $like_post->post_title, $like_post->ID ).'</a>"'. $review_count .'" Reviews</div></div>';
+		
+		;
+		?>
+        <div class="rating-blc">
+                    <div class="left-rate">
+                        <div class="cont-score">
+                            <div class="score-v1" style="width:<?php echo 150 * $review_score; ?>px"></div>
+                        </div>
+                    </div>
+                </div>
+   <?php //echo $review_count;
+	}
+
+    return $output;
+}  ?>
+
+            <div><ul><li>Related Hotels <br />
+             <?php echo get_you_also_like_posts();  ?></li></ul></div>
 
 <?php } else { ?>
 	<article>

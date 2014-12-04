@@ -46,8 +46,9 @@ if (is_user_logged_in()) {
 				</table>
 				<h3><?php echo sprintf(__('title for the %s?', 'bookyourtravel'), $post_type); ?></h3>
                 <div class="f-item">
-					<input type="text" id="title" name="title" />
+					<input type="text" id="title" name="title" style="border-color:#D3D3D3;" />
 				</div> 
+                <h3><?php echo sprintf(__('What did you not like about the %s?', 'bookyourtravel'), $post_type); ?></h3>
 				<div class="f-item">
 					<textarea id="likes" name='likes' rows="10" cols="10" ></textarea>
 				</div>				

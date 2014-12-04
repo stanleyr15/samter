@@ -233,22 +233,4 @@ require_once get_byt_file_path('/includes/admin/theme_cruise_schedule_admin.php'
 require_once get_byt_file_path('/includes/admin/theme_cruise_schedule_booking_admin.php');
 require_once get_byt_file_path('/includes/theme_woocommerce.php');
 
-function get_you_also_like_posts() {
-    global $post;
-	$args = array(
-		'posts_per_page'   => 3,
-		'orderby'          => 'rand',
-		'exclude'          => array( $post->ID ),
-		'post_type'        => 'accommodation',
-		'post_status'      => 'publish' ); 
-    $like_posts = get_posts( $args );
-
-    foreach ( $like_posts as $like_post ) {
-		$post_thumbnail_id = get_post_thumbnail_id( $like_post->ID );
-		$url = wp_get_attachment_url( $post_thumbnail_id );
-        $output .= '<div class="thumad-cont"><div class="thumad-cont-img"><a href="' . get_permalink( $like_post->ID ) . '"><img src="' . $url . '" width="141" height="74" alt=""></a></div><div class="thumad-cont-name"><a href="' . get_permalink( $like_post->ID ) . '">' . apply_filters( 'the_title', $like_post->post_title, $like_post->ID ) . '</a></div></div>';
-    }
-
-    return $output;
-} 
 ?>

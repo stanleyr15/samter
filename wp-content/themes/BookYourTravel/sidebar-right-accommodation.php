@@ -81,8 +81,11 @@ $accommodation_location = $accommodation_obj->get_location();
 	<!--//location-->
 	<?php }  ?>
     
-         <?php $review_latitude = get_post_meta($post->ID, 'accommodation_latitude', true); 
-				 $review_longitude = get_post_meta($post->ID, 'accommodation_longitude', true); ?>
+         <?php
+		 $review_latitude = get_post_meta($post->ID, 'accommodation_latitude', true); 
+		 print_r($review_latitude);
+		 $review_longitude = get_post_meta($post->ID, 'accommodation_longitude', true);
+		 print_r($review_longitude); ?>
         </li>
 		<!--<li>
 			<?php 
