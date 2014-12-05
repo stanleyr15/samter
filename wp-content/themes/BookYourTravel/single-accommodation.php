@@ -119,20 +119,22 @@ if ( have_posts() ) {
 						<?php //byt_render_field('', '', '', $room_type_obj->get_custom_field('meta'), '', true, true); ?>
                         <?php byt_render_field('', '', __('Bed size:', 'bookyourtravel'), $room_type_obj->get_custom_field('bed_size'), '', false, true); ?><br />
                         <?php byt_render_field('', '', __('<b>Extra beds available</b>:', 'bookyourtravel'), $room_type_obj->get_custom_field('extra_beds_available'), '', false, true); ?><br />
-                        <?php byt_render_field('', '', __('', 'bookyourtravel'), $room_type_obj->get_custom_field('room_size').' Square Metres', '', false, true) . ','. byt_render_field('', '', __('<b>Max Occupancy</b>:', 'bookyourtravel'), $room_type_obj->get_custom_field('max_guest_count').'Guests', '', false, true); ?> <br />
+                        <?php byt_render_field('', '', __('', 'bookyourtravel'), $room_type_obj->get_custom_field('room_size').' Square Metres', '', false, true);?>
+                        <?php  byt_render_field('', '', __('<b>Max Occupancy</b>:', 'bookyourtravel'), $room_type_obj->get_custom_field('max_guest_count').'Guests', '', false, true); ?> <br />
 					
                         
                         
 						<?php byt_render_link_button("#", "more-info", "", __('+ more info', 'bookyourtravel')); ?>
 					</div>
+                    <div><?php echo $currency_symbol; ?> Best Value</div>
                     <!--<div class="room-information">Best Value</div>-->
 					<div class="room-information">
 						<div class="row">
                         <?php if ($room_type_min_price > 0) { ?>
 						<div class="row">
 							<span class="first"><?php _e('Rs', 'bookyourtravel'); ?></span>
-							<div class="second price">
-								<br /><em><span class="curr"><?php echo $currency_symbol; ?></span>
+							<div class="price">
+								<br /><em><span class="curr"><?php //echo $currency_symbol; ?></span>
 								<span class="amount"><?php echo $room_type_min_price; ?></span></em>
 								<input type="hidden" class="max_count" value="<?php echo $room_type_obj->get_custom_field('max_count'); ?>" />
 								<input type="hidden" class="max_child_count" value="<?php echo $room_type_obj->get_custom_field('max_child_count'); ?>" />
