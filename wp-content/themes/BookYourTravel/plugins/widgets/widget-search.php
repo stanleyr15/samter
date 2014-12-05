@@ -114,7 +114,7 @@ class byt_search_widget extends WP_Widget {
 				window.searchWidgetPricePerDayLabel = '<?php echo $price_per_day_label_text; ?>';
 				
 			</script>
-			<article class="refine-search-results byt_search_widget">
+			<article class="refine-search-results byt_search_widget hotel-desc">
 				<form class="widget-search" method="get" action="<?php echo $custom_search_results_page; ?>">
 					<?php echo $before_title . $title . $after_title; ?>
 					<dl>
