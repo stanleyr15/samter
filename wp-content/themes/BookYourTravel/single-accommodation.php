@@ -226,7 +226,7 @@ if ( have_posts() ) {
 		
 	</section>	
 	<!--description-->
-	<section id="description" class="tab-content <?php echo $first_display_tab == 'description' ? 'initial' : ''; ?>">
+	<section id="description" class="tab-content <?php echo $first_display_tab == 'description' ? 'initial' : ''; ?>  col-lg-12">
 		<article>		
 			<?php 
 			do_action( 'byt_show_single_accommodation_description_before' );
