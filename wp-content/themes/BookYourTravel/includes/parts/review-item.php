@@ -119,8 +119,8 @@
     return $output;
 }  ?>
 
-            <div><ul><li>Related Hotels <br />
-             <?php echo get_you_also_like_posts();  ?></li></ul></div>
+            <!--<div><ul><li>Related Hotels <br />
+             <?php //echo get_you_also_like_posts();  ?></li></ul></div>-->
 
 <?php } else { ?>
 	<article>
