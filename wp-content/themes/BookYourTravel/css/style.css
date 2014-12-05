@@ -589,7 +589,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c1b6ae', end
 	background: -o-linear-gradient(top, rgba(95, 200, 194, 1) 0%, rgba(64, 191, 184, 1) 100%);
 	background: -ms-linear-gradient(top, rgba(95, 200, 194, 1) 0%, rgba(64, 191, 184, 1) 100%);
 	background: linear-gradient(to bottom, rgba(95, 200, 194, 1) 0%, rgba(64, 191, 184, 1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5fc8c2', endColorstr='#40bfb8', GradientType=0 );
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#246fc2', endColorstr='#40bfb8', GradientType=0 );
 }
 .inner-nav li.active, .inner-nav li.active:hover {
 	width:122%;
@@ -608,17 +608,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5fc8c2', end
 	width:100%;
 	margin:0 0 20px;
 	height:48px;
-	background:#fff;
-	webkit-box-shadow:0 0 2px rgba(0, 0, 0, 0.1);
-	-moz-box-shadow:0 0 2px rgba(0, 0, 0, 0.1);
-	box-shadow:0 0 2px rgba(0, 0, 0, 0.1);
+	background:#ececec;
 }
 .sort-by h3 {
 	float:left;
 	display:block;
 	padding:0 20px;
-	font-size:14px;
+	font-size:16px;
 	line-height:48px;
+	color:#246fc1;
+	font-weight:normal;
 }
 .sort {
 	float:left;
@@ -670,7 +669,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5fc8c2', end
 	transition: all 0.1s ease-in 0.1s;
 }
 .view-type li:hover, .view-type li.active {
-	background:#5FC8C2;
+	background:#246fc2;
 }
 .view-type li a {
 	float:left;
@@ -792,28 +791,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5fc8c2', end
 	border-radius:15px;
 	-moz-border-radius:15px;
 	-webkit-border-radius:15px;
-	background: rgb(111,207,202);
-	background: -moz-linear-gradient(top, rgba(111, 207, 202, 1) 0%, rgba(55, 168, 163, 1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(111, 207, 202, 1)), color-stop(100%, rgba(55, 168, 163, 1)));
-	background: -webkit-linear-gradient(top, rgba(111, 207, 202, 1) 0%, rgba(55, 168, 163, 1) 100%);
-	background: -o-linear-gradient(top, rgba(111, 207, 202, 1) 0%, rgba(55, 168, 163, 1) 100%);
-	background: -ms-linear-gradient(top, rgba(111, 207, 202, 1) 0%, rgba(55, 168, 163, 1) 100%);
-	background: linear-gradient(to bottom, rgba(111, 207, 202, 1) 0%, rgba(55, 168, 163, 1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6fcfca', endColorstr='#37a8a3', GradientType=0 );
+	background:url(../images/search-btnbg.jpg) repeat-x;
 	cursor:pointer;
+	line-height:30px;
 }
 .gradient-button:hover, .wpcf7-submit:hover {
 	-webkit-text-shadow:0 1px 0 rgba(0, 0, 0, 0.2);
 	-moz-text-shadow:0 1px 0 rgba(0, 0, 0, 0.2);
 	text-shadow:0 1px 0 rgba(0, 0, 0, 0.2);
-	background: rgb(55,168,163);
-	background: -moz-linear-gradient(top, rgba(55, 168, 163, 1) 0%, rgba(111, 207, 202, 1) 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(55, 168, 163, 1)), color-stop(100%, rgba(111, 207, 202, 1)));
-	background: -webkit-linear-gradient(top, rgba(55, 168, 163, 1) 0%, rgba(111, 207, 202, 1) 100%);
-	background: -o-linear-gradient(top, rgba(55, 168, 163, 1) 0%, rgba(111, 207, 202, 1) 100%);
-	background: -ms-linear-gradient(top, rgba(55, 168, 163, 1) 0%, rgba(111, 207, 202, 1) 100%);
-	background: linear-gradient(to bottom, rgba(55, 168, 163, 1) 0%, rgba(111, 207, 202, 1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#37a8a3', endColorstr='#6fcfca', GradientType=0 );
+	background:url(../images/search-btnbg-hover.jpg) repeat-x;
+	color:#FFFFFF
 }
 /*CONTENT*/
 .content, .home.blog {
@@ -877,7 +864,7 @@ section .one-fourth {
 }
 .three-fourth {
 	float:left;
-	width:74.5%;
+	width:76.5%;
 	margin:0 0 20px 0;
 }
 .three-fourth .one-fourth {
@@ -1159,16 +1146,17 @@ margin-right:0;
 	text-align:left;
 }
 .deals .details h2 {
-	font-size:18px!important;
+	font-size:16px!important;
 	padding:0 0 4px!important;
-	color:#666!important;
 	-webkit-text-shadow:none;
 	-moz-text-shadow:none;
 	text-shadow:none;
 	text-align:left;
 	display:inline-block;
 	float:left;
-	width:100%;
+	width:54%;
+	font-weight:normal !important;
+	color:#246fc1;
 }
 .deals .stars {
 	float:right;
@@ -1196,8 +1184,10 @@ margin-right:0;
 }
 .deals .price em {
 	font:normal 16px;
-	color:#666;
+	color:#ff9932;
 	float:right;
+	font-size:22px;
+	font-family:Arial, Helvetica, sans-serif;
 }
 .deals .description {
 	width:100%;
@@ -1213,7 +1203,7 @@ margin-right:0;
 }
 .deals .description a {
 	font-style:italic;
-	color:#3FBFB8;
+	color:#246fc2;
 font-family:;
 }
 .deals .description p:first-of-type, .oldie .deals .description p {
@@ -1268,9 +1258,9 @@ font-family:;
 	display:inline-block;
 }
 .deals .full-width .price {
-	text-align:center;
+	text-align:left;
 	float:left;
-	width:100px;
+	width:125px;
 	border-top:none;
 	border-bottom:none;
 	border-left:1px solid #ccc;
@@ -2407,7 +2397,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', end
 }
 /*SIDEBAR*/
 .left-sidebar {
-	margin:0 2% 80px 0;
+	margin:0 0% 80px 0;
 }
 .right-sidebar {
 	margin:0 0 80px 2%;
@@ -2423,7 +2413,7 @@ aside .widget, aside article {
 	display:inline-block;
 	width:86%;
 	background:#fff;
-	padding:14px 7% 20px;
+/*	padding:14px 7% 20px;*/
 	margin:0 0 20px;
 	webkit-box-shadow:0 0 2px rgba(0, 0, 0, 0.1);
 	-moz-box-shadow:0 0 2px rgba(0, 0, 0, 0.1);
@@ -2713,7 +2703,7 @@ aside .hasDatepicker {
 	background: -o-linear-gradient(top, rgba(95, 200, 194, 1) 0%, rgba(64, 191, 184, 1) 100%);
 	background: -ms-linear-gradient(top, rgba(95, 200, 194, 1) 0%, rgba(64, 191, 184, 1) 100%);
 	background: linear-gradient(to bottom, rgba(95, 200, 194, 1) 0%, rgba(64, 191, 184, 1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5fc8c2', endColorstr='#40bfb8', GradientType=0 );
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#246fc2', endColorstr='#40bfb8', GradientType=0 );
 }
 .testimonials blockquote {
 	font:italic normal 15px;
@@ -4576,7 +4566,7 @@ background: linear-gradient(to bottom, rgba(193, 182, 174, 1) 0%, rgba(186, 172,
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c1b6ae', endColorstr='#baaca3', GradientType=0 );
 }
 .destinations .ribbon:focus, .destinations .ribbon:hover, .locations .one-fourth .ribbon:focus, .locations .one-fourth .ribbon:hover {
-background:#5FC8C2;
+background:#246fc2;
 -webkit-box-shadow:0 0 2px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.2);
 -moz-box-shadow:0 0 2px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.2);
 box-shadow:0 0 2px rgba(0, 0, 0, 0.2), inset 0 0 10px rgba(0, 0, 0, 0.2);
@@ -4668,9 +4658,9 @@ margin:0 3% 0 0;
 width:42%;
 }
 .deals .full-width .price {
-width:14%;
-padding:0 0 0 3%;
-height:142px;
+  height: 115px;
+  padding: 0 0 0 3%;
+  width: 15%;
 }
 .deals .full-width .description {
 width:100%;
@@ -4982,8 +4972,8 @@ width:100%;
 margin:0 !important;
 }
 aside .widget, aside article {
-padding:14px 3% 20px;
-width:94%;
+/*padding:14px 3% 20px;*/
+width:100%;
 }
 .default {
 padding:14px 3% 5px;
@@ -5069,7 +5059,7 @@ background: -webkit-linear-gradient(top, rgba(95, 200, 194, 1) 0%, rgba(64, 191,
 background: -o-linear-gradient(top, rgba(95, 200, 194, 1) 0%, rgba(64, 191, 184, 1) 100%);
 background: -ms-linear-gradient(top, rgba(95, 200, 194, 1) 0%, rgba(64, 191, 184, 1) 100%);
 background: linear-gradient(to bottom, rgba(95, 200, 194, 1) 0%, rgba(64, 191, 184, 1) 100%);
-filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5fc8c2', endColorstr='#40bfb8', GradientType=0 );
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#246fc2', endColorstr='#40bfb8', GradientType=0 );
 filter:none;
 }
 .tab-content {
@@ -5373,6 +5363,7 @@ width:100% !important;
 padding:14px 0 6px 0;
 }
 .booking .info {
+
 
 width:100%;
 padding:0 0 10px;
@@ -6327,4 +6318,34 @@ line-height:30px;
 border-top-left-radius: 10px;
 border-bottom-left-radius: 10px;
 text-align:center;
+}
+h3.panel-title 
+{
+	margin-bottom:0px !important;
+	padding-bottom:0px;
+}
+
+.right-border
+{
+	border:#d9d9d9 solid 1px;
+	-webkit-border-radius: 15px;
+-moz-border-radius: 15px;
+border-radius: 15px;
+padding:15px;
+}
+
+.best-price
+{
+	color:#5b9b00;
+	font-weight:bold;
+	font-size:14px;
+	float:left;
+	width:auto;
+}
+
+.best-price img
+{
+	float:left;
+	margin-right:10px;
+	margin-top:2px;
 }
