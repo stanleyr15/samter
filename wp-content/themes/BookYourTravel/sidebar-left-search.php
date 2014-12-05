@@ -18,12 +18,12 @@
 <?php } else { ?>
 
 	<aside class="left-sidebar">
-    
- 
-		<?php 
+   
+         
+     		<?php 
 		$widget_args = array(
 			'before_widget' => '',
-			'after_widget'  => '',
+			'after_widget'  => ' ',
 			'before_title'  => '',
 			'after_title'   => '',
 		);

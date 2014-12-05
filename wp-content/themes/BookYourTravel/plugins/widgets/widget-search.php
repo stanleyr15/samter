@@ -114,9 +114,14 @@ class byt_search_widget extends WP_Widget {
 				window.searchWidgetPricePerDayLabel = '<?php echo $price_per_day_label_text; ?>';
 				
 			</script>
-			<article class="refine-search-results byt_search_widget hotel-desc">
-				<form class="widget-search" method="get" action="<?php echo $custom_search_results_page; ?>">
+			<article class="refine-search-results byt_search_widget  panel panel-primary">
+            <div class="panel-heading">
+                 <h3 class="panel-title">
 					<?php echo $before_title . $title . $after_title; ?>
+                    </h3></div>
+				<form class="widget-search" method="get" action="<?php echo $custom_search_results_page; ?>">
+                <div class="panel-body">
+                
 					<dl>
 					<?php 					
 					$this->render_what_section($searchable_count, $what_text);
@@ -138,6 +143,7 @@ class byt_search_widget extends WP_Widget {
 					?>					
 					</dl>
 					<input type="submit" value="<?php echo $submit_button_text; ?>" class="gradient-button" id="search-submit" />
+                    </div>
 				</form>
 			</article>        	
 		<?php

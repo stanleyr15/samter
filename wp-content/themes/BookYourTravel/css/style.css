@@ -765,12 +765,14 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#246fc2', end
 	-moz-text-shadow:0 -1px 0 rgba(0, 0, 0, 0.2);
 	text-shadow:0 -1px 0 rgba(0, 0, 0, 0.2);
 	background:url(../images/bgr/top-button.png) 0 0 no-repeat;
+	line-height:40px;
 }
 .scroll-to-top:hover {
 	background-position:0 -38px;
 	-webkit-text-shadow:0 1px 0 rgba(0, 0, 0, 0.2);
 	-moz-text-shadow:0 1px 0 rgba(0, 0, 0, 0.2);
 	text-shadow:0 1px 0 rgba(0, 0, 0, 0.2);
+	color:#FFFFFF;
 }
 .locations .scroll-to-top {
 	margin:-7px 0 0 40px;
@@ -958,9 +960,9 @@ section .one-fourth {
 }
 /*DESTINATIONS*/
 .home .destinations {
-	background:url(../images/bgr/separator.jpg) 0 100% repeat-x;
-	padding:0 0 25px;
-	margin:0 0 46px;
+	/*background:url(../images/bgr/separator.jpg) 0 100% repeat-x;*/
+	padding:0 0 15px;
+	margin:0 0 0px;
 	width:100%;
 	display:inline-block;
 }

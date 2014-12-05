@@ -126,6 +126,67 @@
 	get_template_part('includes/parts/location', 'latest'); 
 
 	wp_reset_postdata();
+	
+	?>
+    <div class="row">
+ 
+ <div class="col-xs-12 col-sm-6 col-md-5"> <div class="customer-servicecont partnerwithus"> 
+   
+   <div class="customservice-header">Hotel Owner? Partner with Us</div>
+  
+
+       <div class="col-xs-12 col-sm-12 col-md-12  partnerwith-txt"> 
+       
+     <p> <span>  Get Maximum business for your hotel round the year by registering it on </span></p>
+      
+      <p> Register your hotel with us free of cost</p>
+      
+      <p> <input type="button" value="Submit Hotel Details" class="btns" name=""></p>
+
+   
+      </div>
+     
+     
+     
+   
+   
+   </div></div>
+ <div class="col-xs-12 col-sm-6 col-md-7"> <div class="customer-servicecont partnerwithus"> 
+   
+   <div class="customservice-header">Top Cities to Visit</div>
+  
+
+       <div class="col-xs-12 col-sm-12 col-md-12  partnerwith-txt"> 
+       
+     
+     <ul> 
+     
+     <li> <a href="#">London Hostels <span>$30.42 </span> </a></li>
+      <li> <a href="#">Barcelona Hostels <span>$22.85 </span> </a></li>
+       <li> <a href="#">Belin Hostels <span>$28.16 </span> </a></li>
+        <li> <a href="#">Rome Hostels <span>$24.12 </span> </a></li>
+         <li> <a href="#">Budapest Hostels <span>$4153.95 </span> </a></li>
+     
+     
+     </ul>
+      
+      
+      
+     
+
+   
+      </div>
+     
+     
+     
+   
+   
+   </div></div>
+ 
+ 
+    </div>
+    <?php 
+	
 //	get_sidebar('home-footer');
 	get_footer(); 
 ?>
