@@ -1000,6 +1000,7 @@ section .one-fourth {
 	height:57px;
 	overflow:hidden;
 	margin:20px 0 0 -22px;
+	display:none;
 }
 .destinations .ribbon a {
 	text-decoration:none;
