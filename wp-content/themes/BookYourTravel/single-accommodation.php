@@ -117,10 +117,10 @@ if ( have_posts() ) {
 					<div class="meta room_type">
 						<h2><?php echo $room_type_obj->get_title(); ?></h2>
 						<?php //byt_render_field('', '', '', $room_type_obj->get_custom_field('meta'), '', true, true); ?>
-                        <?php byt_render_field('', '', __('Bed size:', 'bookyourtravel'), $room_type_obj->get_custom_field('bed_size'), '', true, true); ?>
-                        <?php byt_render_field('', '', __('Extra Beds Available:', 'bookyourtravel'), $room_type_obj->get_custom_field('extra_beds_available'), '', true, true); ?>
-                        <?php byt_render_field('', '', __('', 'bookyourtravel'), $room_type_obj->get_custom_field('room_size').'Square Metres', '', true, true); ?> 
-						<?php byt_render_field('', '', __('Max Occupancy:', 'bookyourtravel'), $room_type_obj->get_custom_field('max_guest_count').'Guests', '', true, true); ?>
+                        <?php byt_render_field('', '', __('Bed size:', 'bookyourtravel'), $room_type_obj->get_custom_field('bed_size'), '', false, true); ?><br />
+                        <?php byt_render_field('', '', __('<b>Extra beds available</b>:', 'bookyourtravel'), $room_type_obj->get_custom_field('extra_beds_available'), '', false, true); ?><br />
+                        <?php byt_render_field('', '', __('', 'bookyourtravel'), $room_type_obj->get_custom_field('room_size').' Square Metres', '', false, true) . ','. byt_render_field('', '', __('<b>Max Occupancy</b>:', 'bookyourtravel'), $room_type_obj->get_custom_field('max_guest_count').'Guests', '', false, true); ?> <br />
+					
                         
                         
 						<?php byt_render_link_button("#", "more-info", "", __('+ more info', 'bookyourtravel')); ?>

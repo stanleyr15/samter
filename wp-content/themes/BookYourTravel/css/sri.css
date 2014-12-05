@@ -15,15 +15,15 @@
 .cont-score {
     background: url(../images/stars-sprite-cn.png) repeat-x scroll left top rgba(0, 0, 0, 0);
     float: left;
-    height: 31px;
-    width: 150px;
+    height: 30px;
+    width: 135px;
 }
 
 .score-v1 {
     background: url(../images/stars-sprite-cn.png) repeat-x scroll 0 -30px rgba(0, 0, 0, 0);
     float: left;
-    height: 31px;
-    width: 150px;
+    height: 30px;
+    width: 135px;
 }
 
 .hotel-desc {
@@ -80,5 +80,5 @@ height:300px;
 }
 
 .room-types h2 {
-	color:#246FC2;
+	color:#246FC2 !important;
 }

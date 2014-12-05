@@ -30,7 +30,7 @@ $accommodation_location = $accommodation_obj->get_location();
                 <div class="rating-blc">
                     <div class="left-rate">
                         <div class="cont-score">
-                            <div class="score-v1" style="width:<?php echo 150 * $review_score; ?>px">  </div>
+                            <div class="score-v1" style="width:<?php echo 135 * $review_score; ?>px">  </div>
                         </div>
                     </div>
                 </div>
