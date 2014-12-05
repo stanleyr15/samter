@@ -16,15 +16,16 @@
 		</ul>
 	</aside><!-- #secondary -->
 <?php } else { ?>
+
 	<aside class="left-sidebar">
     
  
 		<?php 
 		$widget_args = array(
-			'before_widget' => '<div class="panel panel-primary">',
-			'after_widget'  => '</div></div>',
-			'before_title'  => '<div class="panel-heading">',
-			'after_title'   => '</div><div class="panel-body">',
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '',
+			'after_title'   => '',
 		);
 		the_widget('byt_Search_Widget', null, $widget_args); 
 		?>
