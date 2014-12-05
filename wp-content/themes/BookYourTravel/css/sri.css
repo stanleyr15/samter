@@ -40,7 +40,6 @@ article.accommodation-details {
 }
 
 
-
 .accommodation-details h3 {
     color: #000;
     font-size: 18px;
@@ -74,22 +73,5 @@ height:300px;
   font-weight: normal;
   margin: -15px -15px 0;
   padding: 10px 8px;
-}
-
-.room-types li figure {
-	width:30% !important;
-}
-
-.room-types h2 {
-	color:#246FC2 !important;
-}
-
-.room-information .row {
-	 padding: 0 12px 10px !important;
-}
-
-.amount {
-	font-size:40px !important;
-	color:#F90 !important;
 }
 

@@ -119,34 +119,32 @@ if ( have_posts() ) {
 						<?php //byt_render_field('', '', '', $room_type_obj->get_custom_field('meta'), '', true, true); ?>
                         <?php byt_render_field('', '', __('Bed size:', 'bookyourtravel'), $room_type_obj->get_custom_field('bed_size'), '', false, true); ?><br />
                         <?php byt_render_field('', '', __('<b>Extra beds available</b>:', 'bookyourtravel'), $room_type_obj->get_custom_field('extra_beds_available'), '', false, true); ?><br />
-                        <?php byt_render_field('', '', __('', 'bookyourtravel'), $room_type_obj->get_custom_field('room_size').' Square Metres', '', false, true);?>
-                        <?php  byt_render_field('', '', __('<b>Max Occupancy</b>:', 'bookyourtravel'), $room_type_obj->get_custom_field('max_guest_count').'Guests', '', false, true); ?> <br />
-					
-                        
-                        
+                        <?php byt_render_field('', '', __('', 'bookyourtravel'), $room_type_obj->get_custom_field('room_size').' Square Metres', '', false, true) . ','. byt_render_field('', '', __('<b>Max Occupancy</b>:', 'bookyourtravel'), $room_type_obj->get_custom_field('max_guest_count').'Guests', '', false, true); ?> <br />
 						<?php byt_render_link_button("#", "more-info", "", __('+ more info', 'bookyourtravel')); ?>
 					</div>
-                    <div><?php echo $currency_symbol; ?> Best Value</div>
                     <!--<div class="room-information">Best Value</div>-->
 					<div class="room-information">
 						<div class="row">
-                        <?php if ($room_type_min_price > 0) { ?>
+							<span class="first"><?php _e('Max:', 'bookyourtravel'); ?></span>
+							<span class="second">
+                            <?php byt_render_field($room_type_obj->get_custom_field('max_guest_count'), '', true, true); ?>
+								<?php /*?><?php for ( $j = 0; $j < $room_type_obj->get_custom_field('max_count'); $j++ ) { ?>
+								<img src="<?php echo get_byt_file_uri('/images/ico/person.png'); ?>" alt="" />
+								<?php } ?><?php */?>
+							</span>
+						</div>
+						<?php if ($room_type_min_price > 0) { ?>
 						<div class="row">
-							<span class="first"><?php _e('Rs', 'bookyourtravel'); ?></span>
-							<div class="price">
-								<br /><em><span class="curr"><?php //echo $currency_symbol; ?></span>
+							<span class="first"><?php _e('Rs:', 'bookyourtravel'); ?></span>
+							<div class="second price">
+								<em><span class="curr"><?php echo $currency_symbol; ?></span>
 								<span class="amount"><?php echo $room_type_min_price; ?></span></em>
 								<input type="hidden" class="max_count" value="<?php echo $room_type_obj->get_custom_field('max_count'); ?>" />
 								<input type="hidden" class="max_child_count" value="<?php echo $room_type_obj->get_custom_field('max_child_count'); ?>" />
 							</div>
 						</div>
-						
-							<span class="first"><?php byt_render_field('', '', __('Max :', 'bookyourtravel'), $room_type_obj->get_custom_field('max_guest_count'), '', true, true); ?></span>
-                            <?php byt_render_link_button("#", "gradient-button book-accommodation", "book-accommodation-$room_type_id", __('Book', 'bookyourtravel')); ?>
+						<?php byt_render_link_button("#", "gradient-button book-accommodation", "book-accommodation-$room_type_id", __('Book', 'bookyourtravel')); ?>
 						<?php } ?>
-							
-						</div>
-						
 					</div>
 					<div class="more-information">
 						<?php byt_render_field('', '', __('Room facilities:', 'bookyourtravel'), $room_type_obj->get_facilities_string(), '', true, true); ?>
