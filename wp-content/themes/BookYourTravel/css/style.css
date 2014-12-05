@@ -1602,7 +1602,7 @@ font-family:;
 }
 .room-types li figure {
 	position:relative;
-	width:44.2%;
+	/*width:44.2%;*/
 	height:auto;
 	overflow:hidden;
 	max-height:160px;
