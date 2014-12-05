@@ -92,10 +92,11 @@ if ( have_posts() ) {
     <div class="col-lg-5">
     <?php 	get_sidebar('right-accommodation');  ?>
     </div>
-	<section class="col-lg-12">    
-    <article>
-			<?php do_action( 'byt_show_single_accommodation_availability_before' ); ?>
-			<h1><?php _e('Select A Room', 'bookyourtravel'); ?></h1>
+	<section class="col-lg-12">  
+    <?php do_action( 'byt_show_single_accommodation_availability_before' ); ?>  
+    <div class="panel panel-primary">
+  <div class="panel-heading"><?php _e('Select A Room', 'bookyourtravel'); ?></div>
+  <div class="panel-body">
 			<?php 
 			byt_render_field("text-wrap", "", "", $accommodation_obj->get_custom_field('availability_text'), '', false, true);
 			$room_type_ids = $accommodation_obj->get_room_types();
@@ -175,7 +176,10 @@ if ( have_posts() ) {
 			} ?>
 			<?php byt_render_tab_extra_fields('accommodation_extra_fields', $accommodation_extra_fields, 'availability', $accommodation_obj); ?>
 			<?php do_action( 'byt_show_single_accommodation_availability_after' ); ?>
-		</article>
+
+  </div>
+</div>
+    
 	<!--inner navigation-->
 	<nav class="inner-nav">
 		<ul>
