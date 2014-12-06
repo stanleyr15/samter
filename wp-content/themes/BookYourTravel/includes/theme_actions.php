@@ -26,6 +26,10 @@ function bookyourtravel_setup() {
 	register_nav_menus( array(
 		'primary-menu' => __( 'Primary Menu', 'bookyourtravel' ),
 		'footer-menu' => __( 'Footer Menu', 'bookyourtravel' ),
+		'get-to-know' => __( 'Get To Know', 'bookyourtravel' ),
+		'customer-service' => __( 'Customer Service', 'bookyourtravel' ),
+		'our-policies' => __( 'Our Policies', 'bookyourtravel' ),
+		'hoteliers' => __( 'Hoteliers', 'bookyourtravel' ),
 		'customer-support-menu' => __( 'Customer Support Menu', 'bookyourtravel' )
 	) );	
 	

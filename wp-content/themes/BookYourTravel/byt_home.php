@@ -141,7 +141,7 @@
       
       <p> Register your hotel with us free of cost</p>
       
-      <p> <input type="button" value="Submit Hotel Details" class="btns" name=""></p>
+      <p> <a href="<?php get_site_url()?>create-accommodations/"><input type="button" value="Submit Hotel Details" class="btns" name=""></a></p>
 
    
       </div>

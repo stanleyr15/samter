@@ -52,37 +52,52 @@
   <div class="col-xs-12 col-sm-3 col-md-2"> 
  
  <h2>Get To Know	 </h2>
- 
- <ul>
+ <?php if ( has_nav_menu( 'get-to-know' ) ) {
+					wp_nav_menu( array( 
+						'theme_location' => 'get-to-know', 
+						'container' => 'nav', 
+					) ); 
+				}?>
+ <!--<ul>
 <li><a href="#">  About Us </a></li>
 <li><a href="#">Help and FAQ </a></li>
 <li><a href="#">Travel Blog</a>
 <li>
  
- </ul>
+ </ul>-->
   
   </div>
   
   <div class="col-xs-12 col-sm-3 col-md-2"> 
  
  <h2>Customer Service	 </h2>
- 
- <ul>
+ <?php if ( has_nav_menu( 'customer-service' ) ) {
+					wp_nav_menu( array( 
+						'theme_location' => 'customer-service', 
+						'container' => 'nav', 
+					) ); 
+				}?>
+<!-- <ul>
 <li><a href="#">  My Booking</a></li>
 <li><a href="#">Contact Us </a></li>
  
- </ul>
+ </ul>-->
   
   </div>
   
   <div class="col-xs-12 col-sm-3 col-md-2"> 
  
  <h2>Our Policies </h2>
- 
- <ul>
+  <?php if ( has_nav_menu( 'our-policies' ) ) {
+					wp_nav_menu( array( 
+						'theme_location' => 'our-policies', 
+						'container' => 'nav', 
+					) ); 
+				}?>
+<!-- <ul>
 <li><a href="#">  Privacy & Cookies</a></li>
 <li><a href="#">Terms & Conditions</a></li>
- </ul>
+ </ul>-->
   
   </div>
   
@@ -91,11 +106,16 @@
   <div class="col-xs-12 col-sm-3 col-md-2"> 
  
  <h2>Hoteliers </h2>
- 
- <ul>
+ <?php if ( has_nav_menu( 'hoteliers' ) ) {
+					wp_nav_menu( array( 
+						'theme_location' => 'hoteliers', 
+						'container' => 'nav', 
+					) ); 
+				}?>
+<!-- <ul>
 <li><a href="#"> Add your hotel</a></li>
 
- </ul>
+ </ul>-->
   
   </div>
   
