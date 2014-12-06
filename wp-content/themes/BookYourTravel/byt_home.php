@@ -187,22 +187,13 @@ wp_reset_query();
 		'post_type'        => 'accommodation',
 		'post_status'      => 'publish' ); 
     $like_posts = get_posts( $args );
-	$accommodation_obj = new byt_accommodation($post);
-	//var_dump($like_posts); 
-	
-	//print_r($review_score);
-		
-	
-
     foreach ( $like_posts as $like_post ) {
 		//var_dump($like_post);
 		$review_count = get_post_meta($like_post->ID, 'post_title', true);
 		$accomodation_price = get_post_meta($like_post->ID, '_accommodation_min_price', true); 
-		
+		$accommodation_obj = new byt_accommodation($like_post->ID);
 		$url = wp_get_attachment_url( $post_thumbnail_id );
-        echo '<ul><li> <a href="' . get_permalink( $like_post->ID ) . '"> ' .$accommodation_obj->post_title() . ' <span>$ '.$accomodation_price.' </span> </a></li></ul>';
-		
-		
+        echo '<ul><li> <a href="' . get_permalink( $like_post->ID ) . '"> ' .$accommodation_obj->get_title() . ' <span>$ '.$accomodation_price.' </span> </a></li></ul>';
 		?>
     
    <?php //echo $review_count;
