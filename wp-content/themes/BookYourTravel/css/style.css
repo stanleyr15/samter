@@ -1434,19 +1434,19 @@ font-family:;
 /*HOTEL CONTENT*/
 .tab-content {
 	float:right;
-	width:76.4%;
+/*	width:76.4%;*/
 	overflow:hidden;
+		webkit-box-shadow:0 0 2px rgba(0, 0, 0, 0.1);
+	-moz-box-shadow:0 0 2px rgba(0, 0, 0, 0.1);
+	box-shadow:0 0 2px rgba(0, 0, 0, 0.1);
 }
 .tab-content article {
 	float:left;
-	width:94%;
+	/*width:94%;*/
 	padding:12px 3% 20px;
 	overflow:hidden;
 	margin:0 0 20px;
 	background:#fff;
-	webkit-box-shadow:0 0 2px rgba(0, 0, 0, 0.1);
-	-moz-box-shadow:0 0 2px rgba(0, 0, 0, 0.1);
-	box-shadow:0 0 2px rgba(0, 0, 0, 0.1);
 	font-size:13px;
 }
 .full .tab-content article {
@@ -1828,14 +1828,14 @@ font-family:;
 .reviews .pro {
 	float:left;
 	width:360px;
-	background:url(../images/ico/plus.png) 0 20% no-repeat;
+	/*background:url(../images/ico/plus.png) 0 20% no-repeat;*/
 	padding:3px 0 3px 35px;
 	margin:0 0 5px;
 }
 .reviews .con {
 	float:left;
 	width:360px;
-	background:url(../images/ico/minus.png) 0 50% no-repeat;
+	/*background:url(../images/ico/minus.png) 0 50% no-repeat;*/
 	padding:3px 0 3px 35px;
 }
 .reviews p {
