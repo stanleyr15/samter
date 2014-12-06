@@ -158,8 +158,61 @@
 
        <div class="col-xs-12 col-sm-12 col-md-12  partnerwith-txt"> 
        
+<?php 
+$i=1;
+global $wpdb;
+query_posts('post_type=accommodation&showposts=5'); 
+if(have_posts()) : while(have_posts()) : the_post();
+?> 
+
+
+<ul><!--<li> <a href="<?php the_permalink(); ?>"> <?php the_title(); ?> <span> $ <?php  //the_price(); ?> </span> </a></li>--></ul>
+
+
+<?php
+ $i++ ;
+endwhile; endif;
+wp_reset_query();
+?>
+
+
+
+
+ <?php      
+  global $post;
+	$args = array(
+		'posts_per_page'   => 5,
+		'orderby'          => 'DESC',
+		'post_id'          => array( $post->ID ),
+		'post_type'        => 'accommodation',
+		'post_status'      => 'publish' ); 
+    $like_posts = get_posts( $args );
+	$accommodation_obj = new byt_accommodation($post);
+	//var_dump($like_posts); 
+	
+	//print_r($review_score);
+		
+	
+
+    foreach ( $like_posts as $like_post ) {
+		//var_dump($like_post);
+		$review_count = get_post_meta($like_post->ID, 'post_title', true);
+		$accomodation_price = get_post_meta($like_post->ID, '_accommodation_min_price', true); 
+		
+		$url = wp_get_attachment_url( $post_thumbnail_id );
+        echo '<ul><li> <a href="' . get_permalink( $like_post->ID ) . '"> ' .$accommodation_obj->post_title() . ' <span>$ '.$accomodation_price.' </span> </a></li></ul>';
+		
+		
+		?>
+    
+   <?php //echo $review_count;
+	}
+
+ ?>
+
+       
      
-     <ul> 
+     <!--<ul> 
      
      <li> <a href="#">London Hostels <span>$30.42 </span> </a></li>
       <li> <a href="#">Barcelona Hostels <span>$22.85 </span> </a></li>
@@ -168,7 +221,7 @@
          <li> <a href="#">Budapest Hostels <span>$4153.95 </span> </a></li>
      
      
-     </ul>
+     </ul>-->
       
       
       
