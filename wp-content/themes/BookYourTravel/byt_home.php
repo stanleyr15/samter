@@ -177,7 +177,7 @@ wp_reset_query();
 
 
 
-
+<ul>
  <?php      
   global $post;
 	$args = array(
@@ -193,13 +193,14 @@ wp_reset_query();
 		$accomodation_price = get_post_meta($like_post->ID, '_accommodation_min_price', true); 
 		$accommodation_obj = new byt_accommodation($like_post->ID);
 		$url = wp_get_attachment_url( $post_thumbnail_id );
-        echo '<ul><li> <a href="' . get_permalink( $like_post->ID ) . '"> ' .$accommodation_obj->get_title() . ' <span>$ '.$accomodation_price.' </span> </a></li></ul>';
+        echo '<li> <a href="' . get_permalink( $like_post->ID ) . '"> ' .$accommodation_obj->get_title() . ' <span>$ '.$accomodation_price.' </span> </a></li>';
 		?>
     
    <?php //echo $review_count;
 	}
 
  ?>
+ </ul>
 
        
      
