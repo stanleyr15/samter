@@ -1,7 +1,10 @@
 <?php do_action( 'byt_show_accommodation_confirm_form_before' ); ?>
+
 <form id="accommodation-confirmation-form" method="post" action="" class="booking" style="display:none">
+    <div id="mydiv">
 	<fieldset>
 		<h3><span>02 </span><?php _e('Confirmation', 'bookyourtravel') ?></h3>
+                <!--<button onclick="myFunction()">Print</button>-->
 		<div class="text-wrap">
 			<p><?php _e('Thank you. We will get back you with regards your reservation within 24 hours.', 'bookyourtravel') ?></p>
 		</div>				
@@ -44,5 +47,37 @@
 			<p><?php echo sprintf(__('<strong>We wish you a pleasant stay</strong><br /><i>your %s team</i>', 'bookyourtravel'), of_get_option('contact_company_name', 'BookYourTravel')) ?></p>
 		</div>
 	</fieldset>
+    </div>
+    <input type="button" value="Print Div" onclick="PrintElem('#mydiv')" />
 </form>
+
+
 <?php do_action( 'byt_show_accommodation_confirm_form_after' ); ?>
+<!--<script>
+function myFunction() {
+    window.print();
+}
+</script>-->
+<script type="text/javascript">
+
+    function PrintElem(elem)
+    {
+        Popup($(elem).html());
+    }
+
+    function Popup(data) 
+    {
+        var mywindow = window.open('', 'my div', 'height=400,width=600');
+        mywindow.document.write('<html><head><title>my div</title>');
+        /*optional stylesheet*/ //mywindow.document.write('<link rel="stylesheet" href="main.css" type="text/css" />');
+        mywindow.document.write('</head><body >');
+        mywindow.document.write(data);
+        mywindow.document.write('</body></html>');
+
+        mywindow.print();
+        mywindow.close();
+
+        return true;
+    }
+
+</script>

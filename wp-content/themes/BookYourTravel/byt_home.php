@@ -157,7 +157,7 @@
   
 
        <div class="col-xs-12 col-sm-12 col-md-12  partnerwith-txt"> 
-       
+           <ul>
 <?php 
 $i=1;
 global $wpdb;
@@ -166,7 +166,7 @@ if(have_posts()) : while(have_posts()) : the_post();
 ?> 
 
 
-<ul><!--<li> <a href="<?php the_permalink(); ?>"> <?php the_title(); ?> <span> $ <?php  //the_price(); ?> </span> </a></li>--></ul>
+<!--<ul><li> <a href="<?php the_permalink(); ?>"> <?php the_title(); ?> <span> $ <?php  //the_price(); ?> </span> </a></li></ul>-->
 
 
 <?php
@@ -177,7 +177,7 @@ wp_reset_query();
 
 
 
-<ul>
+
  <?php      
   global $post;
 	$args = array(
@@ -200,7 +200,7 @@ wp_reset_query();
 	}
 
  ?>
- </ul>
+           </ul>
 
        
      
