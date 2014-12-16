@@ -2,6 +2,157 @@
 
 <form id="accommodation-confirmation-form" method="post" action="" class="booking" style="display:none">
     <div id="mydiv">
+        <div class="booking-sucess"> 
+  
+  <div class="thankyou-message"> 
+  
+  <div class="thankyou-icon"> <img src="images/thankyou-img.jpg" width="82" height="72" alt=""></div>
+  
+  <div class="col-xs-12 col-sm-8 col-md-10"> 
+  
+ <h2>Thank you! Your booking is complete.</h2>
+  
+  <p> You successfully confirmed your email address and your booking. </p>
+  
+  <p><input name="" type="button" class="print-btn" value="Print"></p>
+  
+  </div>
+  
+  
+  </div>
+  
+  
+  
+  <div class="thankyou-bookingdetails"> 
+  
+  <div class="row">
+  <div class="col-xs-12 col-sm-6 col-md-4 thankyou-bookingdetails-part"> 
+  
+  <b>Booking Number     	: </b>	<span> 385yu8 </span>
+  
+  </div>
+  
+    <div class="col-xs-12 col-sm-6 col-md-4 thankyou-bookingdetails-part" > 
+  
+  <b>Booking Date        	: </b>	<span> 2014-09-16 </span>
+  
+  </div>
+  
+    <div class="col-xs-12 col-sm-6 col-md-4 thankyou-bookingdetails-part"> 
+  
+  <b>Arrival Date  	: </b>	<span> 2014-09-16 </span>
+  
+  </div>
+  
+  
+   <div class="col-xs-12 col-sm-6 col-md-4 thankyou-bookingdetails-part"> 
+  
+  <b>Guest Name   	  	: </b>	<span> name </span>
+  
+  </div>
+  
+  <div class="col-xs-12 col-sm-6 col-md-4 thankyou-bookingdetails-part"> 
+  
+  <b>Email	 	  	: </b>	<span> test@gmail.com</span>
+  
+  </div>
+  
+  
+  <div class="col-xs-12 col-sm-6 col-md-4 thankyou-bookingdetails-part"> 
+  
+  <b>Booker Phone	 	  	: </b>	<span> +44 1234 567 890</span>
+  
+  </div>
+  
+  
+  <div class="col-xs-12 col-sm-6 col-md-4 thankyou-bookingdetails-part"> 
+  
+  <b>Home Address		 	  	: </b>	<span> Dummy Address</span>
+  
+  </div>
+  
+  
+  </div>
+  
+  
+  </div>
+  
+  
+  
+  <div class="thankyou-hotelfull-name"> 
+  
+  <div class="row">   <div class="col-xs-12 col-sm-12 col-md-4"> <span> Novotel Waterloo</span> <img src="images/star.jpg" width="80" height="23" alt=""></div> 
+   <div class="col-xs-12 col-sm-12 col-md-8"> <b> This is a "Pay When You Stay" room. </b> The hotel will bill you the amount shown below at the time of your hotel stay. 
+The actual charqes for your hotel room are shown in the local currency below. </div>
+  </div>
+ 
+  
+  </div>
+  
+  
+  <div class="row">  
+  <div class="col-xs-12 col-sm-6 col-md-6 thank-you-chk-details"> 
+  
+  <div class="row">
+  
+    <div class="col-xs-12 col-sm-4 col-md-3"> <img src="images/thanku-hotel-img.jpg"  alt=""></div> 
+    
+    <div class="col-xs-12 col-sm-8 col-md-9"> <img src="images/loaction-icon.jpg" width="11" height="13" alt=""> Address: 113 Lambeth Road, SE1 7LS, London <br/> 
+   <b> Check-in	</b>     <span> Mon, 15 Sep 2014 </span> <br/> 
+   <b>Check-out	</b>                				           <span> Tue, 16 Sep 2014 </span><br/> 
+   <b>For:	</b> 					   <span>  1 Night, 2 Persons,in 1 Room</span> <br/> 
+
+</div> 
+    </div>
+  
+  </div> 
+  
+  <div class="col-xs-12 col-sm-6 col-md-6 thank-you-chk-details thank-you-chk-details-right"> 
+  
+  <div class="row">
+  
+  
+   <div class="col-xs-12 col-sm-12 col-md-12"> <i> Room1.  1 x Club Double/Twin Room - Advanced Purchase</i> </div>
+   
+    <div class="col-xs-12 col-sm-5 col-md-3"> <img src="images/booked-hotelimg.jpg"  alt=""></div> 
+    
+    <div class="col-xs-12 col-sm-7 col-md-9"> 
+   <b> Price per night<br/> <em> (all taxes included)	</em>	</b>     <span> GBP 100 </span> <br/> 
+   <b>	</b>                				           <span> PKR 1500 </span><br/> 
+   <b>You Pay today</b> 					   <span>  PKR 0</span> <br/> 
+
+</div> 
+    </div>
+  
+  </div>
+ <div class=" col-xs-12 col-sm-12 col-md-12"> 
+  
+  <div class="total-pricebg"> 
+  
+  <div class="col-xs-12 col-sm-6 col-md-6"> <b> Total Price </b> <br/>  <span> (all taxes included) </span>	</div>
+  
+  <div class="col-xs-12 col-sm-6 col-md-6 total-right"> <b>GBP 100    PKR 1500</b>	</div>
+  
+  </div>
+  </div>
+  
+   <div class=" col-xs-12 col-sm-12 col-md-12">  
+   
+   <div class="locationmap"> 
+   
+   <h2>Location on Map </h2>
+   
+   <div class="map"> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9288846.204449672!2d-3.4433237999999995!3d55.3617609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x25a3b1142c791a9%3A0xc4f8a0433288257a!2sUnited+Kingdom!5e0!3m2!1sen!2sin!4v1418648049173" width="100%" height="450" frameborder="0" style="border:0"></iframe></div>
+   
+   </div>
+   
+   </div>
+  
+  
+   </div>
+  
+  
+        </div>
 	<fieldset>
 		<h3><span>02 </span><?php _e('Confirmation', 'bookyourtravel') ?></h3>
                 <!--<button onclick="myFunction()">Print</button>-->
