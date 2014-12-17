@@ -49,13 +49,13 @@ if ( have_posts() ) {
 	</script>
 <?php   //echo  $_SESSION['search_term'];
      
-//		$widget_args = array(
-//			'before_widget' => '',
-//			'after_widget'  => '',
-//			'before_title'  => '',
-//			'after_title'   => '',
-//		);
-//		the_widget('byt_Header_Search_Widget', null, $widget_args); 
+		$widget_args = array(
+			'before_widget' => '',
+			'after_widget'  => '',
+			'before_title'  => '',
+			'after_title'   => '',
+		);
+		the_widget('byt_Header_Search_Widget', null, $widget_args); 
 		
 	get_template_part('includes/parts/inquiry', 'form');
 	?>		
