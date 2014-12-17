@@ -1,10 +1,11 @@
 
 .rating-blc {
-    float: left;
+    /*float: left;*/
     height: 42px;
     margin-top: 10px;
-    width: 100%;
+   /* width: 100%;*/
 }
+
 
 .left-rate {
     float: left;

@@ -4,11 +4,15 @@ byt_breadcrumbs();
 get_sidebar('under-header');
 
 
+echo $_SESSION['search_term'];
+
 
 
 global $post, $current_user, $accommodation_obj, $entity_obj, $currency_symbol, $price_decimal_places, $score_out_of_10, $enable_reviews, $default_accommodation_tabs, $default_accommodation_extra_fields;
 
 //var_dump($accommodation_obj);
+
+
 
 $accommodation_extra_fields = of_get_option('accommodation_extra_fields');
 if (!is_array($accommodation_extra_fields) || count($accommodation_extra_fields) == 0)
@@ -97,10 +101,50 @@ if ( have_posts() ) {
     <div class="panel panel-primary">
     <div class="panel-heading"><?php _e('Select A Room', 'bookyourtravel'); ?></div>
     <div class="panel-body">
+     <table class="table" width="100%">
+     <tr><td>
 			<?php 
 			byt_render_field("text-wrap", "", "", $accommodation_obj->get_custom_field('availability_text'), '', false, true);
 			$room_type_ids = $accommodation_obj->get_room_types();
-			if ($room_type_ids && count($room_type_ids) > 0) { ?>
+			if ($room_type_ids && count($room_type_ids) > 0) { ?></td></tr>
+            
+           
+            <tr>
+            <th>From</th>
+            <th>To</th>
+            <th>Rooms</th>
+            <th>Adults</th>
+            <th>Children</th>
+            <th>&nbsp;</th>
+            </tr>
+
+            <tr>
+            <script>
+				window.whenCount = <?php echo $home_search_box_column_count; ?>;
+			</script>
+            
+            <td>
+			<div class="f-item datepicker">
+				<label for="search_date_from"></label>
+				<div class="datepicker-wrap"><input type="text" placeholder="" id="search_date_from" name="from" /></div>
+			</div>
+			</td>
+            <td>			
+            <div class="f-item datepicker">
+				<label for="search_date_to"></label>
+				<div class="datepicker-wrap"><input type="text" placeholder="" id="search_date_to" name="to"  /></div>
+			</div>
+           </td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>&nbsp;</td>
+            <td>Update</td>
+            <td>Number</td>
+            
+            </tr>
+			</table>
+            
+            
 			<ul class="room-types">
 				<?php 
 				// Loop through the items returned				
@@ -127,7 +171,7 @@ if ( have_posts() ) {
 						<div class="row">
 							<span class="first"><?php _e('Max:', 'bookyourtravel'); ?></span>
 							<span class="second">
-                            <?php byt_render_field($room_type_obj->get_custom_field('max_guest_count'), '', true, true); ?>
+                            <?php byt_render_field('', '', __('', 'bookyourtravel'), $room_type_obj->get_custom_field('max_guest_count'), '', false, true); ?>
 								<?php /*?><?php for ( $j = 0; $j < $room_type_obj->get_custom_field('max_count'); $j++ ) { ?>
 								<img src="<?php echo get_byt_file_uri('/images/ico/person.png'); ?>" alt="" />
 								<?php } ?><?php */?>
@@ -220,7 +264,10 @@ if ( have_posts() ) {
 		</ul>
 	</nav>
 	<!--//inner navigation-->
-	<?php do_action( 'byt_show_single_accommodation_tab_content_before' ); ?>
+	<?php do_action( 'byt_show_single_accommodation_tab_content_before' );
+    
+    echo $date_from;
+echo $date_to; ?>
 
 	<section id="" class="tab-content <?php echo $first_display_tab == 'availability' ? 'initial' : ''; ?>">
 		

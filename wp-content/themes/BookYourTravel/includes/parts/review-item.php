@@ -42,7 +42,7 @@
 			?>
 		</dl>
 	</article>-->
-	<article>
+	<article class="col-lg-7">
     <?php $review_score = get_post_meta($post->ID, 'review_score', true); ?>
 		<h1><?php _e($reviews_total . ' People have reviewed this Hotel', 'bookyourtravel');?></h1>
 		<ul class="reviews">
@@ -102,25 +102,20 @@
 		$review_score = get_post_meta($like_post->ID, 'review_score', true); 
 		
 		$url = wp_get_attachment_url( $post_thumbnail_id );
-        $output .= '<div class="thumad-cont"><div class="thumad-cont-img"><a href="' . get_permalink( $like_post->ID ) . '"> <img src="' . $url . '" width="141" height="74" alt=""></a></div><div class="thumad-cont-name"><a href="' . get_permalink( $like_post->ID ) . '">' . apply_filters( 'the_title', $like_post->post_title, $like_post->ID ).'</a>"'. $review_count .'" Reviews</div></div>';
-		
-		;
-		?>
-        <div class="rating-blc">
+       ?>
+        <div class="thumad-cont"><div class="thumad-cont-img"><a href="<?php echo get_permalink( $like_post->ID ); ?>"> <img src="<?php echo $url ?>" width="141" height="74" alt=""></a></div>
+                <div class="rating-blc">
                     <div class="left-rate">
                         <div class="cont-score">
                             <div class="score-v1" style="width:<?php echo 150 * $review_score; ?>px"></div>
-                        </div>
-                    </div>
+                        </div> 
+                    </div> <?php echo $review_count ?> Reviews 
                 </div>
-   <?php //echo $review_count;
-	}
+                <div class="thumad-cont-name"><a href="<?php echo get_permalink( $like_post->ID ); ?>"><?php echo  apply_filters( 'the_title', $like_post->post_title, $like_post->ID )?></a> </div></div>
+   <?php } }  ?>
 
-    return $output;
-}  ?>
-
-            <!--<div><ul><li>Related Hotels <br />
-             <?php //echo get_you_also_like_posts();  ?></li></ul></div>-->
+            <div>Related Hotels <br />
+             <ul><li><?php echo get_you_also_like_posts();  ?></li></ul></div>
 
 <?php } else { ?>
 	<article>

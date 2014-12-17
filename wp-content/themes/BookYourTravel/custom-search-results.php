@@ -8,7 +8,15 @@
  */
 get_header(); 
 byt_breadcrumbs();
+
 get_sidebar('under-header');
+
+
+$_SESSION['search_term'] = $search_term;
+
+
+
+
 
 global $currency_symbol, $enable_reviews;
 $default_results_view = (int)of_get_option('search_results_default_view', 0);
@@ -31,6 +39,7 @@ if ($cabin_types_query->have_posts()) {
 	}
 }
 
+
 $request_car_types = retrieve_array_of_values_from_query_string('car_types', true);
 $request_accommodation_types = retrieve_array_of_values_from_query_string('accommodation_types', true);
 $request_cabin_types = retrieve_array_of_values_from_query_string('cabin_types', true);
@@ -46,11 +55,16 @@ $rooms = isset($_GET['rooms']) ? intval(wp_kses($_GET['rooms'], '')) : 0;
 $what = isset($_GET['what']) ? intval(wp_kses($_GET['what'], '')) : 1; 
 $is_self_catered = ($what == 2);
 
+
+
 $sort_by = isset($_GET['sb']) ? intval(wp_kses($_GET['sb'], '')) : 1; 
 $sort_order = isset($_GET['so']) ? intval(wp_kses($_GET['so'], '')) : 1;
 
 $date_from = isset($_GET['from']) && !empty($_GET['from'])  ? date('m/d/Y', strtotime(wp_kses($_GET['from'], ''))) : date('Y-m-d', time());
 $date_to = isset($_GET['to']) && !empty($_GET['to']) ? date('m/d/Y', strtotime(wp_kses($_GET['to'], ''))) : date('Y-m-d', strtotime("+1 day", time()));
+
+$_SESSION['from'] = $date_from;
+$_SESSION['to'] = $date_to;
 
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $posts_per_page = of_get_option('search_results_posts_per_page', 12);

@@ -3600,10 +3600,10 @@ span.wpcf7-not-valid-tip {
 	width:96%;
 	padding:12px 2% 20px;
 	margin:0 0 20px;
-	background:#fff;
+	/*background:#fff;
 	webkit-box-shadow:0 0 2px rgba(0, 0, 0, 0.1);
 	-moz-box-shadow:0 0 2px rgba(0, 0, 0, 0.1);
-	box-shadow:0 0 2px rgba(0, 0, 0, 0.1);
+	box-shadow:0 0 2px rgba(0, 0, 0, 0.1);*/
 }
 .booking h3 {
 	display:inline-block;

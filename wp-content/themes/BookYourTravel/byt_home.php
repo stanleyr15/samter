@@ -14,6 +14,8 @@ global $currency_symbol;
 
 get_header();
 
+
+
 if (have_posts()) {
     ?>
     <section class="full">
@@ -62,7 +64,7 @@ if (have_posts()) {
                 FAQs
             </div>
             <div class="col-xs-12 col-sm-6 col-md-4 service-txt"> 
-                <input name="" type="button" class="btns" value="Login"> 
+                <input name="" type="button" class="btns" value="Login"  onclick="toggleLightbox('login_lightbox')"> 
             </div>
                    
         </div>
