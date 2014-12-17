@@ -1,20 +1,21 @@
 <?php do_action( 'byt_show_accommodation_confirm_form_before' ); ?>
 
-<form id="accommodation-confirmation-form" method="post" action="" class="booking" style="display:none">
-    <div id="mydiv">
+<form id="accommodation-confirmation-form" method="post" action="" class="booking" >
+<!--    style="display:none"-->
+    <div id="div1">
         <div class="booking-sucess"> 
   
   <div class="thankyou-message"> 
   
-  <div class="thankyou-icon"> <img src="images/thankyou-img.jpg" width="82" height="72" alt=""></div>
+  <div class="thankyou-icon"> <img src="<?php echo bloginfo('template_url')?>/images/thankyou-img.jpg" width="82" height="72" alt=""></div>
   
   <div class="col-xs-12 col-sm-8 col-md-10"> 
   
  <h2>Thank you! Your booking is complete.</h2>
   
   <p> You successfully confirmed your email address and your booking. </p>
-  
-  <p><input name="" type="button" class="print-btn" value="Print"></p>
+
+  <p><input name="" type="button" class="print-btn" value="Print" onclick="PrintElem('#mydiv')"></p>
   
   </div>
   
@@ -34,40 +35,33 @@
   
     <div class="col-xs-12 col-sm-6 col-md-4 thankyou-bookingdetails-part" > 
   
-  <b>Booking Date        	: </b>	<span> 2014-09-16 </span>
+  <b>Booking Name        	: </b>	<span id="confirm_first_name"> </span>
   
   </div>
   
     <div class="col-xs-12 col-sm-6 col-md-4 thankyou-bookingdetails-part"> 
   
-  <b>Arrival Date  	: </b>	<span> 2014-09-16 </span>
+  <b>Booker Phone  	: </b>	<span id="confirm_phone"> </span>
   
   </div>
   
   
    <div class="col-xs-12 col-sm-6 col-md-4 thankyou-bookingdetails-part"> 
   
-  <b>Guest Name   	  	: </b>	<span> name </span>
+  <b>Date   	  	: </b>	<span> CURRENT DATE </span>
   
   </div>
   
   <div class="col-xs-12 col-sm-6 col-md-4 thankyou-bookingdetails-part"> 
   
-  <b>Email	 	  	: </b>	<span> test@gmail.com</span>
-  
-  </div>
-  
-  
-  <div class="col-xs-12 col-sm-6 col-md-4 thankyou-bookingdetails-part"> 
-  
-  <b>Booker Phone	 	  	: </b>	<span> +44 1234 567 890</span>
+  <b>Email	 	  	: </b>	<span id="confirm_email_address"></span>
   
   </div>
   
   
   <div class="col-xs-12 col-sm-6 col-md-4 thankyou-bookingdetails-part"> 
   
-  <b>Home Address		 	  	: </b>	<span> Dummy Address</span>
+  <b>Home Address		 	  	: </b>	<span id="confirm_town"></span>
   
   </div>
   
@@ -95,11 +89,11 @@ The actual charqes for your hotel room are shown in the local currency below. </
   
   <div class="row">
   
-    <div class="col-xs-12 col-sm-4 col-md-3"> <img src="images/thanku-hotel-img.jpg"  alt=""></div> 
+    <div class="col-xs-12 col-sm-4 col-md-3"> <img src="<?php echo bloginfo('template_url')?>/images/thanku-hotel-img.jpg"  alt=""></div> 
     
-    <div class="col-xs-12 col-sm-8 col-md-9"> <img src="images/loaction-icon.jpg" width="11" height="13" alt=""> Address: 113 Lambeth Road, SE1 7LS, London <br/> 
-   <b> Check-in	</b>     <span> Mon, 15 Sep 2014 </span> <br/> 
-   <b>Check-out	</b>                				           <span> Tue, 16 Sep 2014 </span><br/> 
+    <div class="col-xs-12 col-sm-8 col-md-9"> <img src="<?php echo bloginfo('template_url')?>/images/loaction-icon.jpg" width="11" height="13" alt=""> Address: 113 Lambeth Road, SE1 7LS, London <br/> 
+   <b> Check-in	</b>     <span id="confirm_date_from"></span> <br/> 
+   <b>Check-out	</b>   <span id="confirm_date_to"> </span><br/> 
    <b>For:	</b> 					   <span>  1 Night, 2 Persons,in 1 Room</span> <br/> 
 
 </div> 
@@ -114,7 +108,7 @@ The actual charqes for your hotel room are shown in the local currency below. </
   
    <div class="col-xs-12 col-sm-12 col-md-12"> <i> Room1.  1 x Club Double/Twin Room - Advanced Purchase</i> </div>
    
-    <div class="col-xs-12 col-sm-5 col-md-3"> <img src="images/booked-hotelimg.jpg"  alt=""></div> 
+   <div class="col-xs-12 col-sm-5 col-md-3"> <img src="<?php echo bloginfo('template_url')?>/images/booked-hotelimg.jpg"  alt=""></div> 
     
     <div class="col-xs-12 col-sm-7 col-md-9"> 
    <b> Price per night<br/> <em> (all taxes included)	</em>	</b>     <span> GBP 100 </span> <br/> 
@@ -153,9 +147,9 @@ The actual charqes for your hotel room are shown in the local currency below. </
   
   
         </div>
-	<fieldset>
+<!--	<fieldset>
 		<h3><span>02 </span><?php _e('Confirmation', 'bookyourtravel') ?></h3>
-                <!--<button onclick="myFunction()">Print</button>-->
+                <button onclick="myFunction()">Print</button>
 		<div class="text-wrap">
 			<p><?php _e('Thank you. We will get back you with regards your reservation within 24 hours.', 'bookyourtravel') ?></p>
 		</div>				
@@ -197,10 +191,22 @@ The actual charqes for your hotel room are shown in the local currency below. </
 		<div class="text-wrap">
 			<p><?php echo sprintf(__('<strong>We wish you a pleasant stay</strong><br /><i>your %s team</i>', 'bookyourtravel'), of_get_option('contact_company_name', 'BookYourTravel')) ?></p>
 		</div>
-	</fieldset>
+	</fieldset>-->
     </div>
-    <input type="button" value="Print Div" onclick="PrintElem('#mydiv')" />
+    
 </form>
+
+<script> function printContent(el){ 
+    var restorepage = document.body.innerHTML;
+    var printcontent = document.getElementById(el).innerHTML;
+    document.body.innerHTML = printcontent; window.print(); 
+    document.body.innerHTML = restorepage; } 
+</script> 
+<h1>My page</h1> 
+<div id="div12">DIV 1 content...</div> <button onclick="printContent('div1')">Print Content</button>
+<div id="div2">DIV 2 content...</div> <button onclick="printContent('div2')">Print Content</button> 
+<p id="p1">Paragraph 1 content...</p> <button onclick="printContent('p1')">Print Content</button>
+
 
 
 <?php do_action( 'byt_show_accommodation_confirm_form_after' ); ?>
@@ -218,9 +224,9 @@ function myFunction() {
 
     function Popup(data) 
     {
-        var mywindow = window.open('', 'my div', 'height=400,width=600');
+        var mywindow = window.open('', 'my div', 'height=900,width=900');
         mywindow.document.write('<html><head><title>my div</title>');
-        /*optional stylesheet*/ //mywindow.document.write('<link rel="stylesheet" href="main.css" type="text/css" />');
+        /*optional stylesheet*/ mywindow.document.write('<link rel="stylesheet" href="http://localhost/samter/trunk/wp-content/themes/BookYourTravel/css/style.css" type="text/css" media="all"/>');
         mywindow.document.write('</head><body >');
         mywindow.document.write(data);
         mywindow.document.write('</body></html>');

@@ -13,7 +13,7 @@
 global $currency_symbol;
 
 get_header();
-
+//$_SESSION['search_term'] = "Some data I need later";
 
 
 if (have_posts()) {

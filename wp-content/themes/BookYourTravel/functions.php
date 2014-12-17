@@ -139,6 +139,8 @@ require_once get_byt_file_path('/plugins/widgets/widget-search.php');
 require_once get_byt_file_path('/plugins/widgets/widget-address.php');
 require_once get_byt_file_path('/plugins/widgets/widget-social.php');
 require_once get_byt_file_path('/plugins/widgets/widget-home-feature.php');
+require_once get_byt_file_path('/plugins/widgets/widget-header-search-result-bar.php');
+require_once get_byt_file_path('/plugins/widgets/widget-accommodation-update.php');
 require_once get_byt_file_path('/plugins/metaboxes/meta_box.php');
 require_once get_byt_file_path('/plugins/class-tgm-plugin-activation.php');
 
@@ -234,6 +236,8 @@ require_once get_byt_file_path('/includes/admin/theme_cruise_schedule_booking_ad
 require_once get_byt_file_path('/includes/theme_woocommerce.php');
 
 
+//-------------------------------------------------------session-------
+
 
 add_action('init', 'myStartSession', 1);
 add_action('wp_logout', 'myEndSession');
@@ -248,5 +252,6 @@ function myStartSession() {
 function myEndSession() {
     session_destroy ();
 }
+
 
 ?>

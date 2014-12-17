@@ -38,7 +38,7 @@ if ($cabin_types_query->have_posts()) {
 		$cabin_types[] = $post;
 	}
 }
-
+echo $_SESSION['search_term'];
 
 $request_car_types = retrieve_array_of_values_from_query_string('car_types', true);
 $request_accommodation_types = retrieve_array_of_values_from_query_string('accommodation_types', true);
@@ -46,6 +46,7 @@ $request_cabin_types = retrieve_array_of_values_from_query_string('cabin_types',
 $request_prices = retrieve_array_of_values_from_query_string('price', true);
 
 $search_term = isset($_GET['term']) ? wp_kses($_GET['term'], '') : '';
+$_SESSION['search_term'] = $search_term;
 $age = isset($_GET['age']) ? intval(wp_kses($_GET['age'], '')) : 0; 
 $stars = isset($_GET['stars']) ? intval(wp_kses($_GET['stars'], '')) : 0; 
 $rating = isset($_GET['rating']) ? intval(wp_kses($_GET['rating'], '')) : 0; 
