@@ -1,6 +1,6 @@
 <?php do_action( 'byt_show_accommodation_confirm_form_before' ); ?>
 
-<form id="accommodation-confirmation-form" method="post" action="" class="booking" >
+<form id="accommodation-confirmation-form" method="post" action="" class="booking" style="display:none">
 <!--    style="display:none"-->
     <div id="div1">
         <div class="booking-sucess"> 
@@ -196,7 +196,7 @@ The actual charqes for your hotel room are shown in the local currency below. </
     
 </form>
 
-<script> function printContent(el){ 
+<!--<script> function printContent(el){ 
     var restorepage = document.body.innerHTML;
     var printcontent = document.getElementById(el).innerHTML;
     document.body.innerHTML = printcontent; window.print(); 
@@ -205,7 +205,7 @@ The actual charqes for your hotel room are shown in the local currency below. </
 <h1>My page</h1> 
 <div id="div12">DIV 1 content...</div> <button onclick="printContent('div1')">Print Content</button>
 <div id="div2">DIV 2 content...</div> <button onclick="printContent('div2')">Print Content</button> 
-<p id="p1">Paragraph 1 content...</p> <button onclick="printContent('p1')">Print Content</button>
+<p id="p1">Paragraph 1 content...</p> <button onclick="printContent('p1')">Print Content</button>-->
 
 
 
