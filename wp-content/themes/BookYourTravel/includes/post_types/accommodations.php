@@ -286,7 +286,7 @@ function accommodations_search_where( $where, &$wp_query ) {
 				}
 			}
 			
-			echo 'AAAAAAAA';
+			//echo 'AAAAAAAA';
 			
 			if (!empty($needed_where_part)) {
 				$prefix = str_replace("meta_key = 'accommodation_location_post_id'","",$needed_where_part);
@@ -501,11 +501,14 @@ function list_accommodations ( $paged = 0, $per_page = -1, $orderby = '', $order
 	}
 		
 	$args['meta_query'] = $meta_query;
+      //  print_r($args);
+        //exit;
 	
 	$posts_query = new WP_Query($args);
 	
 	// if (isset($args['s']))
 	//echo $posts_query->request;
+       // exit;
 	
 	if ($count_only) {
 		$results = array(

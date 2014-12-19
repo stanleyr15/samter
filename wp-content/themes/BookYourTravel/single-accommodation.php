@@ -4,7 +4,7 @@ byt_breadcrumbs();
 get_sidebar('under-header');
 
 
-echo $_SESSION['search_term'];
+
 
 
 

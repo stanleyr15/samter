@@ -123,20 +123,20 @@ class byt_header_search_widget extends WP_Widget {
                 
 					<dl>
 					<?php 					
-					$this->render_what_section($searchable_count, $what_text);
-					$this->render_price_range_section($what, $price_per_person_label_text, $price_per_night_label_text, $price_per_day_label_text);
-					$this->render_star_rating_section($star_rating_label_text);
+					//$this->render_what_section($searchable_count, $what_text);
+					//$this->render_price_range_section($what, $price_per_person_label_text, $price_per_night_label_text, $price_per_day_label_text);
+					//$this->render_star_rating_section($star_rating_label_text);
 					
 					if ($enable_reviews)
-						$this->render_user_rating_section($user_rating_label_text);
+					//	$this->render_user_rating_section($user_rating_label_text);
 						
-					$this->render_car_type_section($car_type_label_text);
-					$this->render_accommodation_type_section($accommodation_type_label_text);
-					$this->render_cabin_type_section($cabin_type_label_text);
-					$this->render_drivers_age_section($drivers_age_label_text);
+					//$this->render_car_type_section($car_type_label_text);
+					//$this->render_accommodation_type_section($accommodation_type_label_text);
+					//$this->render_cabin_type_section($cabin_type_label_text);
+					//$this->render_drivers_age_section($drivers_age_label_text);
 					$this->render_rooms_section($rooms_label_text);
-					$this->render_guests_section($guests_label_text);
-					$this->render_cabins_section($cabins_label_text);
+					//$this->render_guests_section($guests_label_text);
+					//$this->render_cabins_section($cabins_label_text);
 					$this->render_when_section($when_text, $accommodation_date_from_label_text, $accommodation_date_to_label_text, $car_rental_date_from_label_text, $car_rental_date_to_label_text, $tour_date_from_label_text, $cruise_date_from_label_text);
 					$this->render_location_section($accommodation_location_label_text, $car_rental_location_label_text, $tour_location_label_text);
 					?>					

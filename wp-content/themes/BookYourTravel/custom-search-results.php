@@ -12,10 +12,13 @@ byt_breadcrumbs();
 get_sidebar('under-header');
 
 
-$_SESSION['search_term'] = $search_term;
 
 
 
+
+	
+		the_widget('byt_Header_Search_Widget', null, $widget_args); 
+	
 
 
 global $currency_symbol, $enable_reviews;
@@ -38,7 +41,7 @@ if ($cabin_types_query->have_posts()) {
 		$cabin_types[] = $post;
 	}
 }
-echo $_SESSION['search_term'];
+
 
 $request_car_types = retrieve_array_of_values_from_query_string('car_types', true);
 $request_accommodation_types = retrieve_array_of_values_from_query_string('accommodation_types', true);
@@ -46,7 +49,6 @@ $request_cabin_types = retrieve_array_of_values_from_query_string('cabin_types',
 $request_prices = retrieve_array_of_values_from_query_string('price', true);
 
 $search_term = isset($_GET['term']) ? wp_kses($_GET['term'], '') : '';
-$_SESSION['search_term'] = $search_term;
 $age = isset($_GET['age']) ? intval(wp_kses($_GET['age'], '')) : 0; 
 $stars = isset($_GET['stars']) ? intval(wp_kses($_GET['stars'], '')) : 0; 
 $rating = isset($_GET['rating']) ? intval(wp_kses($_GET['rating'], '')) : 0; 
@@ -64,8 +66,7 @@ $sort_order = isset($_GET['so']) ? intval(wp_kses($_GET['so'], '')) : 1;
 $date_from = isset($_GET['from']) && !empty($_GET['from'])  ? date('m/d/Y', strtotime(wp_kses($_GET['from'], ''))) : date('Y-m-d', time());
 $date_to = isset($_GET['to']) && !empty($_GET['to']) ? date('m/d/Y', strtotime(wp_kses($_GET['to'], ''))) : date('Y-m-d', strtotime("+1 day", time()));
 
-$_SESSION['from'] = $date_from;
-$_SESSION['to'] = $date_to;
+
 
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $posts_per_page = of_get_option('search_results_posts_per_page', 12);
@@ -99,10 +100,50 @@ if ($what == 1 || $what == 2) {
 	$search_args['rating'] = $rating;
 	$search_args['rooms'] = $rooms;
 	$search_args['stars'] = $stars;
-	
+	//print_r($search_args);
 	$results = list_accommodations ( $paged, $posts_per_page, $sort_by, $sort_order, 0, $request_accommodation_types, $search_args, false, $is_self_catered);
-	$current_url = $custom_search_results_page . '?from=' . urlencode($date_from) . '&to=' . urlencode($date_to) . '&term=' . $search_term . '&what=' . $what;
+	print_r($results);
+        //echo $date_from.'end date--'.$date_to;
+      
+//          --------------------------------------------
+        
+        
+          foreach ($results['results'] as $acc_ids)
+          {
+    
+             echo $acc_ids->ID;
+              global $wpdb;
+   
+                $query = "SELECT * FROM wp_byt_accommodation_vacancies WHERE accommodation_id = '$acc_ids->ID'";
 
+                $get_vacancies_date = $wpdb->get_results($query);
+                print_r($get_vacancies_date);
+
+                    foreach ($get_vacancies_date as $vacc_date)
+                    {
+                        
+                        echo $vacc_date->start_date;
+                        if(strtotime($date_from) >= strtotime($vacc_date->start_date) && strtotime($date_to) <= strtotime($vacc_date->end_date))
+                         {
+                            $date_result = $results;
+                         }  else 
+                               {
+                               $date_result = array();
+                               }
+            
+                    }
+            }
+      
+                     //   exit;
+        
+                $results = $date_result;
+        
+        //        --------------------------------------------
+
+        
+        
+        $current_url = $custom_search_results_page . '?from=' . urlencode($date_from) . '&to=' . urlencode($date_to) . '&term=' . $search_term . '&what=' . $what;
+//echo $current_url;exit;
 } else if ($what == 3) {
 
 	$search_args['age'] = $age;
