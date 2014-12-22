@@ -122,10 +122,23 @@ if ($what == 1 || $what == 2) {
                     foreach ($get_vacancies_date as $vacc_date)
                     {
                         
-                        echo $vacc_date->start_date;
+                        //echo $vacc_date->start_date;
                         if(strtotime($date_from) >= strtotime($vacc_date->start_date) && strtotime($date_to) <= strtotime($vacc_date->end_date))
                          {
                             $date_result = $results;
+                            $current_avail_room = $acc_ids->rooms_available - $acc_ids->rooms_booked;
+                            //echo $rooms;
+                            if($current_avail_room >= $rooms) 
+                                {
+                                echo 'available';
+                                }  else 
+                                    {
+                                    $room_staus = $rooms.' room not availble '.$current_avail_room.' room only available';
+                                    //$date_result = array();//used for not display result
+                                    }
+                           // if() {}
+                            //exit;
+                            
                          }  else 
                                {
                                $date_result = array();
@@ -137,6 +150,14 @@ if ($what == 1 || $what == 2) {
                      //   exit;
         
                 $results = $date_result;
+               // echo $date_from;
+              // echo $_GET['from'].'testing';exit;
+                $_SESSION['from_date'] = $date_from;
+                $_SESSION['to_date'] = $date_to;
+                $_SESSION['room'] = $rooms;
+                
+
+                
         
         //        --------------------------------------------
 
@@ -199,6 +220,7 @@ if ($what == 1 || $what == 2) {
 		</div>
 	
 		<div class="deals clearfix">
+                    <?php if(!empty(room_staus)){ echo $room_staus;}?>
 			<!--deal-->
 			<?php 
 			if (count($results) > 0 && $results['total'] > 0) { ?>
@@ -235,7 +257,7 @@ if ($what == 1 || $what == 2) {
 						?>
 					</div>
 				</nav>
-			<?php } ?>
+                        <?php } ?>
 		</div>
 	</section>
 <?php 

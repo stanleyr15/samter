@@ -235,4 +235,15 @@ require_once get_byt_file_path('/includes/admin/theme_cruise_schedule_admin.php'
 require_once get_byt_file_path('/includes/admin/theme_cruise_schedule_booking_admin.php');
 require_once get_byt_file_path('/includes/theme_woocommerce.php');
 
+add_action('init', 'myStartSession', 1);
+add_action('wp_clear_session', 'myEndSession');
+function myStartSession() {
+    if(!session_id()) {
+        session_start();
+    }
+}
+
+function myEndSession() {
+    session_destroy ();
+}
 ?>

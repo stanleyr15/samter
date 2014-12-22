@@ -47,16 +47,7 @@ if ( have_posts() ) {
 	<script>
 		window.postType = 'accommodation';
 	</script>
-<?php   //echo  $_SESSION['search_term'];
-     
-		$widget_args = array(
-			'before_widget' => '',
-			'after_widget'  => '',
-			'before_title'  => '',
-			'after_title'   => '',
-		);
-		the_widget('byt_Header_Search_Widget', null, $widget_args); 
-		
+<?php   	
 	get_template_part('includes/parts/inquiry', 'form');
 	?>		
 	<!--accommodation three-fourth content-->
@@ -109,51 +100,31 @@ if ( have_posts() ) {
     <?php do_action( 'byt_show_single_accommodation_availability_before' ); ?>  
     <div class="panel panel-primary">
     <div class="panel-heading"><?php _e('Select A Room', 'bookyourtravel'); ?></div>
+    <form action="#">
+        <label>From</label>
+        <div class="datepicker-wrap"><input class="text-field textfield2" type="text" placeholder="mm / dd / yyyy" id="search_date_from" name="from" /></div>
+        <input type="text" value="<?php echo $_SESSION['from_date']?>" />
+        <label>To</label>
+        <input type="text" value="<?php echo $_SESSION['to_date']?>" />
+        <label>Rooms</label>
+        <input type="text" />
+        <label>Adult</label>
+        <input type="text" value="1" />
+        <label>Chlidren</label>
+        <input type="text" value="0" />
+        <input type="submit"  value="Update" />
+        
+    </form>
+    <?php echo 'start'.$_SESSION['from_date'] .'end'.$_SESSION['to_date'].'room'.$_SESSION['room'];?>
+                                
     <div class="panel-body">
-     <table class="table" width="100%">
-     <tr><td>
+     
 			<?php 
 			byt_render_field("text-wrap", "", "", $accommodation_obj->get_custom_field('availability_text'), '', false, true);
 			$room_type_ids = $accommodation_obj->get_room_types();
-			if ($room_type_ids && count($room_type_ids) > 0) { ?></td></tr>
+			if ($room_type_ids && count($room_type_ids) > 0) { ?>
             
-           
-            <tr>
-            <th>From</th>
-            <th>To</th>
-            <th>Rooms</th>
-            <th>Adults</th>
-            <th>Children</th>
-            <th>&nbsp;</th>
-            </tr>
-
-            <tr>
-            <script>
-				window.whenCount = <?php echo $home_search_box_column_count; ?>;
-			</script>
-            
-            <td>
-			<div class="f-item datepicker">
-				<label for="search_date_from"></label>
-				<div class="datepicker-wrap"><input type="text" placeholder="" id="search_date_from" name="from" /></div>
-			</div>
-			</td>
-            <td>			
-            <div class="f-item datepicker">
-				<label for="search_date_to"></label>
-				<div class="datepicker-wrap"><input type="text" placeholder="" id="search_date_to" name="to"  /></div>
-			</div>
-           </td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>&nbsp;</td>
-            <td>Update</td>
-            <td>Number</td>
-            
-            </tr>
-			</table>
-            
-            
+   
 			<ul class="room-types">
 				<?php 
 				// Loop through the items returned				
