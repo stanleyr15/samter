@@ -70,9 +70,9 @@ class byt_widget_accommodation_update extends WP_Widget {
 		$title = apply_filters('widget_title', isset($instance['title']) ? $instance['title'] : __('Refine search results', 'bookyourtravel') );
 		
 		$what_text = isset($instance['what_text']) ? $instance['what_text'] : __('What?', 'bookyourtravel');
-		$when_text = isset($instance['when_text']) ? $instance['when_text'] : __('When?', 'bookyourtravel');
+		$when_text = isset($instance['when_text']) ? $instance['when_text'] : __('From', 'bookyourtravel');
 		$accommodation_date_from_label_text = isset($instance['accommodation_date_from_label_text']) ? $instance['accommodation_date_from_label_text'] : __('Check-in date', 'bookyourtravel');
-		$accommodation_date_to_label_text = isset($instance['accommodation_date_to_label_text']) ? $instance['accommodation_date_to_label_text'] : __('Check-out date', 'bookyourtravel');
+		$accommodation_date_to_label_text = isset($instance['accommodation_date_to_label_text']) ? $instance['accommodation_date_to_label_text'] : __('To <br>Check-out date', 'bookyourtravel');
 		$accommodation_location_label_text = isset($instance['accommodation_location_label_text']) ? $instance['accommodation_location_label_text'] : __('Your destination', 'bookyourtravel');
 		$rooms_label_text = isset($instance['rooms_label_text']) ? $instance['rooms_label_text'] : __('Rooms', 'bookyourtravel');
 		$guests_label_text = isset($instance['guests_label_text']) ? $instance['guests_label_text'] : __('Guests', 'bookyourtravel');
@@ -97,7 +97,7 @@ class byt_widget_accommodation_update extends WP_Widget {
 		$price_per_night_label_text = isset($instance['price_per_night_label_text']) ? $instance['price_per_night_label_text'] : __('Price per night', 'bookyourtravel');
 		$price_per_day_label_text = isset($instance['price_per_day_label_text']) ? $instance['price_per_day_label_text'] : __('Price per day', 'bookyourtravel');
 
-		$submit_button_text = isset($instance['submit_button_text']) ? $instance['submit_button_text'] : __('Search again', 'bookyourtravel');
+		$submit_button_text = isset($instance['submit_button_text']) ? $instance['submit_button_text'] : __('Update', 'bookyourtravel');
 
 		/* Before widget (defined by themes). */
 
@@ -118,27 +118,28 @@ class byt_widget_accommodation_update extends WP_Widget {
                  <h3 class="panel-title">
 					<?php echo $before_title . $title . $after_title; ?>
                     </h3></div>
-				<form class="widget-search" method="get" action="<?php echo $custom_search_results_page; ?>">
+                    
+				<form class="widget-search" method="get" action="<?php echo get_permalink( $post->ID ); ?>">
                 <div class="panel-body">
                 
 					<dl>
 					<?php 					
-					$this->render_what_section($searchable_count, $what_text);
-					$this->render_price_range_section($what, $price_per_person_label_text, $price_per_night_label_text, $price_per_day_label_text);
-					$this->render_star_rating_section($star_rating_label_text);
+					//$this->render_what_section($searchable_count, $what_text);
+					//$this->render_price_range_section($what, $price_per_person_label_text, $price_per_night_label_text, $price_per_day_label_text);
+					//$this->render_star_rating_section($star_rating_label_text);
 					
 					if ($enable_reviews)
-						$this->render_user_rating_section($user_rating_label_text);
+					//$this->render_user_rating_section($user_rating_label_text);
 						
 					$this->render_car_type_section($car_type_label_text);
-					$this->render_accommodation_type_section($accommodation_type_label_text);
+					//$this->render_accommodation_type_section($accommodation_type_label_text);
 					$this->render_cabin_type_section($cabin_type_label_text);
 					$this->render_drivers_age_section($drivers_age_label_text);
 					$this->render_rooms_section($rooms_label_text);
 					$this->render_guests_section($guests_label_text);
 					$this->render_cabins_section($cabins_label_text);
 					$this->render_when_section($when_text, $accommodation_date_from_label_text, $accommodation_date_to_label_text, $car_rental_date_from_label_text, $car_rental_date_to_label_text, $tour_date_from_label_text, $cruise_date_from_label_text);
-					$this->render_location_section($accommodation_location_label_text, $car_rental_location_label_text, $tour_location_label_text);
+					//$this->render_location_section($accommodation_location_label_text, $car_rental_location_label_text, $tour_location_label_text);
 					?>					
 					</dl>
 					<input type="submit" value="<?php echo $submit_button_text; ?>" class="gradient-button" id="search-submit" />
