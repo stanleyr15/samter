@@ -1,3 +1,4 @@
+<script src="<?php echo get_template_directory_uri(); ?>/js/search.js"></script>
 <?php 
 get_header('accommodation'); 
 byt_breadcrumbs();
@@ -102,7 +103,10 @@ if ( have_posts() ) {
     <div class="panel-heading"><?php _e('Select A Room', 'bookyourtravel'); ?></div>
     <form action="#">
         <label>From</label>
-        <div class="datepicker-wrap"><input class="text-field textfield2" type="text" placeholder="mm / dd / yyyy" id="search_date_from" name="from" /></div>
+        <div class="datepicker-wrap">
+            <input class="text-field textfield2 hasDatepicker" type="text" placeholder="mm / dd / yyyy" id="search_date_from" name="from" />
+        </div>
+        <div class="datepicker-wrap"><input class="text-field textfield hasDatepicker"  type="text" placeholder="mm / dd / yyyy" id="search_date_to" name="to" /></div>
         <input type="text" value="<?php echo $_SESSION['from_date']?>" />
         <label>To</label>
         <input type="text" value="<?php echo $_SESSION['to_date']?>" />
