@@ -53,6 +53,8 @@ $age = isset($_GET['age']) ? intval(wp_kses($_GET['age'], '')) : 0;
 $stars = isset($_GET['stars']) ? intval(wp_kses($_GET['stars'], '')) : 0; 
 $rating = isset($_GET['rating']) ? intval(wp_kses($_GET['rating'], '')) : 0; 
 $guests = isset($_GET['guests']) ? intval(wp_kses($_GET['guests'], '')) : 0; 
+$adults = isset($_GET['adults']) ? intval(wp_kses($_GET['adults'], '')) : 0; 
+$children = isset($_GET['childrens']) ? intval(wp_kses($_GET['childrens'], '')) : 0; 
 $cabins = isset($_GET['cabins']) ? intval(wp_kses($_GET['cabins'], '')) : 0; 
 $rooms = isset($_GET['rooms']) ? intval(wp_kses($_GET['rooms'], '')) : 0; 
 $what = isset($_GET['what']) ? intval(wp_kses($_GET['what'], '')) : 1; 
@@ -154,8 +156,8 @@ if ($what == 1 || $what == 2) {
                 $_SESSION['from_date'] = $date_from;
                 $_SESSION['to_date'] = $date_to;
                 $_SESSION['room'] = $rooms;
-               // $_SESSION['adult'] = $rooms;
-              //  $_SESSION['children'] = $rooms;
+                $_SESSION['adult'] = $adults;
+                $_SESSION['children'] = $children;
                 
 
                 

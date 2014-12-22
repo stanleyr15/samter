@@ -103,7 +103,6 @@ if ( have_posts() ) {
 	<section class="col-lg-12">  
     <?php do_action( 'byt_show_single_accommodation_availability_before' ); ?>  
             
-             <?php echo $accommodation_obj->get_custom_field('adult').'Testing'?>
             
     <div class="panel panel-primary">
     <div class="panel-heading"><?php _e('Select A Room', 'bookyourtravel'); ?></div>
@@ -116,18 +115,21 @@ if ( have_posts() ) {
         <label>Check Out</label>
         <div class="datepicker-wrap"><input class="text-field textfield2"  type="text" value="<?php  if(isset($_GET['to'])){echo $_GET['to'];}else{ echo $_SESSION['to_date'];}?>" placeholder="mm / dd / yyyy" id="search_date_to" name="to" /></div>
         <label>Rooms</label>
-        <input type="text" name="room" value="<?php echo $_SESSION['room']?>" />
+        <input type="text" name="room" value="<?php  if(isset($_GET['room'])){echo $_GET['room'];}else{ echo $_SESSION['room'];}?>" />
         <label>Adult</label>
-        <input type="text" name="adult" value="1" />
+        <input type="text" name="adult" value="<?php  if(isset($_GET['adult'])){echo $_GET['adult'];}else{ echo $_SESSION['adult'];}?>" />
         <label>Chlidren</label>
-        <input type="text" name="children" value="0" />
+        <input type="text" name="children" value="<?php  if(isset($_GET['children'])){echo $_GET['children'];}else{ echo $_SESSION['children'];}?>" />
         <input type="submit"  value="Update" />
         
     </form>
     <?php if(isset($_GET['from'])){$_SESSION['from_date']=$_GET['from'];}
           if(isset($_GET['to'])){$_SESSION['from_date']=$_GET['to'];}
+          if(isset($_GET['room'])){$_SESSION['room']=$_GET['room'];}
+          if(isset($_GET['adult'])){$_SESSION['adult']=$_GET['adult'];}
+          if(isset($_GET['children'])){$_SESSION['children']=$_GET['children'];}
     ?>
-    <?php echo 'start'.$_SESSION['from_date'] .'end'.$_SESSION['to_date'].'room'.$_SESSION['room'];?>
+    <?php echo 'SESSION start'.$_SESSION['from_date'] .'end'.$_SESSION['to_date'].'room'.$_SESSION['room'].'Adults'.$_SESSION['adult'].'childrens'. $_SESSION['children'];?>
                                 
     <div class="panel-body">
      
@@ -146,13 +148,15 @@ if ( have_posts() ) {
 					$room_type_min_price = number_format (get_accommodation_min_price($accommodation_id, $room_type_id), $price_decimal_places, ".", "");
 				?>
 				<!--room_type-->
-				<li id="room_type_<?php echo $room_type_id; ?>">
+                                <?php echo 'max adult'.$room_type_obj->get_custom_field('max_count').'max child'.$room_type_obj->get_custom_field('max_child_count');?>
+                                <?php if(($_SESSION['adult'] <= $room_type_obj->get_custom_field('max_count'))&&($_SESSION['children'] <= $room_type_obj->get_custom_field('max_child_count'))){?>
+                                <li id="room_type_<?php echo $room_type_id; ?>">
 					<?php if ($room_type_obj->get_main_image('medium')) { ?>
 					<figure class="left"><img src="<?php echo $room_type_obj->get_main_image('medium') ?>" alt="" /><a href="<?php echo $room_type_obj->get_main_image(); ?>" class="image-overlay" rel="prettyPhoto[gallery1]"></a></figure>
 					<?php } ?>
 					<div class="meta room_type">
 						<h2><?php echo $room_type_obj->get_title(); ?></h2>
-						<?php echo 'max adult'.$room_type_obj->get_custom_field('max_count').'max child'.$room_type_obj->get_custom_field('max_child_count'); //byt_render_field('', '', '', $room_type_obj->get_custom_field('meta'), '', true, true); ?>
+						<?php  //byt_render_field('', '', '', $room_type_obj->get_custom_field('meta'), '', true, true); ?>
                         <?php byt_render_field('', '', __('Bed size:', 'bookyourtravel'), $room_type_obj->get_custom_field('bed_size'), '', false, true); ?><br />
                         <?php byt_render_field('', '', __('<b>Extra beds available</b>:', 'bookyourtravel'), $room_type_obj->get_custom_field('extra_beds_available'), '', false, true); ?><br />
                         <?php byt_render_field('', '', __('', 'bookyourtravel'), $room_type_obj->get_custom_field('room_size').' Square Metres', '', false, true) . ','. byt_render_field('', '', __('<b>Max Occupancy</b>:', 'bookyourtravel'), $room_type_obj->get_custom_field('max_guest_count').'Guests', '', false, true); ?> <br />
@@ -191,6 +195,7 @@ if ( have_posts() ) {
 						<?php //byt_render_field('', '', __('Room size:', 'bookyourtravel'), $room_type_obj->get_custom_field('room_size').'Square Metres', '', true, true); ?>
 					</div>
 				</li>
+                               <?php }?>
 				<!--//room-->
 				<?php 
 				} 
