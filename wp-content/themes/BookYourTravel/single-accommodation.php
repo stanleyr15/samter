@@ -120,7 +120,9 @@ if ( have_posts() ) {
         <input type="submit"  value="Update" />
         
     </form>
-    <?php if(isset($_GET['from'])){$_SESSION['from_date']=$_GET['from'];}else{$_SESSION['from_date'] = $_SESSION['from_date']; } ?>
+    <?php if(isset($_GET['from'])){$_SESSION['from_date']=$_GET['from'];}
+          if(isset($_GET['to'])){$_SESSION['from_date']=$_GET['to'];}
+    ?>
     <?php echo 'start'.$_SESSION['from_date'] .'end'.$_SESSION['to_date'].'room'.$_SESSION['room'];?>
                                 
     <div class="panel-body">
