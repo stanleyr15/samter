@@ -154,6 +154,8 @@ if ($what == 1 || $what == 2) {
                 $_SESSION['from_date'] = $date_from;
                 $_SESSION['to_date'] = $date_to;
                 $_SESSION['room'] = $rooms;
+               // $_SESSION['adult'] = $rooms;
+              //  $_SESSION['children'] = $rooms;
                 
 
                 

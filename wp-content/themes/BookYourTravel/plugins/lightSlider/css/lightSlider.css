@@ -124,7 +124,7 @@
 .csAction > a {
 	width: 32px;
 	display: block;
-	top: 50%;
+	bottom: 15%;
 	height: 32px;
 	background-image: url('../img/controls.png');
 	cursor: pointer;

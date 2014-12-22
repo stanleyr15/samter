@@ -1858,6 +1858,12 @@ font-family:;
 .csSlideOuter .csPager.cSGallery li {
 	height:65px;
 	margin-top:6px;
+        position: relative;
+}
+.csPager.cSGallery {
+  bottom: 140px;
+  overflow: hidden;
+  position: relative;
 }
 .lightSlider li {
 	text-align:center;

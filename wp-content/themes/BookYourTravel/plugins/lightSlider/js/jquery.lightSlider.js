@@ -56,6 +56,7 @@
             $slide = '',
             scene = 0,
             pagerWidth = 0,
+            pagerContainerWidth = 0,
             slideWidth = 0,
             resize = false,
             slideOn = false,
