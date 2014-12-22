@@ -152,9 +152,9 @@ if ($what == 1 || $what == 2) {
                 $results = $date_result;
                // echo $date_from;
               // echo $_GET['from'].'testing';exit;
-                $_SESSION['from_date'] = $date_from;
-                $_SESSION['to_date'] = $date_to;
-                $_SESSION['room'] = $rooms;
+              //  $_SESSION['from_date'] = $date_from;
+               // $_SESSION['to_date'] = $date_to;
+              //  $_SESSION['room'] = $rooms;
                 
 
                 
