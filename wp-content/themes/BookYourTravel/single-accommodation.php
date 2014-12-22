@@ -103,24 +103,24 @@ if ( have_posts() ) {
     <?php do_action( 'byt_show_single_accommodation_availability_before' ); ?>  
     <div class="panel panel-primary">
     <div class="panel-heading"><?php _e('Select A Room', 'bookyourtravel'); ?></div>
-    <form action="#">
-        <label>From</label>
+    <?php if(isset($_GET['from'])){echo $_GET['from']; } ?>
+    <form action="">
+        <label>Check In</label>
         <div class="datepicker-wrap">
-            <input class="text-field textfield2 " type="text" placeholder="mm / dd / yyyy" id="search_date_from" name="from" />
+            <input class="text-field textfield2 " type="text" value="<?php  if(isset($_GET['from'])){echo $_GET['from'];}else{ echo $_SESSION['from_date'];}?>" placeholder="mm / dd / yyyy" id="search_date_from" name="from" />
         </div>
-        <div class="datepicker-wrap"><input class="text-field textfield2"  type="text" placeholder="mm / dd / yyyy" id="search_date_to" name="to" /></div>
-        <input type="text" value="<?php echo $_SESSION['from_date']?>" />
-        <label>To</label>
-        <input type="text" value="<?php echo $_SESSION['to_date']?>" />
+        <label>Check Out</label>
+        <div class="datepicker-wrap"><input class="text-field textfield2"  type="text" value="<?php  if(isset($_GET['to'])){echo $_GET['to'];}else{ echo $_SESSION['to_date'];}?>" placeholder="mm / dd / yyyy" id="search_date_to" name="to" /></div>
         <label>Rooms</label>
-        <input type="text" />
+        <input type="text" name="room" value="<?php echo $_SESSION['room']?>" />
         <label>Adult</label>
-        <input type="text" value="1" />
+        <input type="text" name="adult" value="1" />
         <label>Chlidren</label>
-        <input type="text" value="0" />
+        <input type="text" name="children" value="0" />
         <input type="submit"  value="Update" />
         
     </form>
+    <?php if(isset($_GET['from'])){$_SESSION['from_date']=$_GET['from'];}else{$_SESSION['from_date'] = $_SESSION['from_date']; } ?>
     <?php echo 'start'.$_SESSION['from_date'] .'end'.$_SESSION['to_date'].'room'.$_SESSION['room'];?>
                                 
     <div class="panel-body">
