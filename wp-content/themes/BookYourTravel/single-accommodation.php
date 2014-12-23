@@ -81,6 +81,7 @@ if ( have_posts() ) {
 		window.currentMonth = <?php echo date('n'); ?>;
 		window.currentYear = <?php echo date('Y'); ?>;
 	</script>
+        <section id="hotel-detail">
     <div class="col-lg-12">
        
     <h1><?php echo $accommodation_obj->get_title(); '' ?></h1>
@@ -100,7 +101,7 @@ if ( have_posts() ) {
     <div class="col-lg-5  col-xs-12">
     <?php 	get_sidebar('right-accommodation');  ?>
     </div>
-	<section class="col-lg-12">  
+        <section class="col-lg-12 hotel-content" id="availability">  
     <?php do_action( 'byt_show_single_accommodation_availability_before' ); ?>  
             
             
@@ -124,7 +125,7 @@ if ( have_posts() ) {
         
     </form>
     <?php if(isset($_GET['from'])){$_SESSION['from_date']=$_GET['from'];}
-          if(isset($_GET['to'])){$_SESSION['from_date']=$_GET['to'];}
+          if(isset($_GET['to'])){$_SESSION['to_date']=$_GET['to'];}
           if(isset($_GET['room'])){$_SESSION['room']=$_GET['room'];}
           if(isset($_GET['adult'])){$_SESSION['adult']=$_GET['adult'];}
           if(isset($_GET['children'])){$_SESSION['children']=$_GET['children'];}
@@ -266,9 +267,9 @@ if ( have_posts() ) {
     echo $date_from;
 echo $date_to; ?>
 
-	<section id="" class="tab-content <?php echo $first_display_tab == 'availability' ? 'initial' : ''; ?>">
+<!--	<section id="" class="tab-content <?php echo $first_display_tab == 'availability' ? 'initial' : ''; ?>">
 		
-	</section>	
+	</section>	-->
 	<!--description-->
 	<section id="description" class="tab-content <?php echo $first_display_tab == 'description' ? 'initial' : ''; ?>  col-lg-12">
 		<article>		
@@ -402,7 +403,7 @@ echo $date_to; ?>
 	}	
 	do_action( 'byt_show_single_accommodation_tab_content_after' ); ?>
 	</section>
-
+</section>        
 <?php //echo get_you_also_like_posts();  ?>
 
 	<!--//accommodation content-->	
