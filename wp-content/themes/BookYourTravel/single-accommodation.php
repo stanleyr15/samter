@@ -50,7 +50,13 @@ if ( have_posts() ) {
 	<script>
 		window.postType = 'accommodation';
 	</script>
-<?php   	
+<?php   
+if(isset($_GET['from'])){$_SESSION['from_date']=$_GET['from'];}
+          if(isset($_GET['to'])){$_SESSION['to_date']=$_GET['to'];}
+          if(isset($_GET['room'])){$_SESSION['room']=$_GET['room'];}
+          if(isset($_GET['adult'])){$_SESSION['adult']=$_GET['adult'];}
+          if(isset($_GET['children'])){$_SESSION['children']=$_GET['children'];}
+
 	get_template_part('includes/parts/inquiry', 'form');
 	?>		
 	<!--accommodation three-fourth content-->
@@ -107,7 +113,7 @@ if ( have_posts() ) {
             
     <div class="panel panel-primary">
     <div class="panel-heading"><?php _e('Select A Room', 'bookyourtravel'); ?></div>
-    <?php if(isset($_GET['from'])){echo $_GET['from']; } ?>
+    <?php if(isset($_GET['from'])){echo $_GET['from'].'----'.$_GET['to']; } ?>
     <form action="">
         <label>Check In</label>
         <div class="datepicker-wrap">
@@ -124,12 +130,7 @@ if ( have_posts() ) {
         <input type="submit"  value="Update" />
         
     </form>
-    <?php if(isset($_GET['from'])){$_SESSION['from_date']=$_GET['from'];}
-          if(isset($_GET['to'])){$_SESSION['to_date']=$_GET['to'];}
-          if(isset($_GET['room'])){$_SESSION['room']=$_GET['room'];}
-          if(isset($_GET['adult'])){$_SESSION['adult']=$_GET['adult'];}
-          if(isset($_GET['children'])){$_SESSION['children']=$_GET['children'];}
-    ?>
+    
     <?php echo 'SESSION start'.$_SESSION['from_date'] .'end'.$_SESSION['to_date'].'room'.$_SESSION['room'].'Adults'.$_SESSION['adult'].'childrens'. $_SESSION['children'];?>
                                 
     <div class="panel-body">

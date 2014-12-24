@@ -35,8 +35,9 @@ $accommodation_check_out_time = $accommodation_obj->get_custom_field('check_out_
         <div class="col-xs-12 col-sm-7 col-md-9 booking-formleft">
             <form id="accommodation-booking-form" method="post" action="" class="booking" style="display:none">
                 <h4 class="alert alert-success">Congratulations! You've got the best deal in HOTEL</h4>
-                <div class="booking-formheading"> 
-                    <span>01 </span><?php _e('Submit booking', 'bookyourtravel') ?>
+                <div class="booking-formheading">
+                    <!--<span>01 </span>--> You have to pay AMOUNT directly at the hotel.<?php //_e('Submit booking', 'bookyourtravel') ?>
+                    <div class="booking-formpayment">(Payment details subject to hotel's terms and conditions)</div>
                 </div>
 
                 <div class="error" style="display:none;"><div><p></p></div></div>
@@ -97,7 +98,7 @@ $accommodation_check_out_time = $accommodation_obj->get_custom_field('check_out_
                             <label><?php _e('Check-in from', 'bookyourtravel') ?></label>
                             <span id="date_from_text"></span>
                             <?php
-                            echo $_SESSION['from_date']."----".$_SESSION['to_date'];
+                           echo $_SESSION['from_date']."----".$_SESSION['to_date'];
                             $from_dt = new DateTime($_SESSION['from_date'], new DateTimeZone('UTC'));
                             $from_date =  str_pad($from_dt->getTimestamp(), 13, 0, STR_PAD_RIGHT) . "\n";
                             $to_dt = new DateTime($_SESSION['to_date'], new DateTimeZone('UTC'));
