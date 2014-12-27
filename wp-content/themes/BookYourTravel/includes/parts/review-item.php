@@ -1,5 +1,5 @@
 <?php
-	global $entity_obj, $score_out_of_10;
+	global $entity_obj, $score_out_of_10, $accommodation_obj;
 	$base_id = $entity_obj->get_base_id();
 	$reviews_total = get_reviews_count($base_id);
 	$post_type = $entity_obj->get_entity_type();
@@ -42,43 +42,72 @@
 			?>
 		</dl>
 	</article>-->
-	<article class="col-lg-7">
-    <?php $review_score = get_post_meta($post->ID, 'review_score', true); ?>
-		<h1><?php _e($reviews_total . ' People have reviewed this Hotel', 'bookyourtravel');?></h1>
-		<ul class="reviews">
-			<!--review-->
+    
+    
+    <?php 
+	$review_score = get_post_meta($post->ID, 'review_score', true);
+	$review_count = get_post_meta($post->ID, 'review_count', true); ?>
+     <div class="services-heading2"><h2><?php _e($reviews_total . ' People have reviewed this Hotel', 'bookyourtravel');?></h2></div>
+        <div class="services-cont">
+            
+            <div class="row"> 
+            <div class="col-xs-12 col-sm-7 col-md-8 "> 
 			<?php
 			$reviews_query = list_reviews($base_id);
 			while ($reviews_query->have_posts()) : 
 				global $post;
 				$reviews_query->the_post();
 			?>
-			<li>
-				<figure class="left"><?php echo get_avatar( get_the_author_meta( 'ID' ), 70 ); ?></figure>
-				<address><span><?php the_author(); ?></span><br /> <?php the_author_description(); ?> <br /><br /></address>
-				<div class="pro"><p><b><?php echo get_post_meta($post->ID, 'review_title', true); ?></b><br />
+             
+             <div class="col-xs-12 col-sm-5 col-md-3 "> 
+			
+				 <div class="customer-photo"><?php echo get_avatar( get_the_author_meta( 'ID' ), 70 ); ?></div>
+				<div class="customer-name"><?php the_author(); ?></span><br /> <?php the_author_description(); ?> <br /><br /> </span> </div>
+				
+                <div class="topcontributor"> 
+            <h2> Top Contributor </h2>
+            
+            <p> <img src="<?php bloginfo('template_url'); ?>/images/review-icon1.jpg" width="15" height="16" alt=""> <?php echo $review_count; ?>  reviews </p>
+            
+            <!-- <p> <img src="<?php bloginfo('template_url'); ?>/images/review-icon2.jpg" width="15" height="16" alt=""> 34 cities </p>
+             
+             <p> <img src="<?php bloginfo('template_url'); ?>/images/review-icon3.jpg" width="15" height="16" alt=""> 43 helpful votes </p>-->
+             
+            
+            
+            </div>
+            </div>
+            
+            
+            <div class="col-xs-12 col-sm-7 col-md-9 review-txt"> 
+            
+              <em>"<?php echo get_post_meta($post->ID, 'review_title', true); ?>"</em>
                 
-                <div class="rating-blc">
+              <div class="rating-blc">
                     <div class="left-rate">
                         <div class="cont-score">
                             <div class="score-v1" style="width:<?php echo 150 * $review_score; ?>px"></div>
                         </div>
                     </div>
                 </div>
-				<?php echo get_post_meta($post->ID, 'review_likes', true); ?></p></div>
-				<div class="con"><p><?php //echo get_post_meta($post->ID, 'review_dislikes', true); ?></p></div>
-			</li>
-            
+				<p><?php echo get_post_meta($post->ID, 'review_likes', true); ?></p>
+               <p style="margin-bottom:95px;"> <!--Was this review helpful?  <a href="#">Yes</a> 12 --></p>
+              
+               </div>
+               
+              
            
-            
 			<!--//review-->
 			<?php endwhile; 
 				// Reset Second Loop Post Data
 				wp_reset_postdata(); 
 			?>
-		</ul>
-	</article>
-    <?php  ?>
+            
+             </div>
+  
+  <div class="col-xs-12 col-sm-5 col-md-4  related-cont"> 
+  <h2> Related Hotels</h2>
+            
     <?php function get_you_also_like_posts() {
     global $post;
 	
@@ -89,33 +118,33 @@
 		'post_type'        => 'accommodation',
 		'post_status'      => 'publish' ); 
     $like_posts = get_posts( $args );
-	//var_dump($like_posts); exit;
-	
-	//print_r($review_score);
-		
-	
-
+	//print_r($like_posts); exit;
     foreach ( $like_posts as $like_post ) {
 		//var_dump($like_post);
 		$post_thumbnail_id = get_post_thumbnail_id( $like_post->ID );
 		$review_count = get_post_meta($like_post->ID, 'review_count', true);
 		$review_score = get_post_meta($like_post->ID, 'review_score', true); 
+		$star_count = get_post_meta($like_post->ID, 'accommodation_star_count', true); 
 		
 		$url = wp_get_attachment_url( $post_thumbnail_id );
-       ?>
-        <div class="thumad-cont"><div class="thumad-cont-img"><a href="<?php echo get_permalink( $like_post->ID ); ?>"> <img src="<?php echo $url ?>" width="141" height="74" alt=""></a></div>
-                <div class="rating-blc">
-                    <div class="left-rate">
-                        <div class="cont-score">
-                            <div class="score-v1" style="width:<?php echo 150 * $review_score; ?>px"></div>
-                        </div> 
-                    </div> <?php echo $review_count ?> Reviews 
-                </div>
-                <div class="thumad-cont-name"><a href="<?php echo get_permalink( $like_post->ID ); ?>"><?php echo  apply_filters( 'the_title', $like_post->post_title, $like_post->ID )?></a> </div></div>
+    ?>
+            
+            <div class="related-hotels-row"> <img src="<?php echo $url ?>" width="70" height="70" alt=""><b><a href="<?php echo get_permalink( $like_post->ID ); ?>"><?php echo  apply_filters( 'the_title', $like_post->post_title, $like_post->ID )?></a></b> <br/> 
+            <?php for ($i=0;$i<$star_count;$i++) { ?>
+						<img src="<?php echo get_byt_file_uri('/images/ico/star.png'); ?>" alt="">
+						<?php } ?>
+            <a href="#"> <?php echo $review_count ?> Reviews </a> <br/>  <img src="<?php bloginfo('template_url'); ?>/images/show-prices.jpg" width="109" height="30" alt=""></div>
    <?php } }  ?>
-
-            <div>Related Hotels <br />
-             <ul><li><?php echo get_you_also_like_posts();  ?></li></ul></div>
+   <?php echo get_you_also_like_posts();  ?>
+</div>
+</div>
+            
+            
+            </div>
+            
+          
+        </div> 
+             
 
 <?php } else { ?>
 	<article>

@@ -272,21 +272,33 @@ echo $date_to; ?>
 		
 	</section>	-->
 	<!--description-->
+    
+    
+    
 	<section id="description" class="tab-content <?php echo $first_display_tab == 'description' ? 'initial' : ''; ?>  col-lg-12">
-		<article>		
+    
+		<article>	
+        <div class="row">
+          <div class="services-heading2">   <h2> Hotel Policies & Services </h2> </div>
+         
 			<?php 
 			do_action( 'byt_show_single_accommodation_description_before' );
 			//byt_render_field("text-wrap", "", "", $accommodation_obj->get_description(), __('General', 'bookyourtravel'), false, false, false);
-			byt_render_tab_extra_fields('accommodation_extra_fields', $accommodation_extra_fields, 'description', $accommodation_obj);
+			//byt_render_tab_extra_fields('accommodation_extra_fields', $accommodation_extra_fields, 'description', $accommodation_obj);
 			do_action( 'byt_show_single_accommodation_description_after' ); 
 			?>
             <?php do_action( 'byt_show_single_accommodation_facilites_before' ); ?>
+             <div class="services-row">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-3 col-md-3 services-heading"> Services : </div>
 			<?php 
 			$facilities = $accommodation_obj->get_facilities();
 			
 			if ($facilities && count($facilities) > 0) { ?>
-			<h1><?php _e('Services', 'bookyourtravel'); ?></h1>
-			<div class="text-wrap">	
+            
+			
+			<div class="col-xs-12 col-sm-6 col-md-9">	
+            <span class="text-wrap">
 				<ul class="three-col">
 				<?php
 				for( $i = 0; $i < count($facilities); $i++) {
@@ -294,17 +306,23 @@ echo $date_to; ?>
 					echo '<li>' . $accommodation_facility->name  . '</li>';
 				} ?>					
 				</ul>
+                </span>
 			</div>
 			<?php } // endif (!empty($accommodation_facilities)) ?>			
-			<?php byt_render_tab_extra_fields('accommodation_extra_fields', $accommodation_extra_fields, 'facilities', $accommodation_obj); ?>			
+            </div>
+              </div>
+			<?php //byt_render_tab_extra_fields('accommodation_extra_fields', $accommodation_extra_fields, 'facilities', $accommodation_obj); ?>			
 			<?php do_action( 'byt_show_single_accommodation_facilites_after' ); ?>
+            
+             <div class="services-row">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-3 col-md-3 services-heading"> General Facilities : </div>
             
             <?php 
 			$generals = $accommodation_obj->get_generals();
-			//var_dump($generals); exit;
 			if ($generals && count($generals) > 0) { ?>
-			<h1><?php _e('General Facilities', 'bookyourtravel'); ?></h1>
-			<div class="text-wrap">	
+			<div class="col-xs-12 col-sm-6 col-md-9">	
+            <span class="text-wrap">
 				<ul class="three-col">
 				<?php
 				for( $i = 0; $i < count($generals); $i++) {
@@ -313,16 +331,22 @@ echo $date_to; ?>
 					echo '<li>' . $accommodation_general->name  . '</li>';
 				} ?>					
 				</ul>
+                </span>
 			</div>
 			<?php } // endif (!empty($accommodation_facilities)) ?>			
-			<?php //byt_render_tab_extra_fields('accommodation_extra_fields', $accommodation_extra_fields, 'facilities', $accommodation_obj); ?>	
+			</div>
+              </div>	
+              
+              <div class="services-row">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-3 col-md-3 services-heading"> Extra Common Areas : </div>
             
              <?php 
 			$areas = $accommodation_obj->get_common_areas();
 			//var_dump($generals); exit;
 			if ($areas && count($areas) > 0) { ?>
-			<h1><?php _e('Extra Common Areas', 'bookyourtravel'); ?></h1>
-			<div class="text-wrap">	
+			<div class="col-xs-12 col-sm-6 col-md-9">	
+            <span class="text-wrap">
 				<ul class="three-col">
 				<?php
 				for( $i = 0; $i < count($areas); $i++) {
@@ -331,9 +355,12 @@ echo $date_to; ?>
 					echo '<li>' . $accommodation_area->name  . '</li>';
 				} ?>					
 				</ul>
+                </span>
 			</div>
-			<?php } // endif (!empty($accommodation_facilities)) ?>			
-			<?php //byt_render_tab_extra_fields('accommodation_extra_fields', $accommodation_extra_fields, 'facilities', $accommodation_obj); ?>			
+			<?php } // endif (!empty($accommodation_facilities)) ?>	
+            
+            </div>
+              </div>	
 		</article>
 	</section>
 	<!--//description-->	
@@ -366,6 +393,7 @@ echo $date_to; ?>
 		do_action( 'byt_show_single_accommodation_reviews_after' ); 
 		?>
 	</section>
+    
 	<!--//reviews-->	
 	<?php } // if ($enable_reviews) ?>
 	<?php 
