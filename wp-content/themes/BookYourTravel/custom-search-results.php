@@ -104,7 +104,7 @@ if ($what == 1 || $what == 2) {
 	$search_args['stars'] = $stars;
 	//print_r($search_args);
 	$results = list_accommodations ( $paged, $posts_per_page, $sort_by, $sort_order, 0, $request_accommodation_types, $search_args, false, $is_self_catered);
-	print_r($results);
+	//print_r($results);
         //echo $date_from.'end date--'.$date_to;
       
 //          --------------------------------------------
@@ -113,13 +113,13 @@ if ($what == 1 || $what == 2) {
           foreach ($results['results'] as $acc_ids)
           {
     
-             echo $acc_ids->ID;
+            // echo $acc_ids->ID;
               global $wpdb;
    
                 $query = "SELECT * FROM wp_byt_accommodation_vacancies WHERE accommodation_id = '$acc_ids->ID'";
 
                 $get_vacancies_date = $wpdb->get_results($query);
-                print_r($get_vacancies_date);
+               // print_r($get_vacancies_date);
 
                     foreach ($get_vacancies_date as $vacc_date)
                     {
@@ -132,7 +132,7 @@ if ($what == 1 || $what == 2) {
                             //echo $rooms;
                             if($current_avail_room >= $rooms) 
                                 {
-                                echo 'available';
+                                //echo 'available';
                                 }  else 
                                     {
                                     $room_staus = $rooms.' room not availble '.$current_avail_room.' room only available';

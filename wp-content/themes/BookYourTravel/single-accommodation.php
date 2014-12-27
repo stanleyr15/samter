@@ -112,7 +112,7 @@ if(isset($_GET['from'])){$_SESSION['from_date']=$_GET['from'];}
   <div class="slecct-roomsearchcont">
   <h2> Book your room at hotel xenia london </h2>
   <div class="row"> 
-  <?php if(isset($_GET['from'])){echo $_GET['from'].'----'.$_GET['to']; } ?>
+  <?php //if(isset($_GET['from'])){echo $_GET['from'].'----'.$_GET['to']; } ?>
   <form action="">
   <div class="col-xs-12 col-sm-2 col-md-2"> 
           <label>  From </label>
@@ -140,7 +140,7 @@ if(isset($_GET['from'])){$_SESSION['from_date']=$_GET['from'];}
   </div>
   
   <div class="col-xs-12 col-sm-2 col-md-2"> 
-           <input type="button"  value="Update"  class="btns updatebtn" />
+      <input type="submit"  value="Update"  class="btns updatebtn" />
   </div>
   
   <div class="col-xs-12 col-sm-12 col-md-3 phone"> 
