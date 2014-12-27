@@ -44,24 +44,24 @@ if (have_posts()) {
         <div class="customer-servicecont"> 
             <div class="customservice-header">Customer Service</div>
             <div class="col-xs-12 col-sm-6 col-md-4 service-txt"> 
-                <img src="<?php bloginfo('template_directory'); ?>/images/icon1.png"  alt="">  
-                Manage Bookings 
+                <a href="#" onclick="toggleLightbox('login_lightbox')"> <img src="<?php bloginfo('template_directory'); ?>/images/icon1.png"  alt="">  
+                Manage Bookings </a>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-4 service-txt"> 
-                <img src="<?php bloginfo('template_directory'); ?>/images/icon2.png"  alt=""> 
-                Cancellation
+                 <a href="#" onclick="toggleLightbox('login_lightbox')"><img src="<?php bloginfo('template_directory'); ?>/images/icon2.png"  alt=""> 
+                Cancellation</a>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-4 service-txt self-service-heading"> 
-                Self Service 
+               Self Service 
             </div>
 
             <div class="col-xs-12 col-sm-6 col-md-4 service-txt"> 
-                <img src="<?php bloginfo('template_directory'); ?>/images/icon3.png"  alt="">
-                FAQs 
+                 <a href="<?php echo site_url(); ?>/help-and-faq"><img src="<?php bloginfo('template_directory'); ?>/images/icon3.png"  alt="">
+                FAQs </a>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-4 service-txt"> 
-                <img src="<?php bloginfo('template_directory'); ?>/images/icon4.png"  alt="">
-                FAQs
+               <a href="<?php echo site_url(); ?>/contact-us"> <img src="<?php bloginfo('template_directory'); ?>/images/icon4.png"  alt="">
+                Contact Us</a>
             </div>
             <div class="col-xs-12 col-sm-6 col-md-4 service-txt"> 
                 <input name="" type="button" class="btns" value="Login"  onclick="toggleLightbox('login_lightbox')"> 

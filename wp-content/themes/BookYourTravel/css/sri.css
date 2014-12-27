@@ -76,5 +76,12 @@ height:300px;
   padding: 10px 8px;
 }
 
+.goog-logo-link {
+	display:none;
+}
+#glt-translate-trigger {
+	display:none;
+}
+
 
 

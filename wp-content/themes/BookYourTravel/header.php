@@ -27,7 +27,9 @@
         <script type="text/javascript">
             window.themePath = '<?php echo get_template_directory_uri(); ?>';
         </script>
+        
         <script type="text/javascript">
+		
 <?php
 global $site_url, $current_user, $currency_symbol, $current_currency, $default_currency, $enabled_currencies, $use_woocommerce_for_checkout, $woo_cart_page_uri;
 global $logo_src, $my_account_page, $cart_page, $custom_search_results_page, $enable_hotel_search, $enable_tour_search, $enable_self_catered_search, $enable_car_rental_search;
@@ -96,7 +98,7 @@ if ($current_user->ID > 0) {
                 <div class="headerright">
 
 
-                    <div class="language"> language </div>
+                    <div class="language">  	<?php echo do_shortcode('[google-translator]'); ?> </div>
 
                     <div class="currency"> 
                         <div class='selectBox'>
