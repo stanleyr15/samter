@@ -1003,10 +1003,9 @@ function list_accommodation_bookings($paged = null, $per_page = 0, $orderby = 'I
 	return $results;
 }
 
-function create_accommodation_booking($first_name, $last_name, $email, $phone, $address, $town, $zip, $country, $special_requirements, $room_count, $date_from, $date_to, $accommodation_id, $room_type_id, $user_id, $is_self_catered, $total_price, $adults, $children) {
+function create_accommodation_booking($first_name, $last_name, $email, $phone, $address, $town, $zip, $country, $special_requirements, $room_count, $date_from, $date_to, $accommodation_id, $room_type_id, $user_id, $is_self_catered, $total_price, $adults, $children,$timezone,$staying,$gfname,$glname) {
 
 	global $wpdb;
-	
 	$date_from = date('Y-m-d 12:00:00',strtotime($date_from));
 	$date_to = date('Y-m-d 12:00:00',strtotime($date_to));
 	

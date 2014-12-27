@@ -113,7 +113,7 @@ if(isset($_GET['from'])){$_SESSION['from_date']=$_GET['from'];}
             
     <div class="panel panel-primary">
     <div class="panel-heading"><?php _e('Select A Room', 'bookyourtravel'); ?></div>
-    <?php if(isset($_GET['from'])){echo $_GET['from'].'----'.$_GET['to']; } ?>
+    <?php //if(isset($_GET['from'])){echo $_GET['from'].'----'.$_GET['to']; } ?>
     <form action="">
         <label>Check In</label>
         <div class="datepicker-wrap">
@@ -131,7 +131,7 @@ if(isset($_GET['from'])){$_SESSION['from_date']=$_GET['from'];}
         
     </form>
     
-    <?php echo 'SESSION start'.$_SESSION['from_date'] .'end'.$_SESSION['to_date'].'room'.$_SESSION['room'].'Adults'.$_SESSION['adult'].'childrens'. $_SESSION['children'];?>
+    <?php //echo 'SESSION start'.$_SESSION['from_date'] .'end'.$_SESSION['to_date'].'room'.$_SESSION['room'].'Adults'.$_SESSION['adult'].'childrens'. $_SESSION['children'];?>
                                 
     <div class="panel-body">
      
@@ -161,7 +161,7 @@ if(isset($_GET['from'])){$_SESSION['from_date']=$_GET['from'];}
 						<?php  //byt_render_field('', '', '', $room_type_obj->get_custom_field('meta'), '', true, true); ?>
                         <?php byt_render_field('', '', __('Bed size:', 'bookyourtravel'), $room_type_obj->get_custom_field('bed_size'), '', false, true); ?><br />
                         <?php byt_render_field('', '', __('<b>Extra beds available</b>:', 'bookyourtravel'), $room_type_obj->get_custom_field('extra_beds_available'), '', false, true); ?><br />
-                        <?php byt_render_field('', '', __('', 'bookyourtravel'), $room_type_obj->get_custom_field('room_size').' Square Metres', '', false, true) . ','. byt_render_field('', '', __('<b>Max Occupancy</b>:', 'bookyourtravel'), $room_type_obj->get_custom_field('max_guest_count').'Guests', '', false, true); ?> <br />
+                        <?php byt_render_field('', '', __('', 'bookyourtravel'), $room_type_obj->get_custom_field('room_size').' Square Metres', '', false, true) . ','. byt_render_field('', '', __('<b>Max Occupancy</b>:', 'bookyourtravel'), $room_type_obj->get_custom_field('max_guest_count').'Guests', '', false, true);?> <br />
 						<?php byt_render_link_button("#", "more-info", "", __('+ more info', 'bookyourtravel')); ?>
 					</div>
                     <!--<div class="room-information">Best Value</div>-->
