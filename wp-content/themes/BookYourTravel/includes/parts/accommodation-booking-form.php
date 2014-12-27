@@ -307,23 +307,23 @@ Wireless Internet</p>
                         <tbody></tbody>
                     </table>
            
-   Wednesday, 11, 5, 2014      <span>  Rs129.32 </span>
+<!--   Wednesday, 11, 5, 2014      <span>  Rs129.32 </span>
 Thursday, 11, 6, 2014	       <span>  Rs115.71  </span>
 Friday, 11, 7, 2014	       <span>  Rs115.71  </span>
 Saturday, 11,8, 2014	      <span>   Rs136.13  </span>
 Sunday, 11, 9, 2014	       <span>  Rs217.81 </span>
-Monday, 11, 10, 2014	        <span> Rs217.81 </span>
+Monday, 11, 10, 2014	        <span> Rs217.81 </span>-->
       
        </div>
        
-       <div class="days-rates">
+<!--       <div class="days-rates">
   <b> Taxes  </b>    <span> Rs149.19 </span>
 
       
-       </div>
+       </div>-->
        
       
-         <div class="total-price"> 
+<!--         <div class="total-price"> 
     <p>  Total Pirce    <span> Rs1,081.68 </span> </p>
      
      <p> (including taxes)
@@ -332,7 +332,7 @@ rounding)</p>
 
 <p> <b>  You will pay in the hotel's currency  </b> <span> 3,973.00</span> </p>
          
-         </div>
+         </div>-->
          
       </div>
       
@@ -403,11 +403,11 @@ if ($accommodation_obj->get_is_price_per_person() && $accommodation_obj->get_cou
                         window.priceTotalLabel = <?php echo json_encode($total_price_label); ?>;
                         window.dateLabel = <?php echo json_encode(__('Date', 'bookyourtravel')); ?>;
                     </script>
-                    <table class="breakdown tablesorter">
+<!--                    <table class="breakdown tablesorter">
                         <thead></thead>
                         <tfoot></tfoot>
                         <tbody></tbody>
-                    </table>
+                    </table>-->
                 </div>
             </div>
         </div>

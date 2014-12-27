@@ -66,7 +66,8 @@ if ($current_user->ID > 0) {
             window.wooCartPageUri = '<?php echo $woo_cart_page_uri; ?>';
             window.currentCurrency = '<?php echo $current_currency; ?>';
             window.defaultCurrency = '<?php echo $default_currency; ?>';
-            window.currencySymbol = '<?php echo $currency_symbol; ?>';
+//            window.currencySymbol = '<?php echo $currency_symbol; ?>';
+            window.currencySymbol = 'Rs';
 <?php if (defined('ICL_LANGUAGE_CODE')) { ?>
                 window.currentLanguage = '<?php echo ICL_LANGUAGE_CODE; ?>';
 <?php } ?>
