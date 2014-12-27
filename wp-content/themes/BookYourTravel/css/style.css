@@ -3109,7 +3109,7 @@ div.selector {
     -webkit-border-radius:5px;
     -moz-border-radius:5px;
     border-radius:5px;
-    background:url(../images/select-bg.png) right no-repeat;
+    background:url(../images/select-bg.png) #ffffff right no-repeat;
     margin-top:5px;
 }
 div.selector span {
@@ -4301,6 +4301,7 @@ aside .screen-reader-text {
     width:100%;
 }
 aside #searchform input[type="text"], aside #searchform input[type="search"] {
+
     margin:0 0 15px;
 }
 
@@ -4713,7 +4714,6 @@ img {
     }
     .deal-of-the-day p {
         padding:0;
-
     }
     .deal-of-the-day .rating {
         padding:0 0 15px 15px;
@@ -6706,7 +6706,6 @@ h3.panel-title
 }
 
 .thankyou-bookingdetails
-
 {
     width:100%;
     float:left;
@@ -7055,4 +7054,199 @@ padding-bottom:0px;
 	font-weight:normal;
 	padding:15px 0px 20px 15px;
 	text-align:left;
+}
+
+.services-cont
+{
+	width:100%;
+	float:left;
+	border:#dddddd solid 1px;
+	padding:15px;
+	color: #4e4e4e
+}
+
+.services-cont ul li
+{
+	background:url(../images/list-li.jpg) 0px 4px no-repeat;
+	padding-left:15px;
+	padding-bottom:2px;
+}
+
+.services-row
+{
+	padding-bottom:15px;
+border-bottom:#dddddd solid 1px;
+margin-bottom:15px;
+}
+
+.services-heading
+{
+	font-size:12px;
+	font-weight:bold;
+}
+
+
+.services-heading2
+{
+	width:100%;
+	float:left;
+	margin:10px 0px 0px 0px;
+}
+
+.services-heading2 h2
+{
+	font-size:18px;
+	color:#246fc1;
+	font-weight:normal;
+}
+
+
+
+
+.services-cont span
+{
+	font-size:10px;
+}
+
+.customer-photo
+{
+	width:100%;
+	float:left;
+}
+
+.customer-photo img
+{
+	border:#246fc1 solid 2px;
+}
+
+.customer-name
+{
+	width:100%;
+	float:left;
+	color:#246fc1;
+	margin:5px 0px 5px 0px;
+	line-height:16px ;
+}
+
+.customer-name span
+{
+	color:#898888;
+}
+
+.topcontributor
+{
+	width:100%;
+	float:left;
+}
+
+.topcontributor h2
+{
+	width:100%;
+	float:left;
+	font-weight:bold;
+	color:#000000;
+	font-size:13px;
+}
+
+
+.topcontributor a
+{
+	color:#898888;
+}
+
+
+.topcontributor p
+{
+	margin-bottom:0px;
+	padding-bottom:5px;
+}
+
+.review-txt
+{
+	line-height:22px;
+}
+
+.review-txt em
+{
+	color:#000000;
+	font-size:15px;
+	font-style:italic;
+}
+
+.review-txt a
+{
+	color:#246fc1;
+	text-decoration:underline;
+}
+
+.related-cont
+{
+}
+
+.related-cont h2
+{
+	font-weight:bold;
+	font-size:16px;
+	color:#246fc1;
+} 
+
+
+.related-hotels-row
+{
+	width:100%;
+	float:left;
+	margin-bottom:10px;
+}
+
+.related-hotels-row img
+{
+	float:left;
+	margin-right:10px;
+}
+
+.slecct-roomsearchcont
+{
+	width:100%;
+	float:left;
+	background:#dbdbdb;
+	padding:15px;
+}
+
+.slecct-roomsearchcont h2
+{
+	font-size:20px;
+	color:#000000;
+	font-weight:bold;
+	border-bottom:#000000 solid 1px;
+	padding-bottom:5px;
+	margin-bottom:10px;
+}
+
+.slecct-roomsearchcont label
+{
+	color:#000000;
+}
+
+
+.slecct-roomsearchcont input[type="text"], input[type="email"] {
+  border: 1px solid #d4d4d4;
+  border-radius: 5px;
+  margin: 5px 0 5px;
+  padding: 8px 10px;
+  width: 100%;
+}
+
+.date
+{
+	background:url(../images/calendar-icon.jpg) #ffffff right no-repeat;
+}
+.updatebtn
+{
+	width:100%;
+	margin-top:20px;
+}
+
+.phone
+{
+	margin-top:29px;
 }
