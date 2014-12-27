@@ -95,7 +95,7 @@ $accommodation_check_out_time = $accommodation_obj->get_custom_field('check_out_
                         <div class="ball"></div>
                         <div class="ball1"></div>
                     </div>
-                    <div class="row twins dates_row" style="display:none">
+                    <div class="row twins dates_row" style="display:none;">
                         <div class="col-xs-12 col-sm-8 col-md-8"> 
                             <label><?php _e('Check-in from', 'bookyourtravel') ?></label>
                             <span id="date_from_text"></span>
@@ -125,7 +125,7 @@ $accommodation_check_out_time = $accommodation_obj->get_custom_field('check_out_
                         </div>
                     </div>
                     <div class="row triplets bf_room_type_row">
-                        <div class="col-xs-12 col-sm-8 col-md-8" style="display: none;"> 
+                        <div class="col-xs-12 col-sm-8 col-md-8" style="display:none;"> 
                             <label for="booking_form_adults"><?php _e('Adults', 'bookyourtravel') ?></label>
                             <select id="booking_form_adults" name="booking_form_adults">
                                 <option value="<?php echo $_SESSION['adult']?>"></option><!--custom added-->
@@ -135,7 +135,7 @@ $accommodation_check_out_time = $accommodation_obj->get_custom_field('check_out_
                             <label for="booking_form_children"><?php _e('Children', 'bookyourtravel') ?></label>
                             <select id="booking_form_children" name="booking_form_children"></select>
                         </div>
-                        <div class="f-item bf_room_type_cell" style="display: none;">
+                        <div class="f-item bf_room_type_cell" style="display:none;">
                             <label><?php _e('Room type', 'bookyourtravel') ?></label>
 <!--                            <span id="room_type"></span>-->
                             <input type="hidden" name="room_type_id" id="room_type_id" />
