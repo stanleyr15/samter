@@ -1501,7 +1501,7 @@ section .one-fourth {
     width:100%;
 }
 .text-wrap ul li {
-    background:url(../images/ico/bullet-gold-6x6.png) 0 7px no-repeat;
+    background:url(../images/list-li.jpg) 0 7px no-repeat;
     padding:0 0 4px 17px;
 }
 .tab-content hr {
@@ -7201,7 +7201,7 @@ margin-bottom:15px;
 .related-hotels-row img
 {
 	float:left;
-	margin-right:10px;
+	margin-right:5px;
 }
 
 .slecct-roomsearchcont
