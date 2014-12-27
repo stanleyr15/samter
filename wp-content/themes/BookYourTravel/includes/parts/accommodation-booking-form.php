@@ -33,7 +33,7 @@ $accommodation_check_out_time = $accommodation_obj->get_custom_field('check_out_
 <div class="container"> 
     <div class="row">
         <div class="col-xs-12 col-sm-7 col-md-9 booking-formleft">
-            <form id="accommodation-booking-form" method="post" action="" class="booking" style="display:block">
+            <form id="accommodation-booking-form" method="post" action="" class="booking" style="display:none">
                 <h4 class="alert alert-success">Congratulations! You've got the best deal in HOTEL</h4>
                 <div class="booking-formheading">
                     <!--<span>01 </span>--> You have to pay AMOUNT directly at the hotel.<?php //_e('Submit booking', 'bookyourtravel')  ?>
@@ -91,7 +91,7 @@ $accommodation_check_out_time = $accommodation_obj->get_custom_field('check_out_
                         <label><?php _e('Booking dates', 'bookyourtravel') ?></label>
                         <div id="accommodation_vacancy_datepicker"></div>
                     </div>
-                    <div class="row loading" id="datepicker_loading" style="display:none">
+                    <div class="row loading" id="datepicker_loading" style="display:none;">
                         <div class="ball"></div>
                         <div class="ball1"></div>
                     </div>
@@ -239,8 +239,8 @@ $accommodation_check_out_time = $accommodation_obj->get_custom_field('check_out_
         
         
         
-        <div class="col-xs-12 col-sm-5 col-md-3 booking-formright">
-  <article class="panel panel2 panel-primary">
+        <div class="col-xs-12 col-sm-5 col-md-3 booking-formright price_row" style="display:none">
+  <article class="panel panel2 panel-primary " >
             <div class="panel-heading">
         <h3 class="panel-title">Check details and book</h3>
       </div>
