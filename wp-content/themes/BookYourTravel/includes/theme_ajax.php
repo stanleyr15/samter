@@ -833,6 +833,8 @@ function book_car_rental_ajax_request() {
 add_action( 'wp_ajax_book_accommodation_ajax_request', 'book_accommodation_ajax_request' );
 add_action( 'wp_ajax_nopriv_book_accommodation_ajax_request', 'book_accommodation_ajax_request' );
 function book_accommodation_ajax_request() {
+    
+   
 
 	global $enc_key;
 
@@ -859,7 +861,12 @@ function book_accommodation_ajax_request() {
 			$c_val_s = intval(wp_kses($_REQUEST['c_val_s'], ''));
 			$c_val_1 = intval(contact_decrypt(wp_kses($_REQUEST['c_val_1'], ''), $enc_key));
 			$c_val_2 = intval(contact_decrypt(wp_kses($_REQUEST['c_val_2'], ''), $enc_key));
-			
+                        $purpose = wp_kses($_REQUEST['purpose'], '');
+                        $staying_at_hotel = wp_kses($_REQUEST['stay_at_hotel'], '');
+                        $gfname = wp_kses($_REQUEST['guest_first_name'], '');
+                        $glname = wp_kses($_REQUEST['guest_last_name'], '');
+		
+                       // echo $purpose;exit;
 			// nonce passed ok
 			$accommodation = get_post($accommodation_id);
 			if ($room_type_id)
@@ -879,7 +886,7 @@ function book_accommodation_ajax_request() {
 					$current_user = wp_get_current_user();
 					$total_price = get_accommodation_total_price($accommodation_id, $date_from, $date_to, $room_type_id, $room_count, $adults, $children);
 					
-					$booking_id = create_accommodation_booking ($first_name, $last_name, $email, $phone, $address, $town, $zip, $country, $special_requirements, $room_count, $date_from, $date_to, $accommodation_id, $room_type_id, $current_user->ID, $is_self_catered, $total_price, $adults, $children);
+					$booking_id = create_accommodation_booking ($first_name, $last_name, $email, $phone, $address, $town, $zip, $country, $special_requirements, $room_count, $date_from, $date_to, $accommodation_id, $room_type_id, $current_user->ID, $is_self_catered, $total_price, $adults, $children, $purpose, $staying_at_hotel, $gfname, $glname);
 
 					if (byt_is_woocommerce_active() && !$is_reservation_only) {
 						$use_woocommerce_for_checkout = of_get_option('use_woocommerce_for_checkout', 0);

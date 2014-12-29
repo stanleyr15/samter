@@ -133,7 +133,9 @@ $accommodation_check_out_time = $accommodation_obj->get_custom_field('check_out_
                         </div>
                         <div class="f-item booking_form_children" style="display: none;">
                             <label for="booking_form_children"><?php _e('Children', 'bookyourtravel') ?></label>
-                            <select id="booking_form_children" name="booking_form_children"></select>
+                            <select id="booking_form_children" name="booking_form_children">
+                                <option value="<?php echo $_SESSION['children']?>"></option><!--custom added-->
+                            </select>
                         </div>
                         <div class="f-item bf_room_type_cell" style="display:none;">
                             <label><?php _e('Room type', 'bookyourtravel') ?></label>
@@ -167,7 +169,7 @@ $accommodation_check_out_time = $accommodation_obj->get_custom_field('check_out_
                     <div class="col-xs-12 col-sm-12 col-md-12 guestfield"> 
                         <b> Purpose of your trip </b> <br/>
 
-                        <label> <input class="" name="purpose" type="radio" value="Leisure" checked> Leisure</label>
+                        <input class="" name="purpose" type="radio" value="Leisure" checked> Leisure
                         <label><input class="" name="purpose" type="radio" value="Business">  Business</label>
 
                     </div>
@@ -196,7 +198,7 @@ $accommodation_check_out_time = $accommodation_obj->get_custom_field('check_out_
                     <div class="col-xs-12 col-sm-6 col-md-6 guestfield "> 
                         <b> Do you have any special requests? </b>
                         <br/> (e.g. late arrival, room on a higher/lower floor etc.) 
-                        <textarea name="" cols="" rows=""></textarea>
+                        <textarea id="requirements" name="requirements" rows="" cols=""></textarea>
                         Please write your request in English
 
                     </div>

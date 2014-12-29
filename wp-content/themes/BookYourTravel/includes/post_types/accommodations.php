@@ -1003,7 +1003,7 @@ function list_accommodation_bookings($paged = null, $per_page = 0, $orderby = 'I
 	return $results;
 }
 
-function create_accommodation_booking($first_name, $last_name, $email, $phone, $address, $town, $zip, $country, $special_requirements, $room_count, $date_from, $date_to, $accommodation_id, $room_type_id, $user_id, $is_self_catered, $total_price, $adults, $children,$timezone,$staying,$gfname,$glname) {
+function create_accommodation_booking($first_name, $last_name, $email, $phone, $address, $town, $zip, $country, $special_requirements, $room_count, $date_from, $date_to, $accommodation_id, $room_type_id, $user_id, $is_self_catered, $total_price, $adults, $children, $purpose, $staying_at_hotel, $gfname, $glname) {
 
 	global $wpdb;
 	$date_from = date('Y-m-d 12:00:00',strtotime($date_from));
@@ -1016,16 +1016,17 @@ function create_accommodation_booking($first_name, $last_name, $email, $phone, $
 	$errors = array();
 
 	$sql = "INSERT INTO " . BOOKYOURTRAVEL_ACCOMMODATION_BOOKINGS_TABLE . "
-			(first_name, last_name, email, phone, address, town, zip, country, special_requirements, room_count, user_id, total_price, adults, children, date_from, date_to, accommodation_id, room_type_id)
+			(first_name, last_name, email, phone, address, town, zip, country, special_requirements, room_count, user_id, total_price, adults, children, date_from, date_to, accommodation_id, room_type_id,  purpose, staying_at_hotel, guest_first_name, guest_last_name)
 			VALUES 
-			(%s, %s, %s, %s, %s, %s, %s, %s, %s, %d, %d, %d, %d, %d, %s, %s, %d, %d);";
+			(%s, %s, %s, %s, %s, %s, %s, %s, %s, %d, %d, %d, %d, %d, %s, %s, %d, %d, %s, %d, %s, %s);";
 
-	$result = $wpdb->query($wpdb->prepare($sql, $first_name, $last_name, $email, $phone, $address, $town, $zip, $country, $special_requirements, $room_count, $user_id, $total_price, $adults, $children, $date_from, $date_to, $accommodation_id, $room_type_id));
+	$result = $wpdb->query($wpdb->prepare($sql, $first_name, $last_name, $email, $phone, $address, $town, $zip, $country, $special_requirements, $room_count, $user_id, $total_price, $adults, $children, $date_from, $date_to, $accommodation_id, $room_type_id, $purpose, $staying_at_hotel, $gfname, $glname));
 
 	if (is_wp_error($result))
 		$errors[] = $result;
 
 	$booking_id = $wpdb->insert_id;
+        
 
 	$min_price = get_accommodation_min_price ($accommodation_id, 0, 0, true);	
 	sync_accommodation_min_price($accommodation_id, $min_price);
