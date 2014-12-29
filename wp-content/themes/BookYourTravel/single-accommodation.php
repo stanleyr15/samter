@@ -110,9 +110,9 @@ if(isset($_GET['from'])){$_SESSION['from_date']=$_GET['from'];}
     <?php _e('Select A Room', 'bookyourtravel'); ?>
   </div>
   <div class="slecct-roomsearchcont">
-  <h2> Book your room at hotel xenia london </h2>
+  <h2> Book your room at <?php echo $accommodation_obj->get_title(); '' ?> </h2>
   <div class="row"> 
-  <?php //if(isset($_GET['from'])){echo $_GET['from'].'----'.$_GET['to']; } ?>
+  <?php if(isset($_GET['from'])){echo $_GET['from'].'----'.$_GET['to']; } ?>
   <form action="">
   <div class="col-xs-12 col-sm-2 col-md-2"> 
           <label>  From </label>
@@ -140,7 +140,7 @@ if(isset($_GET['from'])){$_SESSION['from_date']=$_GET['from'];}
   </div>
   
   <div class="col-xs-12 col-sm-2 col-md-2"> 
-      <input type="submit"  value="Update"  class="btns updatebtn" />
+           <input type="submit"  value="Update"  class="btns updatebtn" />
   </div>
   
   <div class="col-xs-12 col-sm-12 col-md-3 phone"> 
@@ -285,7 +285,6 @@ echo $date_to; ?>
 <!--description-->
 
 <section id="description" class="tab-content <?php echo $first_display_tab == 'description' ? 'initial' : ''; ?>  col-lg-12">
-<article>
 <div class="row">
 <div class="services-heading2">
   <h2> Hotel Policies & Services </h2>
@@ -399,7 +398,6 @@ echo $date_to; ?>
 </div>
 <?php //byt_render_tab_extra_fields('accommodation_extra_fields', $accommodation_extra_fields, 'facilities', $accommodation_obj); ?>
 <?php //byt_render_tab_extra_fields('accommodation_extra_fields', $accommodation_extra_fields, 'facilities', $accommodation_obj); ?>
-</article>
 </section>
 <!--//description--> 
 <!--facilities--> 

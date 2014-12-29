@@ -118,6 +118,7 @@ class byt_search_widget extends WP_Widget {
                  <h3 class="panel-title">
 					<?php echo $before_title . $title . $after_title; ?>
                     </h3></div>
+                    <div class="col-xs-12 col-sm-12 col-md-12">
 				<form class="widget-search" method="get" action="<?php echo $custom_search_results_page; ?>">
                 <div class="panel-body">
                 
@@ -144,6 +145,7 @@ class byt_search_widget extends WP_Widget {
 					<input type="submit" value="<?php echo $submit_button_text; ?>" class="gradient-button" id="search-submit" />
                     </div>
 				</form>
+                </div>
 			</article>        	
 		<?php
 

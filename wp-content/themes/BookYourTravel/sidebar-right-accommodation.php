@@ -49,7 +49,7 @@ $accommodation_location = $accommodation_obj->get_location();
 			</article>				
 
         
-     <article class="accommodation-details hotel-map clearfix">
+     <article class="accommodation-details clearfix">
          <h3><i class="fa fa-map-marker"></i> <?php echo $accommodation_obj->get_custom_field('address'); ?></h3>
         <!--map-->
         <div class="gmap" id="map_canvas"></div>

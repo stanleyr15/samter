@@ -95,3 +95,9 @@ height:300px;
        border: none !important;
     padding: 0px !important;
   }
+  
+.new-date-class .ui-datepicker-trigger {
+	 position: absolute;
+    right: 20px;
+    top: 28px;
+}

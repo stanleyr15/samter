@@ -1,4 +1,12 @@
-<?php do_action( 'byt_show_accommodation_confirm_form_before' ); ?>
+<?php do_action( 'byt_show_accommodation_confirm_form_before' ); 
+global $post, $current_user, $accommodation_obj; 
+if ( have_posts() ) {
+
+	the_post();
+	$accommodation_obj = new byt_accommodation($post);
+}?>
+
+
 
 <form id="accommodation-confirmation-form" method="post" action="" class="booking" style="display:none">
 <!--    style="display:none"-->
@@ -48,7 +56,7 @@
   
    <div class="col-xs-12 col-sm-6 col-md-4 thankyou-bookingdetails-part"> 
   
-  <b>Date   	  	: </b>	<span> CURRENT DATE </span>
+  <b>Date   	  	: </b>	<span> <?php echo date("Y/m/d"); ?> </span>
   
   </div>
   
@@ -75,7 +83,9 @@
   
   <div class="thankyou-hotelfull-name"> 
   
-  <div class="row">   <div class="col-xs-12 col-sm-12 col-md-4"> <span> Novotel Waterloo</span> <img src="images/star.jpg" width="80" height="23" alt=""></div> 
+  <div class="row">   <div class="col-xs-12 col-sm-12 col-md-4"> <span> <?php echo $accommodation_obj->get_custom_field('address'); ?></span>  <?php for ($i=0;$i<$accommodation_obj->get_custom_field('star_count');$i++) { ?>
+  <img src="<?php echo get_byt_file_uri('/images/ico/star.png'); ?>" alt="">
+  <?php } ?></div> 
    <div class="col-xs-12 col-sm-12 col-md-8"> <b> This is a "Pay When You Stay" room. </b> The hotel will bill you the amount shown below at the time of your hotel stay. 
 The actual charqes for your hotel room are shown in the local currency below. </div>
   </div>
@@ -89,9 +99,9 @@ The actual charqes for your hotel room are shown in the local currency below. </
   
   <div class="row">
   
-    <div class="col-xs-12 col-sm-4 col-md-3"> <img src="<?php echo bloginfo('template_url')?>/images/thanku-hotel-img.jpg"  alt=""></div> 
+    <div class="col-xs-12 col-sm-4 col-md-3"> <?php the_post_thumbnail(); ?></div> 
     
-    <div class="col-xs-12 col-sm-8 col-md-9"> <img src="<?php echo bloginfo('template_url')?>/images/loaction-icon.jpg" width="11" height="13" alt=""> Address: 113 Lambeth Road, SE1 7LS, London <br/> 
+    <div class="col-xs-12 col-sm-8 col-md-9"> <img src="<?php echo bloginfo('template_url')?>/images/loaction-icon.jpg" width="11" height="13" alt=""> Address:  <?php echo $accommodation_obj->get_custom_field('address'); ?> <br/> 
    <b> Check-in	</b>     <span id="confirm_date_from"></span> <br/> 
    <b>Check-out	</b>   <span id="confirm_date_to"> </span><br/> 
    <b>For:	</b> 					   <span>  1 Night, 2 Persons,in 1 Room</span> <br/> 
@@ -106,9 +116,15 @@ The actual charqes for your hotel room are shown in the local currency below. </
   <div class="row">
   
   
-   <div class="col-xs-12 col-sm-12 col-md-12"> <i> Room1.  1 x Club Double/Twin Room - Advanced Purchase</i> </div>
+   <div class="col-xs-12 col-sm-12 col-md-12"><?php $room_type_ids = $accommodation_obj->get_room_types();
+			if ($room_type_ids && count($room_type_ids) > 0) { ?> <?php 
+				// Loop through the items returned				
+				for ( $z = 0; $z < count($room_type_ids); $z++ ) {
+					$room_type_id = $room_type_ids[$z];
+					$room_type_obj = new byt_room_type(intval($room_type_id));
+				?> <i> <?php echo $room_type_obj->get_title(); ?></i> <?php } } ?></div>
    
-   <div class="col-xs-12 col-sm-5 col-md-3"> <img src="<?php echo bloginfo('template_url')?>/images/booked-hotelimg.jpg"  alt=""></div> 
+   <div class="col-xs-12 col-sm-5 col-md-3"> <?php the_post_thumbnail(); ?></div> 
     
     <div class="col-xs-12 col-sm-7 col-md-9"> 
    <b> Price per night<br/> <em> (all taxes included)	</em>	</b>     <span> GBP 100 </span> <br/> 
@@ -125,7 +141,7 @@ The actual charqes for your hotel room are shown in the local currency below. </
   
   <div class="col-xs-12 col-sm-6 col-md-6"> <b> Total Price </b> <br/>  <span> (all taxes included) </span>	</div>
   
-  <div class="col-xs-12 col-sm-6 col-md-6 total-right"> <b>GBP 100    PKR 1500</b>	</div>
+  <div class="col-xs-12 col-sm-6 col-md-6 total-right"> <b>RS 4500</b>	</div>
   
   </div>
   </div>
@@ -135,8 +151,15 @@ The actual charqes for your hotel room are shown in the local currency below. </
    <div class="locationmap"> 
    
    <h2>Location on Map </h2>
-   
    <div class="map"> <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d9288846.204449672!2d-3.4433237999999995!3d55.3617609!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x25a3b1142c791a9%3A0xc4f8a0433288257a!2sUnited+Kingdom!5e0!3m2!1sen!2sin!4v1418648049173" width="100%" height="450" frameborder="0" style="border:0"></iframe></div>
+       <!-- <div class="gmap" id="map_canvas_book_success"></div>
+        <script type="text/javascript">
+		jQuery(document).ready(function(){
+		window.InitializeMap();
+			
+		});
+		</script>
+-->
    
    </div>
    

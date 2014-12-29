@@ -252,6 +252,7 @@ $accommodation_check_out_time = $accommodation_obj->get_custom_field('check_out_
        
        <div class="col-xs-5 col-sm-5 col-md-5">
 <!--         <img src="images/booked-hotelimg.jpg" width="77" height="52" alt="">-->
+<?php the_post_thumbnail(  ); ?>
            
        </div>
          
@@ -265,8 +266,8 @@ $accommodation_check_out_time = $accommodation_obj->get_custom_field('check_out_
         </span><br>
         
 <!--           <img src="images/star.jpg" width="80" height="23" alt="">-->
-           9-Fane Road, Off Mall 
-Road, Lahore, PK
+          <!-- 9-Fane Road, Off Mall 
+Road, Lahore, PK --><?php echo  $accommodation_obj->get_custom_field('address'); ?>
 
 
 
@@ -296,8 +297,7 @@ For:	     <span>  1 Night, <?php echo $_SESSION['max_guest_count'];?> Persons,in
 
 <p>  Average nightly rate	     <span><b>  Rs155.42 </b></span> </p>
 
-<p> <b> <span style="float:left;" id="room_type"></span> , Free Parking, </b> Free 
-Wireless Internet</p>
+<p> <b> <span style="float:left;" id="room_type"></span> , <?php echo $accommodation_obj->get_custom_field('parking'); ?>, </b>  <?php echo $accommodation_obj->get_custom_field('internet'); ?></p>
       
        </div>   
        
@@ -376,8 +376,8 @@ number below to speak to one of our
 advisors who will help you with all of 
 your holiday needs.</p>
 
-<p> <img src="images/phone-icon2.jpg" width="31" height="31" alt=""> <b> Book online or call</b>  </p>
-<p> <img src="images/flag.jpg" width="22" height="14" alt=""> <span> +44 (223) 60 88 169 </span> 
+<p> <img src="<?php bloginfo('template_url'); ?>/images/phone-icon2.jpg" width="31" height="31" alt=""> <b> Book online or call</b>  </p>
+<p> <img src="<?php bloginfo('template_url'); ?>/images/flag.jpg" width="22" height="14" alt=""> <span> +44 (223) 60 88 169 </span> 
 <i> Available 24/7 </i>  </p>
     
     </div>

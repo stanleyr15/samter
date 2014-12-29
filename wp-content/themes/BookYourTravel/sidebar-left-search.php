@@ -10,6 +10,7 @@
  */
 ?>
 <?php if ( is_active_sidebar( 'left-search' ) ) { ?>
+
 	<aside id="secondary" class="left-sidebar widget-area" role="complementary">
 		<ul>
 		<?php dynamic_sidebar( 'left-search' ); ?>
@@ -17,9 +18,7 @@
 	</aside><!-- #secondary -->
 <?php } else { ?>
 
-	<aside class="left-sidebar">
-   
-         
+<div class="col-xs-12 col-sm-4 col-md-3">
      		<?php 
 		$widget_args = array(
 			'before_widget' => '',
@@ -32,5 +31,5 @@
          <!--<div class="panel-heading">Panel heading without title</div>-->
 
 
-	</aside>
+    </div>
 <?php } 

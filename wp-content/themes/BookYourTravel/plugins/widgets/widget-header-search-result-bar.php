@@ -97,7 +97,7 @@ class byt_header_search_widget extends WP_Widget {
 		$price_per_night_label_text = isset($instance['price_per_night_label_text']) ? $instance['price_per_night_label_text'] : __('Price per night', 'bookyourtravel');
 		$price_per_day_label_text = isset($instance['price_per_day_label_text']) ? $instance['price_per_day_label_text'] : __('Price per day', 'bookyourtravel');
 
-		$submit_button_text = isset($instance['submit_button_text']) ? $instance['submit_button_text'] : __('Search again', 'bookyourtravel');
+		$submit_button_text = isset($instance['submit_button_text']) ? $instance['submit_button_text'] : __('Search Hotel', 'bookyourtravel');
 
 		/* Before widget (defined by themes). */
 
@@ -113,15 +113,15 @@ class byt_header_search_widget extends WP_Widget {
 				window.searchWidgetPricePerDayLabel = '<?php echo $price_per_day_label_text; ?>';
 				
 			</script>
-			<article class="refine-search-results byt_search_widget  panel panel-primary">
-            <div class="panel-heading">
-                 <h3 class="panel-title">
-					<?php echo $before_title . $title . $after_title; ?>
-                    </h3></div>
-				<form class="widget-search" method="get" action="<?php echo $custom_search_results_page; ?>">
-                <div class="panel-body">
-                
-					<dl>
+            
+            
+            <div class="inner-topsearch"> 
+             <div class="container">
+             
+             <div class="row">
+              <div class="col-xs-6 col-sm-1 col-md-1 search-icon"> <img src="<?php bloginfo('template_url'); ?>/images/search-icon.png"  alt=""></div>
+			
+				<form class="widget-search new-date-class" method="get" action="<?php echo $custom_search_results_page; ?>">
 					<?php 					
 					//$this->render_what_section($searchable_count, $what_text);
 					//$this->render_price_range_section($what, $price_per_person_label_text, $price_per_night_label_text, $price_per_day_label_text);
@@ -134,17 +134,24 @@ class byt_header_search_widget extends WP_Widget {
 					//$this->render_accommodation_type_section($accommodation_type_label_text);
 					//$this->render_cabin_type_section($cabin_type_label_text);
 					//$this->render_drivers_age_section($drivers_age_label_text);
-					$this->render_rooms_section($rooms_label_text);
+					
 					//$this->render_guests_section($guests_label_text);
 					//$this->render_cabins_section($cabins_label_text);
-					$this->render_when_section($when_text, $accommodation_date_from_label_text, $accommodation_date_to_label_text, $car_rental_date_from_label_text, $car_rental_date_to_label_text, $tour_date_from_label_text, $cruise_date_from_label_text);
 					$this->render_location_section($accommodation_location_label_text, $car_rental_location_label_text, $tour_location_label_text);
-					?>					
-					</dl>
-					<input type="submit" value="<?php echo $submit_button_text; ?>" class="gradient-button" id="search-submit" />
+					$this->render_when_section($when_text, $accommodation_date_from_label_text, $accommodation_date_to_label_text, $car_rental_date_from_label_text, $car_rental_date_to_label_text, $tour_date_from_label_text, $cruise_date_from_label_text);
+					
+					$this->render_rooms_section($rooms_label_text);
+					?>	
+                    <div class="col-xs-12 col-sm-2 col-md-2 ">  				
+					<input type="submit" value="<?php echo $submit_button_text; ?>" class="btns search-hotel-btn" id="search-submit" />
                     </div>
-				</form>
-			</article>        	
+                    
+                    </form>
+                     </div>
+             
+             
+             </div>
+             </div>
 		<?php
 
 		/* After widget (defined by themes). */
@@ -153,19 +160,18 @@ class byt_header_search_widget extends WP_Widget {
 	function render_location_section($accommodation_location_label_text, $car_rental_location_label_text, $tour_location_label_text) {
 		$term = isset($_GET['term']) ? wp_kses($_GET['term'], '') : '';
 	?>	
-		<dt class="where">
-			<?php echo $accommodation_location_label_text; ?>
-		</dt>
-		<dd class="where">
+		
 			<script>		
 				window.searchAccommodationLocationLabel = '<?php echo $accommodation_location_label_text; ?>';
 				window.searchCarRentalLocationLabel = '<?php echo $car_rental_location_label_text; ?>';
 				window.searchTourLocationLabel = '<?php echo $tour_location_label_text; ?>';
 			</script>
-			<div class="destination">
+            <div class="col-xs-6 col-sm-3 col-md-2">
+			    <label>  Your Destination  </label>
 				<input type="text" placeholder="" id="search_widget_term" name="term" value="<?php echo $term;?>" />
-			</div>
-		</dd>
+		    </div>
+            
+            
 	<?php
 	}
 	
@@ -186,14 +192,10 @@ class byt_header_search_widget extends WP_Widget {
 	function render_rooms_section($rooms_label_text) {
 		$rooms = isset($_GET['rooms']) ? intval(wp_kses($_GET['rooms'], '')) : 0;
 		?>
-		<dt class="rooms">
-			<?php echo $rooms_label_text; ?>
-		</dt>
-		<dd class="rooms">
-			<div class="spinner">
-				<input type="text" id="search_widget_rooms" name="rooms" value="<?php echo $rooms; ?>" />
-			</div>
-		</dd>
+		<div class="col-xs-6 col-sm-2 col-md-3">  
+			 <label> <?php echo $rooms_label_text; ?> </label>
+		    <input type="text" id="search_widget_rooms" name="rooms" value="<?php echo $rooms; ?>" />
+		</div>
 		<?php
 	}
 	
@@ -230,10 +232,8 @@ class byt_header_search_widget extends WP_Widget {
 		$from = isset($_GET['from']) && !empty($_GET['from'])  ? date('m/d/Y', strtotime(wp_kses($_GET['from'], ''))) : null;
 		$to = isset($_GET['to']) && !empty($_GET['to']) ? date('m/d/Y', strtotime(wp_kses($_GET['to'], ''))) : null;
 	?>
-		<dt class="when">
-			<?php echo $when_text; ?>
-		</dt>
-		<dd class="when">
+		 
+			<?php //echo $when_text; ?>
 			<script>
 				window.searchAccommodationDateFromLabel = '<?php echo $accommodation_date_from_label_text; ?>';
 				window.searchAccommodationDateToLabel = '<?php echo $accommodation_date_to_label_text; ?>';
@@ -242,15 +242,20 @@ class byt_header_search_widget extends WP_Widget {
 				window.searchTourDateFromLabel = '<?php echo $tour_date_from_label_text; ?>';		
 				window.searchCruiseDateFromLabel = '<?php echo $cruise_date_from_label_text; ?>';	
 			</script>
-			<div class="datepicker">
-				<label for="search_widget_date_from"><?php echo $accommodation_date_from_label_text; ?></label>
-				<div class="datepicker-wrap"><input type="text" id="search_widget_date_from" placeholder="" id="from" name="from" <?php echo $from != null ? 'value="' . $from . '"' : '' ?> /></div>
-			</div>
-			<div class="datepicker">
-				<label for="search_widget_date_to"><?php echo $accommodation_date_to_label_text; ?></label>
-				<div class="datepicker-wrap"><input type="text" id="search_widget_date_to" placeholder="" id="to" name="to" <?php echo $to != null ? 'value="' . $to . '"' : '' ?> /></div>
-			</div>
-		</dd>
+            <div class="col-xs-6 col-sm-2 col-md-2">  
+				  <label>  From   </label>
+			      <input type="text" id="search_widget_date_from" placeholder="" id="from" name="from" <?php echo $from != null ? 'value="' . $from . '"' : '' ?> />
+            </div>
+			 <div class="col-xs-6 col-sm-2 col-md-2">  
+				<label>  To  </label>
+				<input type="text" id="search_widget_date_to" placeholder="" id="to" name="to" <?php echo $to != null ? 'value="' . $to . '"' : '' ?> />
+            </div>
+            
+            
+             
+             
+            
+             
 		<?php
 	}	
 	

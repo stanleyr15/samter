@@ -65,7 +65,7 @@
 						render_home_search_who_column($searchable_count);
 						?>
                     </div>    
-						<input type="submit" value="Search Hotels" class="search-btnbg" id="search-submit" />
+						<input type="submit" value="Search Hotels" class="btns search-hotel-btn" id="search-submit" />
 					</div><!--//.form-->
 				</div><!--.forms-->
 			</form>

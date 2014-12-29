@@ -7,17 +7,14 @@
  * @since Book Your Travel 1.0
  */
 get_header(); 
+
 byt_breadcrumbs();
+
 
 get_sidebar('under-header');
 
-
-
-
-
-
 	
-		the_widget('byt_Header_Search_Widget', null, $widget_args); 
+
 	
 
 
@@ -113,13 +110,13 @@ if ($what == 1 || $what == 2) {
           foreach ($results['results'] as $acc_ids)
           {
     
-            // echo $acc_ids->ID;
+             //echo $acc_ids->ID;
               global $wpdb;
    
                 $query = "SELECT * FROM wp_byt_accommodation_vacancies WHERE accommodation_id = '$acc_ids->ID'";
 
                 $get_vacancies_date = $wpdb->get_results($query);
-               // print_r($get_vacancies_date);
+                //print_r($get_vacancies_date);
 
                     foreach ($get_vacancies_date as $vacc_date)
                     {
@@ -199,9 +196,12 @@ if ($what == 1 || $what == 2) {
 }
 
 ?>
+<div class="container2">
+<div class="row">
 	<?php get_sidebar('left-search'); ?>
 	<!--three-fourth content-->
-	<section class="three-fourth right-border">
+    <div class="col-xs-12 col-sm-8 col-md-9">
+	<section class="right-border">
 	<?php 	$enable_car_rentals = of_get_option('enable_car_rentals', 1); ?>
 		<div class="sort-by">
 			<h3><?php _e('Sort by', 'bookyourtravel'); ?></h3>
@@ -263,6 +263,8 @@ if ($what == 1 || $what == 2) {
                         <?php } ?>
 		</div>
 	</section>
+    </div>
+    </div></div>
 <?php 
 	wp_reset_postdata();
 	get_footer(); 

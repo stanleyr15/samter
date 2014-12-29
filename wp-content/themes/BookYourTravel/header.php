@@ -212,8 +212,12 @@ if ($current_user->ID > 0) {
         }
         ?>
         <div class="body-bg">
+        
+        <?php  if(is_page('search-results')) {  the_widget('byt_Header_Search_Widget', null, $widget_args); 
+		}  ?>
             <!--main-->
             <div class="" role="main" id="primary">		
-                <div class="wrap clearfix">
+                <div class="wrap clearfix"> 
                     <!--main content-->
                     <div class="content clearfix <?php echo $content_class; ?>" id="content">
+                    
